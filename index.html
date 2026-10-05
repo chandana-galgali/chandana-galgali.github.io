@@ -52,7 +52,7 @@ footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;
 <main>
 <section id="about" style="padding-top:60px">
 <p class="meta">// hello, world — Mumbai, India</p>
-<h1>I'm Chandana,<br><span class="grad">I build things that think.</span></h1>
+<h1>I'm Chandana Galgali,<br><span class="grad">I build things that think.</span></h1>
 <div class="term"><div class="dots"><span></span><span></span><span></span></div><pre id="tp" style="white-space:pre-wrap;font:inherit;margin-top:12px"></pre></div>
 <div class="stats" id="stats"></div>
 <div class="links" id="hl"></div>
@@ -79,7 +79,7 @@ const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/ch
 const links=[['GitHub',L.gh],['LinkedIn',L.li],['chandana.galgali@gmail.com',L.em],['+91 9870776977',L.ph],['ORCID',L.orc]];
 const lk=a=>a.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join('');
 hl.innerHTML=lk(links);cl.innerHTML=lk(links);
-stats.innerHTML=[['9.67','CGPA · Rank 1'],['97.5%','mutation recall @ IIT-B'],['45→2 min','validation @ Barclays'],['1st','Climate Hackathon 2024']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
+stats.innerHTML=[['9.67','CGPA · Rank 1'],['97.5%','mutation recall @ IIT-B'],['45 min→2 min','validation time @ Barclays'],['1st','Climate Hackathon 2024']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
 const T=`$ whoami\nchandana-galgali — B.Tech IT (Hons. AI), Dept Rank 1, Gold Medalist\n$ cat roles.txt\nResearch Intern @ IIT Bombay · SWE Intern @ Barclays · Cyber Security Intern @ Keva\n$ cat focus.txt\ncompilers · static analysis · ML/CV · geospatial AI · security · full-stack\n$ echo $STATUS\nopen to work — let's build something together_`;
 let i=0;(function t(){tp.innerHTML=T.slice(0,i).replace(/^\$ (.*)$/gm,'<span class="p">$</span> $1')+'<span class="cur"></span>';if(i++<T.length)setTimeout(t,i%40?14:140)})();
 const exp=[
