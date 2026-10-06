@@ -13,13 +13,18 @@
 @media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f6f8fb;--card:#fff;--fg:#14202e;--mut:#5a6b7e;--a:#0d9488;--b:#6d28d9;--bd:#dce3ec}}
 :root[data-theme=light]{--bg:#f6f8fb;--card:#fff;--fg:#14202e;--mut:#5a6b7e;--a:#0d9488;--b:#6d28d9;--bd:#dce3ec}
 :root[data-theme=dark]{--bg:#0a0e14;--card:#111823;--fg:#d6e2f0;--mut:#7d8ea3;--a:#5eead4;--b:#a78bfa;--bd:#1f2b3b}
-*{box-sizing:border-box;margin:0}
+*{box-sizing:border-box;margin:0;scrollbar-width:thin;scrollbar-color:var(--a) transparent}
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:99px;border:2px solid transparent;background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:var(--a);background-clip:padding-box}
+::-webkit-scrollbar-corner{background:transparent}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{background:var(--bg);color:var(--fg);font:15px/1.65 'JetBrains Mono',ui-monospace,Menlo,monospace;background-image:radial-gradient(var(--bd) 1px,transparent 1px);background-size:26px 26px}
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;background:radial-gradient(var(--a),transparent 65%);opacity:.08;transform:translate(-50%,-50%);z-index:0}
 a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;gap:6px;align-items:center;padding:10px 5vw;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);overflow-x:auto}
+#nh{position:sticky;top:env(safe-area-inset-top,0px);z-index:9}nav{display:flex;gap:6px;align-items:center;padding:10px 5vw;padding-right:46px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}nav::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}#nsb{position:absolute;bottom:0;left:0;width:100%;height:2.5px;pointer-events:none;overflow:hidden}#nsb::after{content:'';position:absolute;top:0;left:var(--nx,0%);width:var(--nw,20%);height:100%;background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 0 8px var(--a);border-radius:99px;opacity:0;transition:opacity .3s ease}#nsb.on::after{opacity:1}
 nav a{color:var(--mut);padding:4px 10px;border-radius:6px;white-space:nowrap;font-size:13px}nav a:hover{color:var(--a);background:var(--card);text-decoration:none}
 nav b{color:var(--a);margin-right:auto;white-space:nowrap}
 button{font:inherit;cursor:pointer;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:4px 10px}
@@ -67,7 +72,7 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 .bd{position:relative;min-height:170px;padding:44px 16px 18px;border:1px solid var(--bd);border-radius:12px;background:radial-gradient(color-mix(in srgb,var(--c) 22%,transparent) 1px,transparent 1px) 0 0/16px 16px,var(--card);overflow:hidden}
 .bd h3{position:absolute;top:12px;left:16px;font:700 13px 'JetBrains Mono';color:var(--c)}.bd h3::before{content:'📌 '}.nn{display:flex;flex-wrap:wrap;gap:16px 12px}
 .sum{font-weight:600;color:var(--fg);margin:10px 0 4px;font-size:14px}
-.ts{display:flex;overflow-x:auto;margin-bottom:28px}.ts div{min-width:200px;flex:1;border-top:2px solid var(--bd);position:relative;padding:14px 12px 0 0;font-size:12.5px}.ts div::before{content:'';position:absolute;top:-6px;left:0;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a)}.ts b{font-size:13.5px}
+.ts{display:flex;overflow-x:auto;margin-bottom:28px;padding:14px 4px 12px;scrollbar-width:thin;scrollbar-color:var(--a) transparent}.ts::-webkit-scrollbar{height:6px}.ts::-webkit-scrollbar-track{background:transparent}.ts::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--a),var(--b));border-radius:99px;box-shadow:0 0 8px var(--a)}.ts::-webkit-scrollbar-thumb:hover{filter:brightness(1.2)}.ts div{min-width:200px;flex:1;border-top:2px solid var(--bd);position:relative;padding:14px 16px 4px 0;font-size:12.5px}.ts div::before{content:'';position:absolute;top:-5px;left:0;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a)}.ts b{font-size:13.5px}
 .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#06121a;font:700 14px 'Space Grotesk',sans-serif;flex:none}.post p{margin:12px 0;font-size:13.5px}
 .sc{display:flex;align-items:center;gap:12px;border:1px dashed var(--bd);border-radius:12px;padding:14px;background:var(--card)}.sc div{flex:1;min-width:0}.sc small{color:var(--mut)}
 .fm input,.fm textarea{width:100%;background:none;border:0;border-bottom:1px solid var(--bd);color:var(--fg);font:inherit;padding:8px 0;margin:4px 0 18px;outline:0}.fm input:focus,.fm textarea:focus{border-color:var(--a)}.lb{font-size:11px;color:var(--mut);letter-spacing:.08em;display:block}
@@ -77,7 +82,7 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 </head>
 <body>
 <div id="glow"></div>
-<nav><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><a href="#npm">npm</a><a href="#kind">kudos</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav>
+<header id="nh"><nav id="nv"><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><a href="#npm">npm</a><a href="#kind">kudos</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
 <main>
 <section id="about" style="padding-top:60px">
 <p class="meta">// hello, world — Mumbai, India</p>
@@ -190,6 +195,7 @@ tx.onclick=()=>{const b=ms.value+(em2.value?'\n\nReply to: '+em2.value:'');st.te
 cord.onclick=()=>{cord.classList.add('p');setTimeout(()=>{cord.classList.remove('p');th.click()},180)};
 addEventListener('scroll',()=>{const p=Math.round(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100);bar.style.width=p+'%';pct.textContent=p+'%'},{passive:true});
 const ck=()=>clk.textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'});ck();setInterval(ck,1000);
+let nt;nv.addEventListener('scroll',()=>{const sw=nv.scrollWidth-nv.clientWidth;if(sw<=0){nsb.classList.remove('on');return}const w=Math.max(16,Math.round((nv.clientWidth/nv.scrollWidth)*100)),x=Math.round((nv.scrollLeft/sw)*(100-w));nsb.style.setProperty('--nw',w+'%');nsb.style.setProperty('--nx',x+'%');nsb.classList.add('on');clearTimeout(nt);nt=setTimeout(()=>nsb.classList.remove('on'),650)},{passive:true});
 </script>
 </body>
 </html>
