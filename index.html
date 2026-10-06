@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Chandana Galgali · Software Engineer</title>
-<meta name="description" content="Chandana Galgali — AI, systems & security engineer. IIT Bombay research, Barclays, 1st place Climate Hackathon 2024.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon-brain.svg">
+<title>Chandana Galgali</title>
+<meta name="description" content="Chandana Galgali Portfolio — AI, Systems and Software Engineer">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0a0e14;--card:#111823;--fg:#d6e2f0;--mut:#7d8ea3;--a:#5eead4;--b:#a78bfa;--bd:#1f2b3b}
@@ -44,11 +45,39 @@ details{margin-top:8px}summary{cursor:pointer;color:var(--a);font-size:13px}
 footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;z-index:1}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.links a{border:1px solid var(--bd);padding:6px 12px;border-radius:8px;background:var(--card)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.card{position:relative;overflow:hidden}.card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:.3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--a) 14%,transparent),transparent)}.card:hover::after{opacity:1}
+.marq{overflow:hidden;margin:34px -5vw 0;border-block:1px solid var(--bd);padding:8px 0;white-space:nowrap;color:var(--mut);font-size:13px}.marq div{display:inline-block;animation:mq 40s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+.wall{position:relative;height:460px;border:1px dashed var(--bd);border-radius:14px;background:repeating-linear-gradient(0deg,transparent 0 31px,var(--bd) 32px);overflow:hidden;touch-action:none}
+.note{position:absolute;width:168px;padding:16px 12px 12px;color:#2b2200;font:600 13px/1.4 'Space Grotesk',sans-serif;box-shadow:0 10px 20px -8px #0009;cursor:grab;user-select:none;touch-action:none;transform:rotate(var(--r));transition:box-shadow .2s}
+.note::before{content:'';position:absolute;top:-7px;left:50%;width:52px;height:16px;margin-left:-26px;background:#ffffff88}.note.d{cursor:grabbing;box-shadow:0 22px 30px -8px #000b;z-index:5}
+#pal{position:fixed;inset:0;z-index:20;display:none;place-items:start center;padding-top:15vh;background:#0008;backdrop-filter:blur(4px)}#pal.o{display:grid}
+#pal div{width:min(520px,92vw);background:var(--card);border:1px solid var(--a);border-radius:12px;overflow:hidden}#pal input{width:100%;padding:14px;background:none;border:0;border-bottom:1px solid var(--bd);color:var(--fg);font:inherit;outline:0}
+#pal a{display:block;padding:9px 14px;color:var(--fg);cursor:pointer}#pal a:hover,#pal a.s{background:var(--bd);text-decoration:none}
+#bot{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;font-size:13px}#bot>button{font-size:24px;border-radius:50%;width:48px;height:48px;padding:0;border-color:var(--a)}
+#bp{display:none;position:absolute;right:0;bottom:58px;width:260px;background:var(--card);border:1px solid var(--a);border-radius:12px;padding:12px}#bp.o{display:block}#bp p{margin:8px 0;min-height:50px}#bp button{margin:2px;font-size:12px}
+#zz{position:absolute;right:50px;top:-14px;color:var(--a);animation:fl 2s ease-in-out infinite;pointer-events:none}@keyframes fl{50%{transform:translateY(-6px);opacity:.4}}
+
+nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:none}
+.btn{display:inline-block;border:1px solid var(--a);color:var(--a);padding:7px 14px;border-radius:8px;background:var(--card);cursor:pointer;font:inherit}.btn.f{background:var(--a);color:var(--bg)}.btn:hover{text-decoration:none;filter:brightness(1.1)}
+.tags button{font:inherit;font-size:12px;border-radius:99px;padding:3px 10px}.tags button.on{background:var(--a);color:var(--bg)}
+.sn{position:relative;display:flex;align-items:center;gap:8px;padding:10px 12px;background:color-mix(in srgb,var(--c) 20%,var(--card));border:1px solid color-mix(in srgb,var(--c) 55%,transparent);border-radius:4px;font:600 12.5px 'Space Grotesk',sans-serif;cursor:grab;user-select:none;touch-action:none;rotate:var(--r);box-shadow:0 8px 14px -8px #000a}
+.sn::before{content:'';position:absolute;top:-6px;left:50%;width:34px;height:10px;margin-left:-17px;background:color-mix(in srgb,var(--c) 60%,transparent);border-radius:2px}.sn.d{cursor:grabbing;z-index:5;box-shadow:0 18px 24px -8px #000c}
+.sn i{width:22px;height:22px;border-radius:5px;background:#f4f6fa;display:grid;place-items:center;font:700 10px 'JetBrains Mono';color:#222;flex:none}.sn img{width:16px;height:16px}
+.bd{position:relative;min-height:170px;padding:44px 16px 18px;border:1px solid var(--bd);border-radius:12px;background:radial-gradient(color-mix(in srgb,var(--c) 22%,transparent) 1px,transparent 1px) 0 0/16px 16px,var(--card);overflow:hidden}
+.bd h3{position:absolute;top:12px;left:16px;font:700 13px 'JetBrains Mono';color:var(--c)}.bd h3::before{content:'📌 '}.nn{display:flex;flex-wrap:wrap;gap:16px 12px}
+.sum{font-weight:600;color:var(--fg);margin:10px 0 4px;font-size:14px}
+.ts{display:flex;overflow-x:auto;margin-bottom:28px}.ts div{min-width:200px;flex:1;border-top:2px solid var(--bd);position:relative;padding:14px 12px 0 0;font-size:12.5px}.ts div::before{content:'';position:absolute;top:-6px;left:0;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a)}.ts b{font-size:13.5px}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#06121a;font:700 14px 'Space Grotesk',sans-serif;flex:none}.post p{margin:12px 0;font-size:13.5px}
+.sc{display:flex;align-items:center;gap:12px;border:1px dashed var(--bd);border-radius:12px;padding:14px;background:var(--card)}.sc div{flex:1;min-width:0}.sc small{color:var(--mut)}
+.fm input,.fm textarea{width:100%;background:none;border:0;border-bottom:1px solid var(--bd);color:var(--fg);font:inherit;padding:8px 0;margin:4px 0 18px;outline:0}.fm input:focus,.fm textarea:focus{border-color:var(--a)}.lb{font-size:11px;color:var(--mut);letter-spacing:.08em;display:block}
+#cord{position:fixed;right:10px;top:env(safe-area-inset-top,0px);z-index:12;width:14px;height:64px;cursor:pointer;transition:height .15s}#cord::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--mut)}#cord::after{content:'';position:absolute;bottom:-10px;left:0;width:14px;height:20px;border-radius:7px;background:var(--a);box-shadow:0 0 14px var(--a)}#cord.p{height:100px}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:30;background:linear-gradient(90deg,var(--a),var(--b))}#pct{position:fixed;left:10px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--mut);z-index:5}
 </style>
 </head>
 <body>
 <div id="glow"></div>
-<nav><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><button id="th" aria-label="toggle theme">◐</button></nav>
+<nav><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><a href="#npm">npm</a><a href="#kind">kudos</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav>
 <main>
 <section id="about" style="padding-top:60px">
 <p class="meta">// hello, world — Mumbai, India</p>
@@ -60,26 +89,42 @@ footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;
 <p class="meta">B.Tech Information Technology · Honors in Artificial Intelligence · 2022–2026 · Mumbai</p>
 <ul><li>CGPA <b>9.67/10</b> (Honors: 9.40/10)</li><li>🥇 Gold Medal — Department Rank 1</li><li>Built an interactive virtual laboratory visualizing core Data Structures &amp; Algorithms for 350+ second-year students.</li><li>General Secretary of Team Emfinity (30-member council): technical events with 500+ footfall and ₹20,000+ sponsorships.</li></ul></div>
 </section>
-<section id="exp"><h2>experience</h2><div class="tl" id="tl"></div></section>
+<div class="marq"><div id="mq"></div></div>
+<section id="exp"><h2>experience</h2><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
 <section id="proj"><h2>flagship-projects</h2><div class="grid" id="pg"></div></section>
 <section id="more"><h2>more-projects</h2><p class="meta" style="margin:-10px 0 18px">// the smaller builds, scripts &amp; experiments — straight from GitHub</p><div class="grid" id="mg"></div></section>
-<section id="skills"><h2>tech-stack</h2><div class="grid" id="sg"></div></section>
+<section id="npm"><h2>published-package</h2><div class="card"><h3>📦 react-ambient-light-adaptive-theme</h3><p class="meta">// React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0"><div class="stat" style="min-width:160px"><b id="nt2">131</b><small>downloads · last 12 months</small></div><code class="btn" id="cp">npm i react-ambient-light-adaptive-theme ⧉</code></div><div id="ch"></div>
+<div class="links"><a href="https://www.npmjs.com/package/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm ↗</a><a href="https://npm-stat.com/charts.html?package=react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm-stat ↗</a><a href="https://github.com/chandana-galgali/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">source ↗</a></div></div></section>
+<section id="skills"><h2>tech-stack</h2><p class="meta" style="margin:-10px 0 14px">// drag the notes — each one stays pinned to its own board</p><div class="grid" id="sg"></div></section>
 <section id="wins"><h2>achievements</h2>
 <div class="card rv"><div class="ph" data-img="assets/climate-hackathon.jpg">📸 drop your hackathon win photo → assets/climate-hackathon.jpg</div>
 <h3>🏆 First Place — Climate Hackathon 2024</h3><p class="meta">Issued by the U.S. Consulate General (Mumbai) &amp; Ekonnect Knowledge Foundation</p>
 <ul><li>Led backend development in a 4-person team; won among 150+ teams.</li><li>Awarded a ₹1,50,000 grant to implement the solution across the 65-acre campus (39,000+ students) under “Towards Green Campuses”.</li></ul></div>
 <div class="grid" style="margin-top:16px"><div class="card rv"><h3>🥇 Gold Medal</h3><p class="meta">Department Rank 1 · KJSCE</p></div><div class="card rv"><h3>🌸 GSSoC ’25</h3><p class="meta">Open-source Tech Contributor · Sep–Oct 2025</p></div><div class="card rv"><h3>🛰️ ISRO Bharatiya Antariksh Hackathon 2024</h3><p class="meta">Voice-Enabled Geospatial UI</p></div></div></section>
+<section id="kind"><h2>kind-words</h2><p class="meta" style="margin:-10px 0 14px">// official recognition at Barclays</p><div class="grid" id="kg"></div></section>
 <section id="certs"><h2>certifications</h2><div class="grid" id="cg"></div></section>
-<section id="contact"><h2>contact</h2><div class="card"><p>Always down to nerd out over cool tech — let's build something together.</p>
-<div class="links" id="cl"></div></div></section>
+<section id="contact"><h2>contact</h2>
+<div class="grid"><div class="sc"><div><b>GitHub</b><br><small>@chandana-galgali</small></div><a class="btn" href="https://github.com/chandana-galgali" target="_blank" rel="noopener">Follow</a></div>
+<div class="sc"><div><b>LinkedIn</b><br><small>in/chandana-galgali</small></div><a class="btn" href="https://linkedin.com/in/chandana-galgali" target="_blank" rel="noopener">Connect</a></div>
+<div class="sc"><div><b>Email</b><br><small>chandana.galgali@gmail.com</small></div><a class="btn" href="mailto:chandana.galgali@gmail.com">Mail me</a></div>
+<div class="sc"><div><b>Résumé</b><br><small>PDF</small></div><a class="btn f" href="assets/Chandana_Galgali_Resume.pdf" download>Download ⬇</a></div></div>
+<div class="card fm" style="margin-top:16px"><h3>INITIATE_CONNECTION</h3><p class="meta">STATUS: <span class="p" id="st">AWAITING_INPUT...</span></p>
+<span class="lb" style="margin:14px 0 6px">[00] TOPIC — tap one, a template is filled in for you</span><div class="tags" id="tc"></div>
+<label class="lb" for="em2">[01] RETURN_ADDRESS (EMAIL)</label><input id="em2" type="email" placeholder="you@company.com">
+<label class="lb" for="ms">[02] PAYLOAD_DATA (MESSAGE)</label><textarea id="ms" rows="6" placeholder="Hi Chandana, ..."></textarea>
+<button class="btn f" id="tx">TRANSMIT ➤</button> <span class="meta">// opens your mail app with the message ready</span></div></section>
 </main>
-<footer>© 2026 Chandana Galgali · hand-built with HTML, CSS &amp; JS · <a href="#about">↑ top</a></footer>
+<div id="bar"></div><span id="pct">0%</span><div id="cord" title="pull me"></div>
+<div id="pal"><div><input id="pi" placeholder="type a command… (esc to close)"><span id="pl"></span></div></div>
+<div id="bot"><span id="zz">z z</span><div id="bp"><b>bit 🤖</b><p id="ba">Hi! Ask me something about Chandana.</p><span id="bq"></span></div><button id="bb" aria-label="chat bot">🤖</button></div>
+<footer>© 2026 Chandana Galgali · hand-built with HTML, CSS &amp; JS<br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
 <script>
 const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/chandana-galgali',em:'mailto:chandana.galgali@gmail.com',ph:'tel:+919870776977',orc:'https://orcid.org/0009-0006-8524-809X'};
-const links=[['GitHub',L.gh],['LinkedIn',L.li],['chandana.galgali@gmail.com',L.em],['+91 9870776977',L.ph],['ORCID',L.orc]];
+const links=[['GitHub',L.gh],['LinkedIn',L.li],['Email',L.em]];
 const lk=a=>a.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join('');
-hl.innerHTML=lk(links);cl.innerHTML=lk(links);
-stats.innerHTML=[['9.67','CGPA · Rank 1'],['97.5%','mutation recall @ IIT-B'],['45 min→2 min','validation time @ Barclays'],['1st','Climate Hackathon 2024']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
+hl.innerHTML=lk(links)+'<a class="btn f" href="assets/Chandana_Galgali_Resume.pdf" download>⬇ Resume</a>';
+stats.innerHTML=[['9.67','CGPA · Rank 1'],['97.5%','mutation recall @ IIT-B'],['45→2 min','validation @ Barclays'],['1st','Climate Hackathon 2024']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
 const T=`$ whoami\nchandana-galgali — B.Tech IT (Hons. AI), Dept Rank 1, Gold Medalist\n$ cat roles.txt\nResearch Intern @ IIT Bombay · SWE Intern @ Barclays · Cyber Security Intern @ Keva\n$ cat focus.txt\ncompilers · static analysis · ML/CV · geospatial AI · security · full-stack\n$ echo $STATUS\nopen to work — let's build something together_`;
 let i=0;(function t(){tp.innerHTML=T.slice(0,i).replace(/^\$ (.*)$/gm,'<span class="p">$</span> $1')+'<span class="cur"></span>';if(i++<T.length)setTimeout(t,i%40?14:140)})();
 const exp=[
@@ -91,7 +136,11 @@ const exp=[
 ['Emfinity KJSCE','General Secretary · Technical Team Member','Jan 2023 – Jul 2025 (2 yrs 7 mos)',['General Secretary (Aug 2024–Jul 2025): led a 30-member council — delegation to team heads, faculty liaison, semester calendars, conflict resolution, deadlines, on-day allotments, council growth.','Technical Team Member (Jan 2023–Aug 2024): daily tech sessions, ran technical events, authored &amp; solved problems, owned the math behind events/workshops/social series, curated problem datasets, brainstormed math competitions.'],['Leadership','Events']],
 ['Keva','Java Development Intern','Jan 2023 – Mar 2023 · Mumbai',['Java, Maven, Spring Boot, OOP, data structures, dependency management and build automation.'],['Java','Spring Boot','Maven']]];
 const tg=a=>`<div class="tags">${a.map(x=>`<span>${x}</span>`).join('')}</div>`;
-tl.innerHTML=exp.map(e=>`<div class="card rv"><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p>${tg(e[4])}<ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+const sm=['Built a JavaScript JIT static-analysis framework: AOT hints show up to ~45% speedup and 48% lower peak memory, with 97.5% property-mutation recall.','Cut regulatory feed validation from 45 min to under 2 min, automated pod and NAS failures with Ansible, and presented to CIOs as Scrum Master.','Pen-tested and audited web apps and Ubuntu servers, mitigating 3 critical vulnerabilities and delivering executive audit reports.','Shipped 5 classic ML models: regression, clustering, SVM, gesture and food recognition.','Open-source contributions: bug fixes, refactors and documentation.','Grew from technical team member to General Secretary of a 30-member council (500+ footfall events, ₹20,000+ sponsorships).','Learned Java, Spring Boot and Maven fundamentals.'],dur=['4 mos','2 mos','3 mos','1 mo','2 mos','2 yrs 7 mos','3 mos'];
+tl.innerHTML=exp.map((e,i)=>`<div class="card rv${i>2?' hid x':''}"><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p><p class="sum">${sm[i]}</p>${tg(e[4])}<ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+ts.innerHTML=exp.map((e,i)=>`<div><b>${e[0].split(' — ')[0]}</b><br>${e[1].split(' / ')[0]}<br><span class="meta">${e[2].split(' · ')[0]} · ${dur[i]}</span></div>`).join('');
+tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:16px">view all experience (+4) ↓</button>');
+vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+4) ↓'};
 const R=n=>L.gh+'/'+n;
 const pr=[
 ['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality','🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025','CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring','pollution-map.jpg'],
@@ -102,7 +151,9 @@ pg.innerHTML=pr.map(p=>`<div class="card rv"><div class="ph" data-img="assets/${
 const mp=[['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python'],['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript'],['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript'],['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python'],['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python'],['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter'],['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript'],['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP'],['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter'],['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter'],['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python'],['K-Means-Clustering','Retail customer segmentation.','Python'],['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python'],['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter'],['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML'],['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web']];
 mg.innerHTML=mp.map(p=>`<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${p[2]!='Web'?`<a href="${R(p[0])}" target="_blank" rel="noopener">repo ↗</a>`:''}</div>`).join('');
 const sk={'Languages':'Python, JavaScript, TypeScript, C++, C, Java, R, SQL','AI / ML / Data':'TensorFlow, PyTorch, Keras, Scikit-Learn, Hugging Face, Transformers, OpenCV, CNNs, RNNs (LSTM, GRU), VGG-16, LLMs, RAG, Pandas, NumPy, K-Means, SVM, Linear Regression','Backend &amp; Web':'React.js, Next.js, Angular, Node.js, Flask, FastAPI, Django, Spring Boot, GraphQL, WebGL, HTML5/CSS3','DevOps, Security &amp; Cloud':'Docker, Kubernetes, Ansible, Git (GitHub/GitLab CI/CD), SonarQube, Burp Suite, Metasploit, FortiSIEM, Red Hat OpenShift, Linux/Ubuntu, AWS (Botocore)','Databases':'PostgreSQL, MySQL, MongoDB, SQL Server Management Studio','Tools &amp; Platforms':'Unity (AR/VR), Babel (AST Parsing), Leaflet.js, Google Earth Engine, MATLAB, RStudio, npm, Jira, Confluence, Agile/Scrum, VSCode, Docker Desktop'};
-sg.innerHTML=Object.entries(sk).map(([k,v])=>`<div class="card rv"><h3 style="font-size:15px">${k}</h3>${tg(v.split(', '))}</div>`).join('');
+const slug={Python:'python',JavaScript:'javascript',TypeScript:'typescript','C++':'cplusplus',C:'c',Java:'java',R:'r',TensorFlow:'tensorflow',PyTorch:'pytorch',Keras:'keras','Scikit-Learn':'scikitlearn',OpenCV:'opencv',Pandas:'pandas',NumPy:'numpy','React.js':'react','Next.js':'nextjs',Angular:'angular','Node.js':'nodejs',Flask:'flask',FastAPI:'fastapi',Django:'django','Spring Boot':'spring',GraphQL:'graphql','HTML5/CSS3':'html5',Docker:'docker',Kubernetes:'kubernetes',Ansible:'ansible',Git:'git',SonarQube:'sonarqube','Linux/Ubuntu':'ubuntu',AWS:'amazonwebservices','Red Hat OpenShift':'openshift',PostgreSQL:'postgresql',MySQL:'mysql',MongoDB:'mongodb','SQL Server Management Studio':'microsoftsqlserver','Unity':'unity',MATLAB:'matlab',RStudio:'rstudio',npm:'npm',Jira:'jira',Confluence:'confluence',VSCode:'vscode','Docker Desktop':'docker',Babel:'babel'};
+const bc=['#5eead4','#a78bfa','#f9a8d4','#fbbf24','#60a5fa','#86efac'];
+sg.innerHTML=Object.entries(sk).map(([k,v],bi)=>`<div class="bd" style="--c:${bc[bi%6]}"><h3>${k}</h3><div class="nn">${v.split(', ').map((n,j)=>{const b=n.split(' (')[0],z=slug[b];return `<div class="sn" style="--r:${((j*7+bi*3)%9)-4}deg"><i>${z?`<img alt="" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${z}/${z}-original.svg" onerror="this.parentNode.textContent='${b.slice(0,2)}'">`:b.slice(0,2)}</i>${n}</div>`}).join('')}</div></div>`).join('');
 const ce={'AI, Cloud &amp; Data Science':['Microsoft: Intro to Generative AI for Data Analysis (2025)','Microsoft: Intro to Microsoft Azure Cloud Services (2025)','CU Boulder: Introduction to Computer Vision (2025)','CU Boulder: Modeling of Autonomous Systems (2025)','SUNY: Big Data, Genes, and Medicine (2026)'],'Finance &amp; Business':['Univ. of Geneva: Understanding Financial Markets (2025)','Univ. of Virginia: Financial Accounting Fundamentals (2025)','Univ. of Virginia: Digital Product Management (2025)'],'Cybersecurity, Hardware &amp; DevOps':['IBM: Introduction to DevOps (2024)','Google: Foundations of Cybersecurity (2024)','Google: Play It Safe: Manage Security Risks (2024)','Univ. of Maryland: Hardware Security (2026)'],'Blockchain &amp; Web3':['Univ. at Buffalo: Blockchain Basics (2025)','Univ. at Buffalo: Smart Contracts (2026)','Univ. at Buffalo: Decentralized Applications (Dapps) (2026)','LearnQuest: Blockchain Security Advanced Protection (2026)'],'Software Engineering &amp; App Dev':['Duke: Java Programming: Solving Problems with Software (2025)','Duke: Java Programming: Arrays, Lists, and Structured Data (2025)','Meta: Programming Fundamentals in Kotlin (2024)','Meta: Intro to Android Mobile App Development (2024)','Vidyalankar Polytechnic: Computer Fundamentals (2022)'],'Languages':['UC Davis: Learn Spanish: Basic Spanish Vocabulary (2024)']};
 cg.innerHTML=Object.entries(ce).map(([k,v])=>`<div class="card rv"><h3 style="font-size:15px">${k}</h3><ul>${v.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
 document.querySelectorAll('.ph').forEach(d=>{const im=new Image();im.onload=()=>{d.textContent='';d.append(im)};im.src=d.dataset.img;im.alt=''});
@@ -110,6 +161,35 @@ const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.c
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
 th.onclick=()=>{const d=document.documentElement,dark=getComputedStyle(d).getPropertyValue('--bg').trim()=='#0a0e14';d.dataset.theme=dark?'light':'dark'};
+
+mq.innerHTML=(Object.values(sk).join(', ')+' · ').repeat(2);
+document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}});
+pg.querySelectorAll('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*7}deg) rotateX(${-y*7}deg)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
+const ls=['All',...new Set(mp.map(p=>p[2]))],fb=document.createElement('div');fb.className='tags';fb.innerHTML=ls.map(l=>`<button data-l="${l}">${l}</button>`).join('');mg.before(fb);
+fb.onclick=e=>{const l=e.target.dataset.l;if(l)[...mg.children].forEach((c,i)=>c.style.display=l=='All'||mp[i][2]==l?'':'none')};
+const go=id=>()=>document.getElementById(id).scrollIntoView();
+const cmds=[...['about','exp','proj','more','skills','npm','wins','kind','certs','contact'].map(x=>['→ jump: '+x,go(x)]),['◐ toggle theme',()=>th.click()],['↗ open GitHub',()=>open(L.gh)],['↗ open LinkedIn',()=>open(L.li)],['✉ copy email',()=>navigator.clipboard&&navigator.clipboard.writeText('chandana.galgali@gmail.com')],['✉ send email',()=>location.href=L.em]];
+function rp(q=''){pl.innerHTML='';cmds.filter(c=>c[0].toLowerCase().includes(q.toLowerCase())).forEach(c=>{const a=document.createElement('a');a.textContent=c[0];a.onclick=()=>{pal.classList.remove('o');c[1]()};pl.append(a)})}
+const op=()=>{pal.classList.add('o');pi.value='';rp();pi.focus()};k.onclick=op;pi.oninput=()=>rp(pi.value);
+pi.onkeydown=e=>{if(e.key=='Enter'){const a=pl.querySelector('a');a&&a.click()}};pal.onclick=e=>{if(e.target==pal)pal.classList.remove('o')};
+addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key=='k'){e.preventDefault();op()}if(e.key=='Escape')pal.classList.remove('o')});
+const qa={'Who is she?':'Chandana: B.Tech IT (Hons. AI), Dept Rank 1 at KJSCE. Compilers, ML, security & full-stack.','Best project?':'Multi-Pollutant Mapping: 1st place Climate Hackathon 2024, ₹1.5L grant, 1000m→10m air-quality maps.','Hire her?':'Yes! chandana.galgali@gmail.com — or press ⌘K → send email.','Fun fact':'Her browser app runs Whisper speech-to-text fully offline in under 600ms.'};
+bq.innerHTML=Object.keys(qa).map(q=>`<button>${q}</button>`).join('');bq.onclick=e=>{if(qa[e.target.textContent])ba.textContent=qa[e.target.textContent]};
+let zt;const wake=()=>{zz.style.display='none';clearTimeout(zt);zt=setTimeout(()=>zz.style.display='',9000)};bb.onclick=()=>bp.classList.toggle('o');addEventListener('pointermove',wake);wake();
+
+document.querySelectorAll('.sn').forEach(n=>{let sx,sy,tx=0,ty=0,b,r,t;n.onpointerdown=e=>{n.setPointerCapture(e.pointerId);n.classList.add('d');sx=e.clientX;sy=e.clientY;b=n.closest('.bd').getBoundingClientRect();r=n.getBoundingClientRect();t=[tx,ty]};
+n.onpointermove=e=>{if(!n.classList.contains('d'))return;const dx=Math.max(b.left-r.left,Math.min(b.right-r.right,e.clientX-sx)),dy=Math.max(b.top-r.top,Math.min(b.bottom-r.bottom,e.clientY-sy));tx=t[0]+dx;ty=t[1]+dy;n.style.translate=tx+'px '+ty+'px'};n.onpointerup=()=>n.classList.remove('d')});
+kg.innerHTML=[['Rizwan Afsar','VP @ Barclays','RA','<b>“Great work, you have been amazing during this period and we have working code ready for production.”</b>'],['Kapie Mzumara','VP @ Barclays · GFED Early Careers','KM','<b>“Kapie Mzumara has recognized one of your team members! Chandana Ramesh Galgali has been recognized for ‘Simplicity and efficiency, seeking out every opportunity to automate’.”</b><br><br>Thank you for taking part in the GFED Early Careers programme. Your tenacity and hard work over the last 5 weeks can be clearly seen. The GFED Early Careers Team and Engineering and Architecture Leads are impressed with all the ideas and solutions to the many friction points you have identified! Well done!']].map(p=>`<div class="card post"><div style="display:flex;gap:10px;align-items:center"><div class="av">${p[2]}</div><div><b>${p[0]}</b><br><span class="meta">${p[1]}</span></div></div><p>${p[3]}</p><div class="tags"><span>🏅 official recognition</span><span>Barclays</span></div></div>`).join('');
+mg.classList.add('col');mg.insertAdjacentHTML('afterend','<button class="btn" id="vm" style="margin-top:16px">view all projects (+10) ↓</button>');vm.onclick=()=>{mg.classList.toggle('col');vm.textContent=mg.classList.contains('col')?'view all projects (+10) ↓':'show less ↑'};fb.addEventListener('click',()=>mg.classList.remove('col'));
+(async()=>{const P='react-ambient-light-adaptive-theme',e=new Date(),s=new Date(e-364*864e5),f=d=>d.toISOString().slice(0,10);try{const r=await(await fetch(`https://api.npmjs.org/downloads/range/${f(s)}:${f(e)}/${P}`)).json(),m={};r.downloads.forEach(x=>m[x.day.slice(0,7)]=(m[x.day.slice(0,7)]||0)+x.downloads);const k=Object.keys(m),mx=Math.max(...k.map(x=>m[x]),1);nt2.textContent=k.reduce((a,x)=>a+m[x],0);ch.innerHTML=`<svg viewBox="0 0 ${k.length*50} 130" style="width:100%;max-width:640px">${k.map((x,i)=>`<rect x="${i*50+8}" y="${100-m[x]/mx*90}" width="34" height="${m[x]/mx*90}" rx="4" fill="var(--a)" opacity=".85"/><text x="${i*50+25}" y="${96-m[x]/mx*90}" font-size="9" text-anchor="middle" fill="var(--fg)">${m[x]}</text><text x="${i*50+25}" y="118" font-size="9" text-anchor="middle" fill="var(--mut)">${x}</text>`).join('')}</svg>`}catch(_){ch.innerHTML='<p class="meta">// monthly chart loads live from the npm registry</p>'}})();
+cp.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText('npm i react-ambient-light-adaptive-theme');cp.textContent='copied ✓'};
+const TP={'Job opportunity':['Opportunity for you','Hi Chandana,\n\nI came across your portfolio and we have an opportunity that fits your profile. Are you open to a quick chat this week?\n\nBest regards,'],'Project':['Project inquiry','Hi Chandana,\n\nI have a project I would like to discuss with you. Could we set up a short call to talk scope and timeline?\n\nBest regards,'],'Collaboration':['Let us collaborate','Hi Chandana,\n\nI would love to collaborate with you on something. Can we find time to brainstorm?\n\nBest regards,'],'Just saying hi':['Hello from your portfolio','Hi Chandana,\n\nLoved your portfolio, just wanted to say hi!\n\nCheers,']};let tp3='Hello from your portfolio';
+tc.innerHTML=Object.keys(TP).map(k=>`<button>${k}</button>`).join('');tc.onclick=e=>{const k=e.target.textContent;if(!TP[k])return;[...tc.children].forEach(c=>c.classList.toggle('on',c==e.target));tp3=TP[k][0];ms.value=TP[k][1];st.textContent='PAYLOAD_READY'};
+ms.oninput=()=>st.textContent='PAYLOAD_READY';
+tx.onclick=()=>{const b=ms.value+(em2.value?'\n\nReply to: '+em2.value:'');st.textContent='TRANSMITTING...';location.href='mailto:chandana.galgali@gmail.com?subject='+encodeURIComponent(tp3)+'&body='+encodeURIComponent(b);setTimeout(()=>st.textContent='TRANSMITTED ✓',800)};
+cord.onclick=()=>{cord.classList.add('p');setTimeout(()=>{cord.classList.remove('p');th.click()},180)};
+addEventListener('scroll',()=>{const p=Math.round(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100);bar.style.width=p+'%';pct.textContent=p+'%'},{passive:true});
+const ck=()=>clk.textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'});ck();setInterval(ck,1000);
 </script>
 </body>
 </html>
