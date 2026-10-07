@@ -164,9 +164,45 @@ transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
 .cert-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px dashed var(--bd);font-size:11.5px}
 .cert-id{color:var(--mut);font-family:'JetBrains Mono',monospace;font-size:11px}
 .cert-link{color:var(--a);font-weight:600;display:inline-flex;align-items:center;gap:4px}
+
+#boot{position:fixed;inset:0;z-index:100;overflow:hidden;color:var(--fg);font-family:'JetBrains Mono',ui-monospace,monospace}
+#boot .h{position:absolute;left:0;right:0;height:50.5%;background:var(--bg);transition:transform .9s cubic-bezier(.77,0,.18,1)}#boot .h.t{top:0;border-bottom:1px solid var(--a)}#boot .h.b{bottom:0}
+#boot.out .h.t{transform:translateY(-101%)}#boot.out .h.b{transform:translateY(101%)}
+#bc{position:absolute;inset:0;width:100%;height:100%;opacity:.4;transition:opacity .4s}
+#boot .c{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:16px;padding:0 5vw;transition:opacity .4s}#boot.out .c,#boot.out #bc{opacity:0}
+#bnm{font:700 clamp(28px,8vw,76px)/1.1 'Space Grotesk',sans-serif;letter-spacing:.02em;text-shadow:0 0 30px color-mix(in srgb,var(--a) 40%,transparent)}
+#bnm span{display:inline-block;min-width:.6em;color:var(--a);opacity:.7}#bnm span.l{color:var(--fg);opacity:1;animation:pop .35s}@keyframes pop{50%{transform:translateY(-8px);text-shadow:0 0 22px var(--a)}}
+#brl{color:var(--mut);min-height:1.6em;opacity:0;transition:opacity .6s;letter-spacing:.08em;font-size:13px}
+#bst{color:var(--a);min-height:1.7em;font-size:14px}
+#bf{width:min(320px,70vw);height:3px;background:var(--bd);margin:0 auto;border-radius:3px;overflow:hidden}#bf i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b))}
+#bh{font-size:11px;color:var(--mut)}
 </style>
 </head>
 <body>
+<noscript><style>#boot{display:none}</style></noscript>
+<div id="boot" role="status" aria-label="Loading"><div class="h t"></div><div class="h b"></div><canvas id="bc"></canvas>
+<div class="c"><div id="bnm" aria-label="Chandana Galgali"></div><div id="brl">SOFTWARE DEVELOPMENT · AI ENGINEERING · SYSTEM DESIGN</div><div id="bst"></div><div id="bf"><i></i></div><div id="bh"><span id="pc">0%</span> · press any key / tap to skip</div></div></div>
+<script>
+(()=>{const b=document.getElementById('boot'),R=document.documentElement,nm=document.getElementById('bnm'),st=document.getElementById('bst'),rl=document.getElementById('brl'),bar=document.querySelector('#bf i'),pc=document.getElementById('pc'),cv=document.getElementById('bc'),cx=cv.getContext('2d');
+let seen=0;try{seen=sessionStorage.getItem('booted')}catch(e){}
+const red=matchMedia('(prefers-reduced-motion:reduce)').matches,N='CHANDANA GALGALI',G='01{}<>/;=#$%&*()[]',sp=seen?35:80,base=seen?250:600,min=seen?1900:4600;
+let fin=false,loaded=document.readyState=='complete',t0=Date.now(),raf,iv;
+R.style.overflow='hidden';
+nm.innerHTML=[...N].map(c=>c==' '?'<span> </span>':'<span></span>').join('');const sp2=[...nm.children];
+let rain=[];const rs=()=>{cv.width=innerWidth;cv.height=innerHeight;rain=Array.from({length:Math.ceil(cv.width/16)},()=>Math.random()*-50)};rs();addEventListener('resize',rs);
+const col=getComputedStyle(R).getPropertyValue('--a').trim()||'#5eead4';
+function draw(){cx.globalCompositeOperation='destination-out';cx.fillStyle='rgba(0,0,0,.12)';cx.fillRect(0,0,cv.width,cv.height);cx.globalCompositeOperation='source-over';cx.fillStyle=col;cx.font='14px monospace';rain.forEach((y,i)=>{cx.fillText(G[Math.random()*G.length|0],i*16,y*16);rain[i]=y*16>cv.height&&Math.random()>.975?0:y+1});raf=requestAnimationFrame(draw)}
+function tick(){const e=Date.now()-t0;sp2.forEach((s,i)=>{if(N[i]==' ')return;if(e>base+i*sp){if(s.className!='l'){s.textContent=N[i];s.className='l'}}else s.textContent=G[Math.random()*G.length|0]});const p=Math.min(100,Math.round(e/min*100));bar.style.width=p+'%';pc.textContent=p+'%'}
+const S=seen?['> reload --hot ✓']:['> compiling projects …','> linking experience …','> pinning tech-stack boards …','> deployed ✓  welcome'];
+S.forEach((x,i)=>setTimeout(()=>{if(!fin)st.textContent=x},seen?500:900+i*900));
+setTimeout(()=>rl.style.opacity=1,base+N.length*sp);
+function end(){if(fin)return;fin=true;clearInterval(iv);try{sessionStorage.setItem('booted','1')}catch(e){}b.classList.add('out');R.style.overflow='';setTimeout(()=>{cancelAnimationFrame(raf);b.remove()},1100)}
+function chk(){if(fin)return;if(loaded&&Date.now()-t0>=min)end();else setTimeout(chk,100)}
+addEventListener('load',()=>loaded=true);['keydown','pointerdown'].forEach(e=>addEventListener(e,end,{once:true}));
+setTimeout(end,9000);
+if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
+})();
+</script>
 <div id="glow"></div>
 <header id="nh"><nav id="nv"><a href="#" id="cgLogo" class="nav-logo" title="Back to top">&lt;cg/&gt;</a><a href="#about">about</a><a href="#edu">education</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#npm">npm</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#kind">kudos</a><a href="#certs">certs</a><a href="#contact">contact</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
 <main>
