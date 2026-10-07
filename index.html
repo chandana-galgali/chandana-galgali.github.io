@@ -80,28 +80,72 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 #cord{position:fixed;right:10px;top:env(safe-area-inset-top,0px);z-index:12;width:14px;height:64px;cursor:pointer;transition:height .15s}#cord::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--mut)}#cord::after{content:'';position:absolute;bottom:-10px;left:0;width:14px;height:20px;border-radius:7px;background:var(--a);box-shadow:0 0 14px var(--a)}#cord.p{height:100px}
 #bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:30;background:linear-gradient(90deg,var(--a),var(--b))}#pct{position:fixed;left:10px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--mut);z-index:5}
 
+.sec-hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin-bottom:6px}
+.sec-hd h2{margin-bottom:0}
+.sec-sub{margin:0 0 16px!important;font-size:12.5px;color:var(--mut)}
+
 /* Kind Words 3D Stack (Lucky Solanki style) */
-.deck-wrap{position:relative;max-width:660px;margin:32px auto 14px;perspective:1200px}
-.deck{position:relative;min-height:450px;width:100%}
-@media(max-width:640px){.deck{min-height:490px}}
-.deck-card{position:absolute;inset:0;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:26px 30px;display:flex;flex-direction:column;box-shadow:0 16px 36px -12px rgba(0,0,0,.5);transition:transform .45s cubic-bezier(.25,1,.5,1),opacity .45s ease,border-color .3s;user-select:none;touch-action:pan-y;box-sizing:border-box}
+.deck-wrap{position:relative;max-width:640px;margin:28px auto 14px;perspective:1200px;width:100%}
+.deck-wrap.grid-view{max-width:100%}
+.deck{position:relative;min-height:380px;width:100%}
+@media(max-width:640px){
+.deck-wrap{margin:18px auto 10px}
+.deck{min-height:430px}
+}
+.deck-card{position:absolute;inset:0;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px 26px;display:flex;flex-direction:column;box-shadow:0 16px 36px -12px rgba(0,0,0,.5);transition:transform .45s cubic-bezier(.25,1,.5,1),opacity .45s ease,border-color .3s;user-select:none;touch-action:pan-y;box-sizing:border-box}
+@media(max-width:640px){
+.deck-card{padding:18px 18px 20px}
+}
 .deck-card:hover{border-color:var(--a)}
 .deck-card.s-0{transform:translate3d(0,0,0) rotate(0deg);z-index:5;opacity:1;pointer-events:auto}
-.deck-card.s-1{transform:translate3d(24px,14px,-30px) rotate(4deg);z-index:4;opacity:.88;cursor:pointer}
-.deck-card.s-2{transform:translate3d(-24px,16px,-60px) rotate(-3.5deg);z-index:3;opacity:.72;cursor:pointer}
-.deck-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid color-mix(in srgb,var(--bd) 70%,transparent);padding-bottom:10px;margin-bottom:14px}
-.deck-q{font-family:Georgia,serif;font-size:42px;line-height:1;color:var(--a);margin-bottom:-6px}
-.deck-body{font-size:14px;line-height:1.7;color:var(--fg);flex:1;display:flex;flex-direction:column;justify-content:flex-start;text-align:justify;text-justify:inter-word;hyphens:auto}
-.deck-body p{margin:0;text-align:justify;text-justify:inter-word;line-height:1.7}
-.deck-author{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto;padding-top:16px;border-top:1px dashed var(--bd);flex-wrap:wrap}
-.deck-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.deck-card.s-1{transform:translate3d(20px,12px,-25px) rotate(3.5deg);z-index:4;opacity:.88;cursor:pointer}
+.deck-card.s-2{transform:translate3d(-20px,14px,-50px) rotate(-3deg);z-index:3;opacity:.72;cursor:pointer}
+@media(max-width:640px){
+.deck-card.s-1{transform:translate3d(12px,8px,-20px) rotate(2deg)}
+.deck-card.s-2{transform:translate3d(-12px,10px,-40px) rotate(-2deg)}
+}
+
+/* Real Card Shuffling Animation */
+.deck-card.shuffle-fly-right{
+transform:translate3d(115%,-20px,80px) rotate(16deg)!important;
+opacity:.9!important;
+z-index:12!important;
+transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
+}
+.deck-card.shuffle-fly-left{
+transform:translate3d(-115%,-20px,80px) rotate(-16deg)!important;
+opacity:.9!important;
+z-index:12!important;
+transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
+}
+
+.deck-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid color-mix(in srgb,var(--bd) 70%,transparent);padding-bottom:8px;margin-bottom:12px}
+.deck-q{font-family:Georgia,serif;font-size:38px;line-height:1;color:var(--a);margin-bottom:-6px}
+.deck-body{font-size:13.5px;line-height:1.65;color:var(--fg);flex:1;display:flex;flex-direction:column;justify-content:flex-start;text-align:justify;text-justify:inter-word}
+.deck-body p{margin:0;text-align:justify;text-justify:inter-word;line-height:1.65}
+@media(max-width:640px){
+.deck-q{font-size:30px;margin-bottom:-4px}
+.deck-body{font-size:12.5px;line-height:1.55}
+.deck-body p{line-height:1.55}
+}
+
+.deck-author{margin-top:auto;padding-top:14px;border-top:1px dashed var(--bd);display:flex;flex-direction:column;gap:8px}
+.deck-author-row{display:flex;align-items:center;gap:12px;min-width:0}
+.deck-author-row b{font-size:14px;color:var(--fg);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.deck-author-row .meta{font-size:12px;color:var(--mut);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.deck-author .tags{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.deck-author .tags span{font-size:11px;padding:2px 7px}
+
+.deck-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
 .deck-btn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;padding:0;font-size:16px;border:1px solid var(--bd);background:var(--card);color:var(--fg);transition:.2s}
 .deck-btn:hover{border-color:var(--a);color:var(--a);transform:scale(1.08)}
 .deck-dots{display:flex;gap:8px}
 .deck-dot{width:9px;height:9px;border-radius:50%;background:var(--bd);cursor:pointer;transition:.25s}
 .deck-dot.active{background:var(--a);transform:scale(1.25);box-shadow:0 0 8px var(--a)}
-.deck-wrap.grid-view .deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;min-height:auto}
-.deck-wrap.grid-view .deck-card{position:relative;inset:auto;transform:none!important;opacity:1!important;z-index:1!important;box-shadow:none}
+
+/* Grid View: Constant height, equal cards, full width, no overlap */
+.deck-wrap.grid-view .deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;min-height:auto}
+.deck-wrap.grid-view .deck-card{position:relative;inset:auto;height:100%;min-height:380px;transform:none!important;opacity:1!important;z-index:1!important;box-shadow:none}
 .deck-wrap.grid-view .deck-controls{display:none}
 
 /* Certifications Hub */
@@ -154,11 +198,11 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 <div class="marq"><div id="mq"></div></div>
 <section id="exp"><h2>experience</h2><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
 <section id="proj"><h2>flagship-projects</h2><div class="grid" id="pg"></div></section>
-<section id="more"><h2>more-projects</h2><p class="meta" style="margin:-10px 0 18px">// the smaller builds, scripts &amp; experiments — straight from GitHub</p><div class="grid" id="mg"></div></section>
+<section id="more"><h2>more-projects</h2><p class="meta sec-sub">// the smaller builds, scripts &amp; experiments — straight from GitHub</p><div class="grid" id="mg"></div></section>
 <section id="npm"><h2>published-package</h2><div class="card"><h3>📦 react-ambient-light-adaptive-theme</h3><p class="meta">// React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
 <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0"><div class="stat" style="min-width:160px"><b id="nt2">131</b><small>downloads · last 12 months</small></div><code class="btn" id="cp">npm i react-ambient-light-adaptive-theme ⧉</code></div><div id="ch"></div>
 <div class="links"><a href="https://www.npmjs.com/package/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm ↗</a><a href="https://npm-stat.com/charts.html?package=react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm-stat ↗</a><a href="https://github.com/chandana-galgali/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">source ↗</a></div></div></section>
-<section id="skills"><h2>tech-stack</h2><p class="meta" style="margin:-10px 0 14px">// drag the notes — each one stays pinned to its own board</p><div class="grid" id="sg"></div></section>
+<section id="skills"><h2>tech-stack</h2><p class="meta sec-sub">// drag the notes — each one stays pinned to its own board</p><div class="grid" id="sg"></div></section>
 <section id="wins"><h2>achievements</h2>
 <div class="card rv"><div class="ph" data-img="assets/climate-hackathon.jpg">📸 drop your hackathon win photo → assets/climate-hackathon.jpg</div>
 <h3>🏆 First Place — Climate Hackathon 2024</h3><p class="meta">Issued by the U.S. Consulate General (Mumbai) &amp; Ekonnect Knowledge Foundation</p>
@@ -168,12 +212,12 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 <ul><li>Awarded a Gold medal as the Department Topper with a CGPA of 9.67/10.</li></ul></div>
 </section>
 <section id="kind">
-<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+<div class="sec-hd">
 <h2>kind-words</h2>
 <div style="display:flex;gap:8px;align-items:center">
 <button id="kv" style="font-size:12px;padding:3px 8px" title="toggle layout">▦ grid view</button>
 </div></div>
-<p class="meta" style="margin:-10px 0 20px">// feedback from people i have worked with — click or swipe cards to cycle</p>
+<p class="meta sec-sub">// feedback from people i have worked with — click or swipe cards to shuffle</p>
 <div class="deck-wrap" id="dw">
 <div class="deck" id="kg"></div>
 <div class="deck-controls">
@@ -183,11 +227,11 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 </div></div>
 </section>
 <section id="certs">
-<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+<div class="sec-hd">
 <h2>certifications</h2>
 <span class="meta" id="ccCount" style="font-size:12px">// 22 verified credentials</span>
 </div>
-<p class="meta" style="margin:-10px 0 16px">// filter by domain · click "verify ↗" for official accomplishment records</p>
+<p class="meta sec-sub">// filter by domain · click "verify ↗" for official accomplishment records</p>
 <div class="cert-filters" id="cf"></div>
 <div class="cert-grid" id="cg"></div>
 <button class="btn" id="vc" style="margin-top:16px;width:100%">view all 22 credentials ↓</button>
@@ -206,7 +250,7 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 <div id="bar"></div><span id="pct">0%</span><div id="cord" title="pull me"></div>
 <div id="pal"><div><input id="pi" placeholder="type a command… (esc to close)"><span id="pl"></span></div></div>
 <div id="bot"><span id="zz">z z</span><div id="bp"><b>bit 🤖</b><p id="ba">Hi! Ask me something about Chandana.</p><span id="bq"></span></div><button id="bb" aria-label="chat bot">🤖</button></div>
-<footer>© 2026 Chandana Galgali · hand-built with HTML, CSS &amp; JS<br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
+<footer>© 2026 Chandana Galgali · hand-built with only HTML, CSS &amp; JS lol<br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
 <script>
 const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/chandana-galgali',em:'mailto:chandana.galgali@gmail.com',ph:'tel:+919870776977',orc:'https://orcid.org/0009-0006-8524-809X'};
 const links=[['GitHub',L.gh],['LinkedIn',L.li],['Email',L.em]];
@@ -311,40 +355,78 @@ const reviews=[
 {org:'BARCLAYS · GFED',idx:'02',name:'Kapie Mzumara',role:'VP @ Barclays · GFED Early Careers',badge:'KM',quote:'Chandana Ramesh Galgali has been recognized for \'Simplicity and efficiency, seeking out every opportunity to automate\'. Thank you for taking part in the GFED Early Careers programme. Your tenacity and hard work over the last 5 weeks can be clearly seen. The GFED Early Careers Team and Engineering and Architecture Leads are impressed with all the ideas and solutions to the many friction points you have identified! Well done!',tags:['🏅 official recognition','Barclays']},
 {org:'IIT BOMBAY · CSE',idx:'03',name:'Prof. Manas Thakur',role:'Dept of CSE @ IIT Bombay',badge:'MT',quote:'Chandana has been a sincere intern, and she has completed the objectives of her internship satisfactorily.',tags:['🎓 research mentor','IIT Bombay']}
 ];
-let curCard=0;
-function renderDeck(){
-kg.innerHTML=reviews.map((r,i)=>{
-const pos=(i-curCard+reviews.length)%reviews.length;
-return `<div class="deck-card s-${pos}" data-idx="${i}">
+let curCard=0,isShuffling=false;
+kg.innerHTML=reviews.map((r,i)=>`<div class="deck-card s-${i}" data-idx="${i}">
 <div class="deck-top"><span>${r.org}</span><span>${r.idx} / 03</span></div>
 <div class="deck-q">“</div>
 <div class="deck-body"><p>${r.quote}</p></div>
 <div class="deck-author">
-<div style="display:flex;align-items:center;gap:12px;min-width:0;flex:1">
+<div class="deck-author-row">
 <div class="av">${r.badge}</div>
-<div style="min-width:0">
-<b style="font-size:14.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.name}</b>
-<span class="meta" style="font-size:12px;display:block">${r.role}</span>
-</div></div>
-<div class="tags" style="margin:0;flex-shrink:0">${r.tags.map(t=>`<span>${t}</span>`).join('')}</div>
-</div></div>`;
-}).join('');
-dd.innerHTML=reviews.map((_,i)=>`<span class="deck-dot${i===curCard?' active':''}" data-i="${i}"></span>`).join('');
+<div style="min-width:0;flex:1"><b>${r.name}</b><span class="meta">${r.role}</span></div>
+</div>
+<div class="tags">${r.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+</div></div>`).join('');
+dd.innerHTML=reviews.map((_,i)=>`<span class="deck-dot${i===0?' active':''}" data-i="${i}"></span>`).join('');
+
+function updateCards(targetIdx,dir=1){
+if(dw.classList.contains('grid-view')){curCard=targetIdx;return}
+if(isShuffling)return;
+isShuffling=true;
+const cards=kg.querySelectorAll('.deck-card');
+const front=kg.querySelector('.deck-card.s-0');
+if(dir===1&&front){
+front.classList.add('shuffle-fly-right');
+setTimeout(()=>{
+curCard=targetIdx;
+cards.forEach((c,i)=>{
+const pos=(i-curCard+reviews.length)%reviews.length;
+c.className=`deck-card s-${pos}`;
+});
+[...dd.children].forEach((d,i)=>d.classList.toggle('active',i===curCard));
+setTimeout(()=>{isShuffling=false},200);
+},200);
+}else if(dir===-1){
+const back=kg.querySelector('.deck-card.s-2');
+if(back)back.classList.add('shuffle-fly-left');
+setTimeout(()=>{
+curCard=targetIdx;
+cards.forEach((c,i)=>{
+const pos=(i-curCard+reviews.length)%reviews.length;
+c.className=`deck-card s-${pos}`;
+});
+[...dd.children].forEach((d,i)=>d.classList.toggle('active',i===curCard));
+setTimeout(()=>{isShuffling=false},200);
+},200);
+}else{
+curCard=targetIdx;
+cards.forEach((c,i)=>{
+const pos=(i-curCard+reviews.length)%reviews.length;
+c.className=`deck-card s-${pos}`;
+});
+[...dd.children].forEach((d,i)=>d.classList.toggle('active',i===curCard));
+isShuffling=false;
 }
-renderDeck();
-const nextCard=()=>{curCard=(curCard+1)%reviews.length;renderDeck()};
-const prevCard=()=>{curCard=(curCard-1+reviews.length)%reviews.length;renderDeck()};
+}
+
+const nextCard=()=>updateCards((curCard+1)%reviews.length,1);
+const prevCard=()=>updateCards((curCard-1+reviews.length)%reviews.length,-1);
 dn.onclick=nextCard;dp.onclick=prevCard;
-dd.onclick=e=>{if(e.target.dataset.i!==undefined){curCard=+e.target.dataset.i;renderDeck()}};
+dd.onclick=e=>{if(e.target.dataset.i!==undefined){const ni=+e.target.dataset.i;updateCards(ni,ni>=curCard?1:-1)}};
 kg.onclick=e=>{
+if(dw.classList.contains('grid-view'))return;
 const c=e.target.closest('.deck-card');
-if(c&&!c.classList.contains('s-0')&&!dw.classList.contains('grid-view')){curCard=+c.dataset.idx;renderDeck()}
+if(c&&!c.classList.contains('s-0')){const idx=+c.dataset.idx;updateCards(idx,idx>curCard?1:-1)}
 };
-let touchStartX=0;
-kg.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+let touchStartX=0,touchStartY=0;
+kg.addEventListener('touchstart',e=>{
+touchStartX=e.changedTouches[0].screenX;
+touchStartY=e.changedTouches[0].screenY;
+},{passive:true});
 kg.addEventListener('touchend',e=>{
 const dx=touchStartX-e.changedTouches[0].screenX;
-if(dx>45)nextCard();else if(dx<-45)prevCard();
+const dy=Math.abs(touchStartY-e.changedTouches[0].screenY);
+if(Math.abs(dx)>40&&dy<60){if(dx>0)nextCard();else prevCard()}
 },{passive:true});
 kv.onclick=()=>{
 const isGrid=dw.classList.toggle('grid-view');
