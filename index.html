@@ -26,7 +26,7 @@ body{background:var(--bg);color:var(--fg);font:15px/1.65 'JetBrains Mono',ui-mon
 a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
 #nh{position:sticky;top:env(safe-area-inset-top,0px);z-index:9}nav{display:flex;gap:6px;align-items:center;padding:10px 5vw;padding-right:46px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}nav::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}#nsb{position:absolute;bottom:0;left:0;width:100%;height:2.5px;pointer-events:none;overflow:hidden}#nsb::after{content:'';position:absolute;top:0;left:var(--nx,0%);width:var(--nw,20%);height:100%;background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 0 8px var(--a);border-radius:99px;opacity:0;transition:opacity .3s ease}#nsb.on::after{opacity:1}
 nav a{color:var(--mut);padding:4px 10px;border-radius:6px;white-space:nowrap;font-size:13px}nav a:hover{color:var(--a);background:var(--card);text-decoration:none}
-nav b{color:var(--a);margin-right:auto;white-space:nowrap}
+.nav-logo{color:var(--a)!important;margin-right:auto;white-space:nowrap;font-weight:700;font-size:14px;padding:4px 6px!important;border-radius:6px;cursor:pointer;display:inline-block}.nav-logo:hover{background:var(--card)!important;text-decoration:none!important}
 button{font:inherit;cursor:pointer;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:4px 10px}
 main{position:relative;z-index:1;max-width:1000px;margin:auto;padding:0 5vw}
 section{padding:50px 0 10px}
@@ -168,7 +168,7 @@ transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
 </head>
 <body>
 <div id="glow"></div>
-<header id="nh"><nav id="nv"><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#edu">education</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><a href="#npm">npm</a><a href="#kind">kudos</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
+<header id="nh"><nav id="nv"><a href="#" id="cgLogo" class="nav-logo" title="Back to top">&lt;cg/&gt;</a><a href="#about">about</a><a href="#edu">education</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#npm">npm</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#kind">kudos</a><a href="#certs">certs</a><a href="#contact">contact</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
 <main>
 <section id="about" style="padding-top:60px">
 <p class="meta">// hello, world — Mumbai, India</p>
@@ -443,6 +443,11 @@ cord.onclick=()=>{cord.classList.add('p');setTimeout(()=>{cord.classList.remove(
 addEventListener('scroll',()=>{const p=Math.round(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100);bar.style.width=p+'%';pct.textContent=p+'%'},{passive:true});
 const ck=()=>clk.textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'});ck();setInterval(ck,1000);
 let nt;nv.addEventListener('scroll',()=>{const sw=nv.scrollWidth-nv.clientWidth;if(sw<=0){nsb.classList.remove('on');return}const w=Math.max(16,Math.round((nv.clientWidth/nv.scrollWidth)*100)),x=Math.round((nv.scrollLeft/sw)*(100-w));nsb.style.setProperty('--nw',w+'%');nsb.style.setProperty('--nx',x+'%');nsb.classList.add('on');clearTimeout(nt);nt=setTimeout(()=>nsb.classList.remove('on'),650)},{passive:true});
+if('scrollRestoration' in history){history.scrollRestoration='manual'}
+if(location.hash){history.replaceState(null,'',window.location.pathname)}
+window.scrollTo(0,0);
+window.addEventListener('load',()=>window.scrollTo(0,0));
+cgLogo.onclick=e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});if(location.hash)history.replaceState(null,'',window.location.pathname)};
 </script>
 </body>
 </html>
