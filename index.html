@@ -29,7 +29,7 @@ nav a{color:var(--mut);padding:4px 10px;border-radius:6px;white-space:nowrap;fon
 nav b{color:var(--a);margin-right:auto;white-space:nowrap}
 button{font:inherit;cursor:pointer;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:4px 10px}
 main{position:relative;z-index:1;max-width:1000px;margin:auto;padding:0 5vw}
-section{padding:70px 0 10px}
+section{padding:50px 0 10px}
 h2{font:700 28px 'Space Grotesk',sans-serif;margin-bottom:24px}h2::before{content:'~/';color:var(--a)}
 h1{font:700 clamp(36px,8vw,64px)/1.05 'Space Grotesk',sans-serif}
 .grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -44,7 +44,8 @@ h1{font:700 clamp(36px,8vw,64px)/1.05 'Space Grotesk',sans-serif}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.tags span{font-size:11.5px;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--b)}
 ul{padding-left:18px}li{margin:5px 0;color:color-mix(in srgb,var(--fg) 88%,transparent);font-size:13.5px}
 .tl{border-left:2px solid var(--bd);padding-left:22px;display:grid;gap:18px}.tl .card{position:relative}.tl .card::before{content:'';position:absolute;left:-30px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--a);box-shadow:0 0 12px var(--a)}
-.ph{aspect-ratio:16/8;border:1.5px dashed var(--bd);border-radius:8px;display:grid;place-items:center;color:var(--mut);font-size:12px;margin-bottom:12px;overflow:hidden;text-align:center;padding:6px}.ph img{width:100%;height:100%;object-fit:cover}
+.ph{aspect-ratio:16/9;border:1px solid var(--bd);border-radius:10px;background:color-mix(in srgb,var(--bg) 65%,var(--card));padding:8px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;overflow:hidden;color:var(--mut);font-size:12px;text-align:center}.ph img{width:100%;height:100%;object-fit:cover;border-radius:6px;display:block}
+.p-impact{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}.p-impact b{font:700 22px 'Space Grotesk',sans-serif;color:var(--a);line-height:1}.p-impact span{font-size:11.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
 details{margin-top:8px}summary{cursor:pointer;color:var(--a);font-size:13px}
 .rv{opacity:0;transform:translateY(18px);transition:.6s}.rv.in{opacity:1;transform:none}
 footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;z-index:1}
@@ -73,26 +74,82 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 .bd h3{position:absolute;top:12px;left:16px;font:700 13px 'JetBrains Mono';color:var(--c)}.bd h3::before{content:'📌 '}.nn{display:flex;flex-wrap:wrap;gap:16px 12px}
 .sum{font-weight:600;color:var(--fg);margin:10px 0 4px;font-size:14px}
 .ts{display:flex;overflow-x:auto;margin-bottom:28px;padding:14px 4px 12px;scrollbar-width:thin;scrollbar-color:var(--a) transparent}.ts::-webkit-scrollbar{height:6px}.ts::-webkit-scrollbar-track{background:transparent}.ts::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--a),var(--b));border-radius:99px;box-shadow:0 0 8px var(--a)}.ts::-webkit-scrollbar-thumb:hover{filter:brightness(1.2)}.ts div{min-width:200px;flex:1;border-top:2px solid var(--bd);position:relative;padding:14px 16px 4px 0;font-size:12.5px}.ts div::before{content:'';position:absolute;top:-5px;left:0;width:10px;height:10px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a)}.ts b{font-size:13.5px}
-.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#06121a;font:700 14px 'Space Grotesk',sans-serif;flex:none}.post p{margin:12px 0;font-size:13.5px}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#06121a;font:700 14px 'Space Grotesk',sans-serif;flex:none}
 .sc{display:flex;align-items:center;gap:12px;border:1px dashed var(--bd);border-radius:12px;padding:14px;background:var(--card)}.sc div{flex:1;min-width:0}.sc small{color:var(--mut)}
 .fm input,.fm textarea{width:100%;background:none;border:0;border-bottom:1px solid var(--bd);color:var(--fg);font:inherit;padding:8px 0;margin:4px 0 18px;outline:0}.fm input:focus,.fm textarea:focus{border-color:var(--a)}.lb{font-size:11px;color:var(--mut);letter-spacing:.08em;display:block}
 #cord{position:fixed;right:10px;top:env(safe-area-inset-top,0px);z-index:12;width:14px;height:64px;cursor:pointer;transition:height .15s}#cord::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--mut)}#cord::after{content:'';position:absolute;bottom:-10px;left:0;width:14px;height:20px;border-radius:7px;background:var(--a);box-shadow:0 0 14px var(--a)}#cord.p{height:100px}
 #bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:30;background:linear-gradient(90deg,var(--a),var(--b))}#pct{position:fixed;left:10px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--mut);z-index:5}
+
+/* Kind Words 3D Stack (Lucky Solanki style) */
+.deck-wrap{position:relative;max-width:660px;margin:32px auto 14px;perspective:1200px}
+.deck{position:relative;min-height:450px;width:100%}
+@media(max-width:640px){.deck{min-height:490px}}
+.deck-card{position:absolute;inset:0;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:26px 30px;display:flex;flex-direction:column;box-shadow:0 16px 36px -12px rgba(0,0,0,.5);transition:transform .45s cubic-bezier(.25,1,.5,1),opacity .45s ease,border-color .3s;user-select:none;touch-action:pan-y;box-sizing:border-box}
+.deck-card:hover{border-color:var(--a)}
+.deck-card.s-0{transform:translate3d(0,0,0) rotate(0deg);z-index:5;opacity:1;pointer-events:auto}
+.deck-card.s-1{transform:translate3d(24px,14px,-30px) rotate(4deg);z-index:4;opacity:.88;cursor:pointer}
+.deck-card.s-2{transform:translate3d(-24px,16px,-60px) rotate(-3.5deg);z-index:3;opacity:.72;cursor:pointer}
+.deck-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid color-mix(in srgb,var(--bd) 70%,transparent);padding-bottom:10px;margin-bottom:14px}
+.deck-q{font-family:Georgia,serif;font-size:42px;line-height:1;color:var(--a);margin-bottom:-6px}
+.deck-body{font-size:14px;line-height:1.7;color:var(--fg);flex:1;display:flex;flex-direction:column;justify-content:flex-start;text-align:justify;text-justify:inter-word;hyphens:auto}
+.deck-body p{margin:0;text-align:justify;text-justify:inter-word;line-height:1.7}
+.deck-author{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto;padding-top:16px;border-top:1px dashed var(--bd);flex-wrap:wrap}
+.deck-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.deck-btn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;padding:0;font-size:16px;border:1px solid var(--bd);background:var(--card);color:var(--fg);transition:.2s}
+.deck-btn:hover{border-color:var(--a);color:var(--a);transform:scale(1.08)}
+.deck-dots{display:flex;gap:8px}
+.deck-dot{width:9px;height:9px;border-radius:50%;background:var(--bd);cursor:pointer;transition:.25s}
+.deck-dot.active{background:var(--a);transform:scale(1.25);box-shadow:0 0 8px var(--a)}
+.deck-wrap.grid-view .deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;min-height:auto}
+.deck-wrap.grid-view .deck-card{position:relative;inset:auto;transform:none!important;opacity:1!important;z-index:1!important;box-shadow:none}
+.deck-wrap.grid-view .deck-controls{display:none}
+
+/* Certifications Hub */
+.cert-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.cert-filters button{font:inherit;font-size:12px;padding:4px 12px;border-radius:99px;border:1px solid var(--bd);background:var(--card);color:var(--mut);cursor:pointer;transition:.2s}
+.cert-filters button.active,.cert-filters button:hover{background:var(--a);color:var(--bg);border-color:var(--a)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.cert-card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}
+.cert-card:hover{transform:translateY(-3px);border-color:var(--a)}
+.cert-card.hid{display:none!important}
+.cert-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.cert-tag{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--b)}
+.cert-date{font-size:11.5px;color:var(--mut)}
+.cert-title{font:700 15px 'Space Grotesk',sans-serif;color:var(--fg);margin-bottom:4px;line-height:1.35}
+.cert-issuer{font-size:12.5px;color:var(--a);margin-bottom:12px}
+.cert-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px dashed var(--bd);font-size:11.5px}
+.cert-id{color:var(--mut);font-family:'JetBrains Mono',monospace;font-size:11px}
+.cert-link{color:var(--a);font-weight:600;display:inline-flex;align-items:center;gap:4px}
 </style>
 </head>
 <body>
 <div id="glow"></div>
-<header id="nh"><nav id="nv"><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><a href="#npm">npm</a><a href="#kind">kudos</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
+<header id="nh"><nav id="nv"><b>&lt;cg/&gt;</b><a href="#about">about</a><a href="#edu">education</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#certs">certs</a><a href="#contact">contact</a><a href="#npm">npm</a><a href="#kind">kudos</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
 <main>
 <section id="about" style="padding-top:60px">
 <p class="meta">// hello, world — Mumbai, India</p>
 <h1>I'm Chandana Galgali,<br><span class="grad">I build things that think.</span></h1>
 <div class="term"><div class="dots"><span></span><span></span><span></span></div><pre id="tp" style="white-space:pre-wrap;font:inherit;margin-top:12px"></pre></div>
 <div class="stats" id="stats"></div>
-<div class="links" id="hl"></div>
-<div class="card rv" style="margin-top:26px"><h3>🎓 K J Somaiya College of Engineering, Somaiya Vidyavihar University</h3>
-<p class="meta">B.Tech Information Technology · Honors in Artificial Intelligence · 2022–2026 · Mumbai</p>
-<ul><li>CGPA <b>9.67/10</b> (Honors: 9.40/10)</li><li>🥇 Gold Medal — Department Rank 1</li><li>Built an interactive virtual laboratory visualizing core Data Structures &amp; Algorithms for 350+ second-year students.</li><li>General Secretary of Team Emfinity (30-member council): technical events with 500+ footfall and ₹20,000+ sponsorships.</li></ul></div>
+<div class="links" id="hl"></div></section>
+<section id="edu"><h2>education</h2>
+<div class="card rv">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:8px">
+<div><h3 style="font-size:20px">🎓 K J Somaiya College of Engineering, Somaiya Vidyavihar University</h3>
+<p class="meta">B.Tech Information Technology · Honors in Artificial Intelligence · 2022–2026 · Mumbai, India</p></div>
+<div class="tags" style="margin:0"><span style="border-color:var(--a);color:var(--a);font-weight:600;font-size:12px">🥇 Department Rank 1 · Gold Medalist</span></div></div>
+<div class="stats" style="margin:14px 0 18px">
+<div class="stat"><b>9.67 / 10</b><small>Overall CGPA (Dept Rank 1)</small></div>
+<div class="stat"><b>9.40 / 10</b><small>Honors in AI CGPA</small></div>
+<div class="stat"><b>350+</b><small>Students on Virtual DSA Lab</small></div>
+<div class="stat"><b>30-Member</b><small>Council Led as General Secretary</small></div></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:14px">
+<div style="border:1px solid var(--bd);border-radius:10px;padding:14px;background:color-mix(in srgb,var(--bg) 50%,var(--card))">
+<b style="color:var(--a);font-size:14px;display:flex;align-items:center;gap:6px">💻 Virtual DSA Laboratory</b>
+<p style="font-size:12.5px;color:var(--mut);margin:6px 0 0">Built an interactive virtual laboratory visualizing core Data Structures &amp; Algorithms for 350+ second-year students to bridge theory and implementation.</p></div>
+<div style="border:1px solid var(--bd);border-radius:10px;padding:14px;background:color-mix(in srgb,var(--bg) 50%,var(--card))">
+<b style="color:var(--b);font-size:14px;display:flex;align-items:center;gap:6px">⚡ Team Emfinity Leadership</b>
+<p style="font-size:12.5px;color:var(--mut);margin:6px 0 0">General Secretary of a 30-member council; spearheaded marquee technical competitions and workshops with 500+ footfall and ₹20,000+ corporate sponsorships.</p></div></div></div>
 </section>
 <div class="marq"><div id="mq"></div></div>
 <section id="exp"><h2>experience</h2><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
@@ -110,8 +167,31 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 <h3>🥇 Gold Medal — Batch of 2026</h3><p class="meta">Department of Information Technology, K J Somaiya College of Engineering</p>
 <ul><li>Awarded a Gold medal as the Department Topper with a CGPA of 9.67/10.</li></ul></div>
 </section>
-<section id="kind"><h2>kind-words</h2><p class="meta" style="margin:-10px 0 14px">// feedback from people i have worked with</p><div class="grid" id="kg"></div></section>
-<section id="certs"><h2>certifications</h2><div class="grid" id="cg"></div></section>
+<section id="kind">
+<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+<h2>kind-words</h2>
+<div style="display:flex;gap:8px;align-items:center">
+<button id="kv" style="font-size:12px;padding:3px 8px" title="toggle layout">▦ grid view</button>
+</div></div>
+<p class="meta" style="margin:-10px 0 20px">// feedback from people i have worked with — click or swipe cards to cycle</p>
+<div class="deck-wrap" id="dw">
+<div class="deck" id="kg"></div>
+<div class="deck-controls">
+<button class="deck-btn" id="dp" aria-label="Previous card">←</button>
+<div class="deck-dots" id="dd"></div>
+<button class="deck-btn" id="dn" aria-label="Next card">→</button>
+</div></div>
+</section>
+<section id="certs">
+<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap">
+<h2>certifications</h2>
+<span class="meta" id="ccCount" style="font-size:12px">// 22 verified credentials</span>
+</div>
+<p class="meta" style="margin:-10px 0 16px">// filter by domain · click "verify ↗" for official accomplishment records</p>
+<div class="cert-filters" id="cf"></div>
+<div class="cert-grid" id="cg"></div>
+<button class="btn" id="vc" style="margin-top:16px;width:100%">view all 22 credentials ↓</button>
+</section>
 <section id="contact"><h2>contact</h2>
 <div class="grid"><div class="sc"><div><b>GitHub</b><br><small>@chandana-galgali</small></div><a class="btn" href="https://github.com/chandana-galgali" target="_blank" rel="noopener">Follow</a></div>
 <div class="sc"><div><b>LinkedIn</b><br><small>in/chandana-galgali</small></div><a class="btn" href="https://linkedin.com/in/chandana-galgali" target="_blank" rel="noopener">Connect</a></div>
@@ -132,8 +212,8 @@ const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/ch
 const links=[['GitHub',L.gh],['LinkedIn',L.li],['Email',L.em]];
 const lk=a=>a.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join('');
 hl.innerHTML=lk(links)+'<a class="btn f" href="assets/Chandana_Galgali_Resume.pdf" download>⬇ Resume</a>';
-stats.innerHTML=[['9.67','CGPA · Rank 1'],['97.5%','mutation recall @ IIT-B'],['45→2 min','validation @ Barclays'],['1st','Climate Hackathon 2024']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
-const T=`$ whoami\nchandana-galgali — B.Tech IT (Hons. AI), Dept Rank 1, Gold Medalist\n$ cat roles.txt\nResearch Intern @ IIT Bombay · SWE Intern @ Barclays · Cyber Security Intern @ Keva\n$ cat focus.txt\ncompilers · static analysis · ML/CV · geospatial AI · security · full-stack\n$ echo $STATUS\nopen to work — let's build something together_`;
+stats.innerHTML=[['9.67 CGPA','Department of IT Rank 1, Gold Medal'],['45%','execution speedup from AOT hints @ IIT Bombay'],['45 → 2','minutes of manual SLA validation @ Barclays'],['1st of 150+','teams @ Climate Hackathon 2024']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
+const T=`$ whoami\nchandana-galgali — B.Tech IT (Hons. AI) from KJSCE, Dept Rank 1, Gold Medalist\n$ cat roles.txt\nResearch Intern @ IIT Bombay · SWE Intern @ Barclays · Web Security Intern @ Keva\n$ cat focus.txt\nsoftware dev · ai engineer · full-stack · web dev · web security · static analysis\n$ echo $STATUS\nopen to work — let's build something together_`;
 let i=0;(function t(){tp.innerHTML=T.slice(0,i).replace(/^\$ (.*)$/gm,'<span class="p">$</span> $1')+'<span class="cur"></span>';if(i++<T.length)setTimeout(t,i%40?14:140)})();
 const exp=[
 ['Indian Institute of Technology Bombay','Research Intern','Jan 2026 – Apr 2026 · Mumbai',['Built a static analysis framework for JavaScript JIT compiler optimizations: AST optimizations, call graph construction, source-to-sink taint tracking, dynamic pattern detection.','Pipeline on @babel/parser + @babel/traverse (Visitor Pattern): scope-aware renaming, dead code elimination, constant folding, liveness analysis, static context resolution for <code>this</code>; auditors for dynamic traps (<code>with</code>, <code>eval</code>), library alias matching, DFS taint tracking.','Integrated the Jelly approximate interpretation framework to emit hints.json as Ahead-of-Time behavioral hints — up to ~45% execution speedup (Shape Pre-Allocation) and 48% peak memory reduction (Array Unboxing).','Instrumented QuickJS-NG (quickjs.c: JS_GetPropertyInternal, JS_SetPropertyInternal, JS_Eval) with telemetry hooks for a runtime ground truth; 97.5% property mutation recall across 12 micro-benchmarks, isolating gaps in polymorphic loops, nested accessors, C++ logic &amp; Symbol.iterator.','Evaluated stability on Octane, Kraken, SunSpider (5 industry macro-benchmark suites) using Linux kernel telemetry (/usr/bin/time -v).'],['JavaScript','C','Babel','QuickJS','Jelly']],
@@ -141,32 +221,71 @@ const exp=[
 ['Keva — Fragrances, Flavours &amp; Aroma Ingredients','Cyber Security / Security Testing &amp; Vulnerability Analysis Intern','Jan 2025 – Mar 2025 · Mumbai',['Security testing &amp; code audits with SonarQube and Burp Suite (PortSwigger Labs) across frontend/backend; mitigated 3 critical web vulnerabilities; SQLi, CORS, CSRF.','Pen-testing on 2 Ubuntu servers: Metasploit reverse shells, antivirus bypass, port scanning, OS credential dumping.','FortiSIEM, VirusTotal &amp; WHOIS for threat detection, malware analysis and malicious IP tracking; brute-force detection with custom rules; 2 major findings; executive audit reports with severity ratings &amp; mitigations.'],['Burp Suite','Metasploit','FortiSIEM','SonarQube']],
 ['Prodigy InfoTech','Machine Learning Intern','Jan 2025 · Remote',['Linear Regression for real-estate valuation; K-Means customer segmentation; SVM binary image classification.','Hand-gesture recognition model from image/video; food recognition with caloric estimation.'],['Scikit-Learn','OpenCV','SVM']],
 ['GirlScript Summer of Code','Tech Contributor (GSSoC ’25)','Sep 2025 – Oct 2025',['Debugged issues, shipped optimized PRs, refactored code, improved documentation; collaborated with maintainers via Git/GitHub.'],['Open Source','Git']],
-['Emfinity KJSCE','General Secretary · Technical Team Member','Jan 2023 – Jul 2025 (2 yrs 7 mos)',['General Secretary (Aug 2024–Jul 2025): led a 30-member council — delegation to team heads, faculty liaison, semester calendars, conflict resolution, deadlines, on-day allotments, council growth.','Technical Team Member (Jan 2023–Aug 2024): daily tech sessions, ran technical events, authored &amp; solved problems, owned the math behind events/workshops/social series, curated problem datasets, brainstormed math competitions.'],['Leadership','Events']],
 ['Keva','Java Development Intern','Jan 2023 – Mar 2023 · Mumbai',['Java, Maven, Spring Boot, OOP, data structures, dependency management and build automation.'],['Java','Spring Boot','Maven']]];
 const tg=a=>`<div class="tags">${a.map(x=>`<span>${x}</span>`).join('')}</div>`;
-const sm=['Built a JavaScript JIT static-analysis framework: AOT hints show up to ~45% speedup and 48% lower peak memory, with 97.5% property-mutation recall.','Cut regulatory feed validation from 45 min to under 2 min, automated pod and NAS failures with Ansible, and presented to CIOs as Scrum Master.','Pen-tested and audited web apps and Ubuntu servers, mitigating 3 critical vulnerabilities and delivering executive audit reports.','Shipped 5 classic ML models: regression, clustering, SVM, gesture and food recognition.','Open-source contributions: bug fixes, refactors and documentation.','Grew from technical team member to General Secretary of a 30-member council (500+ footfall events, ₹20,000+ sponsorships).','Learned Java, Spring Boot and Maven fundamentals.'],dur=['4 mos','2 mos','3 mos','1 mo','2 mos','2 yrs 7 mos','3 mos'];
+const sm=['Built a JavaScript JIT static-analysis framework: AOT hints show up to ~45% speedup and 48% lower peak memory, with 97.5% property-mutation recall.','Cut regulatory feed validation from 45 min to under 2 min, automated pod and NAS failures with Ansible, and presented to CIOs as Scrum Master.','Pen-tested and audited web apps and Ubuntu servers, mitigating 3 critical vulnerabilities and delivering executive audit reports.','Shipped 5 classic ML models: regression, clustering, SVM, gesture and food recognition.','Open-source contributions: bug fixes, refactors and documentation.','Learned Java, Spring Boot and Maven fundamentals.'],dur=['4 mos','2 mos','3 mos','1 mo','2 mos','3 mos'];
 tl.innerHTML=exp.map((e,i)=>`<div class="card rv${i>2?' hid x':''}"><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p><p class="sum">${sm[i]}</p>${tg(e[4])}<ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
 ts.innerHTML=exp.map((e,i)=>`<div><b>${e[0].split(' — ')[0]}</b><br>${e[1].split(' / ')[0]}<br><span class="meta">${e[2].split(' · ')[0]} · ${dur[i]}</span></div>`).join('');
-tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:16px">view all experience (+4) ↓</button>');
-vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+4) ↓'};
+tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:16px">view all experience (+3) ↓</button>');
+vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+3) ↓'};
 const R=n=>L.gh+'/'+n;
 const pr=[
-['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality','🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025','CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring','pollution-map.png'],
-['Voice-Enabled Geospatial UI','ISRO Bharatiya Antariksh Hackathon 2024','Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],'Voice-Enabled-Geospatial-UI','voice-ui.jpg'],
-['Text to AR/VR','Jan 2025–Apr 2025','LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',['Python','Django','LLM','RAG','Unity'],'Text-to-AR-VR-Visualizing-Numerical-Data','ar-vr.jpg'],
-['Automated Caption Generation for Jewellery Images','Jul 2025–Oct 2025','VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',['Python','PyTorch','VGG-16','GRU','FastAPI','React'],'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images','caption.png']];
-pg.innerHTML=pr.map(p=>`<div class="card rv"><div class="ph" data-img="assets/${p[5]}">🖼 screenshot → assets/${p[5]}</div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links"><a href="${R(p[4])}" target="_blank" rel="noopener">source ↗</a></div></div>`).join('');
+['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality','🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025','CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring','pollution-map.png','1000m → 10m','spatial resolution · 88.88% acc'],
+['Voice-Enabled Geospatial UI','ISRO Bharatiya Antariksh Hackathon 2024','Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],'Voice-Enabled-Geospatial-UI','voice-ui.jpg','<600ms','speech-to-text latency · 94.5% intent'],
+['Text to AR/VR','Jan 2025–Apr 2025','LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',['Python','Django','LLM','RAG','Unity'],'Text-to-AR-VR-Visualizing-Numerical-Data','ar-vr.jpg','88.89%','pipeline accuracy · 3D scene gen'],
+['Automated Caption Generation for Jewellery Images','Jul 2025–Oct 2025','VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',['Python','PyTorch','VGG-16','GRU','FastAPI','React'],'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images','caption.png','90.44%','captioning accuracy · 94.62% det']];
+pg.innerHTML=pr.map(p=>`<div class="card rv"><div class="ph" data-img="assets/${p[5]}">🖼 screenshot → assets/${p[5]}</div><div class="p-impact"><b>${p[6]}</b><span>${p[7]}</span></div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links"><a href="${R(p[4])}" target="_blank" rel="noopener">source ↗</a></div></div>`).join('');
 const mp=[['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python'],['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript'],['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript'],['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python'],['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python'],['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter'],['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript'],['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP'],['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter'],['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter'],['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python'],['K-Means-Clustering','Retail customer segmentation.','Python'],['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python'],['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter'],['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML'],['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web']];
 mg.innerHTML=mp.map(p=>`<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${p[2]!='Web'?`<a href="${R(p[0])}" target="_blank" rel="noopener">repo ↗</a>`:''}</div>`).join('');
 const sk={'Languages':'Python, JavaScript, TypeScript, C++, C, Java, R, SQL','AI / ML / Data':'TensorFlow, PyTorch, Keras, Scikit-Learn, Hugging Face, Transformers, OpenCV, CNNs, RNNs (LSTM, GRU), VGG-16, LLMs, RAG, Pandas, NumPy, K-Means, SVM, Linear Regression','Backend &amp; Web':'React.js, Next.js, Angular, Node.js, Flask, FastAPI, Django, Spring Boot, GraphQL, WebGL, HTML5/CSS3','DevOps, Security &amp; Cloud':'Docker, Kubernetes, Ansible, Git (GitHub/GitLab CI/CD), SonarQube, Burp Suite, Metasploit, FortiSIEM, Red Hat OpenShift, Linux/Ubuntu, AWS (Botocore)','Databases':'PostgreSQL, MySQL, MongoDB, SQL Server Management Studio','Tools &amp; Platforms':'Unity (AR/VR), Babel (AST Parsing), Leaflet.js, Google Earth Engine, MATLAB, RStudio, npm, Jira, Confluence, Agile/Scrum, VSCode, Docker Desktop'};
 const slug={Python:'python',JavaScript:'javascript',TypeScript:'typescript','C++':'cplusplus',C:'c',Java:'java',R:'r',TensorFlow:'tensorflow',PyTorch:'pytorch',Keras:'keras','Scikit-Learn':'scikitlearn',OpenCV:'opencv',Pandas:'pandas',NumPy:'numpy','React.js':'react','Next.js':'nextjs',Angular:'angular','Node.js':'nodejs',Flask:'flask',FastAPI:'fastapi',Django:'django','Spring Boot':'spring',GraphQL:'graphql','HTML5/CSS3':'html5',Docker:'docker',Kubernetes:'kubernetes',Ansible:'ansible',Git:'git',SonarQube:'sonarqube','Linux/Ubuntu':'ubuntu',AWS:'amazonwebservices','Red Hat OpenShift':'openshift',PostgreSQL:'postgresql',MySQL:'mysql',MongoDB:'mongodb','SQL Server Management Studio':'microsoftsqlserver','Unity':'unity',MATLAB:'matlab',RStudio:'rstudio',npm:'npm',Jira:'jira',Confluence:'confluence',VSCode:'vscode','Docker Desktop':'docker',Babel:'babel'};
 const bc=['#5eead4','#a78bfa','#f9a8d4','#fbbf24','#60a5fa','#86efac'];
 sg.innerHTML=Object.entries(sk).map(([k,v],bi)=>`<div class="bd" style="--c:${bc[bi%6]}"><h3>${k}</h3><div class="nn">${v.split(', ').map((n,j)=>{const b=n.split(' (')[0],z=slug[b];return `<div class="sn" style="--r:${((j*7+bi*3)%9)-4}deg"><i>${z?`<img alt="" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${z}/${z}-original.svg" onerror="this.parentNode.textContent='${b.slice(0,2)}'">`:b.slice(0,2)}</i>${n}</div>`}).join('')}</div></div>`).join('');
-const ce={'AI, Cloud &amp; Data Science':['Microsoft: Intro to Generative AI for Data Analysis (2025)','Microsoft: Intro to Microsoft Azure Cloud Services (2025)','CU Boulder: Introduction to Computer Vision (2025)','CU Boulder: Modeling of Autonomous Systems (2025)','SUNY: Big Data, Genes, and Medicine (2026)'],'Finance &amp; Business':['Univ. of Geneva: Understanding Financial Markets (2025)','Univ. of Virginia: Financial Accounting Fundamentals (2025)','Univ. of Virginia: Digital Product Management (2025)'],'Cybersecurity, Hardware &amp; DevOps':['IBM: Introduction to DevOps (2024)','Google: Foundations of Cybersecurity (2024)','Google: Play It Safe: Manage Security Risks (2024)','Univ. of Maryland: Hardware Security (2026)'],'Blockchain &amp; Web3':['Univ. at Buffalo: Blockchain Basics (2025)','Univ. at Buffalo: Smart Contracts (2026)','Univ. at Buffalo: Decentralized Applications (Dapps) (2026)','LearnQuest: Blockchain Security Advanced Protection (2026)'],'Software Engineering &amp; App Dev':['Duke: Java Programming: Solving Problems with Software (2025)','Duke: Java Programming: Arrays, Lists, and Structured Data (2025)','Meta: Programming Fundamentals in Kotlin (2024)','Meta: Intro to Android Mobile App Development (2024)','Vidyalankar Polytechnic: Computer Fundamentals (2022)'],'Languages':['UC Davis: Learn Spanish: Basic Spanish Vocabulary (2024)']};
-cg.innerHTML=Object.entries(ce).map(([k,v])=>`<div class="card rv"><h3 style="font-size:15px">${k}</h3><ul>${v.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
-document.querySelectorAll('.ph').forEach(d=>{const im=new Image();im.onload=()=>{d.textContent='';d.append(im)};im.src=d.dataset.img;im.alt=''});
+const certsData=[
+{name:'Hardware Security',issuer:'University of Maryland',date:'Apr 2026',id:'MWQQCWO500WG',url:'https://www.coursera.org/account/accomplishments/records/MWQQCWO500WG',cat:'Cybersecurity & Cloud'},
+{name:'Big Data, Genes, and Medicine',issuer:'State University of New York',date:'Apr 2026',id:'2ZDWE67WRTE8',url:'https://www.coursera.org/account/accomplishments/records/2ZDWE67WRTE8',cat:'AI & Data'},
+{name:'Blockchain Security Advanced Protection',issuer:'LearnQuest',date:'Apr 2026',id:'1MMSBFJ55FNZ',url:'https://www.coursera.org/account/accomplishments/records/1MMSBFJ55FNZ',cat:'Blockchain & Web3'},
+{name:'Decentralized Applications (Dapps)',issuer:'University at Buffalo',date:'Apr 2026',id:'93Y65IOJ8D26',url:'https://www.coursera.org/account/accomplishments/records/93Y65IOJ8D26',cat:'Blockchain & Web3'},
+{name:'Smart Contracts',issuer:'University at Buffalo',date:'Apr 2026',id:'CEQLCSQHIXT2',url:'https://www.coursera.org/account/accomplishments/records/CEQLCSQHIXT2',cat:'Blockchain & Web3'},
+{name:'Intro to Generative AI for Data Analysis',issuer:'Microsoft',date:'Sep 2025',id:'INJLQCPBSPPX',url:'https://www.coursera.org/account/accomplishments/records/INJLQCPBSPPX',cat:'AI & Data'},
+{name:'Modeling of Autonomous Systems',issuer:'CU Boulder',date:'Sep 2025',id:'YVK3JHKRIZ61',url:'https://www.coursera.org/account/accomplishments/records/YVK3JHKRIZ61',cat:'AI & Data'},
+{name:'Intro to Microsoft Azure Cloud Services',issuer:'Microsoft',date:'Sep 2025',id:'V0TOQ4Y7QUO5',url:'https://www.coursera.org/account/accomplishments/records/V0TOQ4Y7QUO5',cat:'Cybersecurity & Cloud'},
+{name:'Introduction to Computer Vision',issuer:'CU Boulder',date:'Sep 2025',id:'Q4SYXFFHN5B7',url:'https://www.coursera.org/account/accomplishments/records/Q4SYXFFHN5B7',cat:'AI & Data'},
+{name:'Blockchain Basics',issuer:'University at Buffalo',date:'Feb 2025',id:'5ESXFVTBYINF',url:'https://www.coursera.org/account/accomplishments/records/5ESXFVTBYINF',cat:'Blockchain & Web3'},
+{name:'Java Programming: Solving Problems with Software',issuer:'Duke University',date:'Feb 2025',id:'Y8NO4BXR056W',url:'https://www.coursera.org/account/accomplishments/records/Y8NO4BXR056W',cat:'Software & Systems'},
+{name:'Java Programming: Arrays, Lists & Data',issuer:'Duke University',date:'Feb 2025',id:'QK4KW443E5BR',url:'https://www.coursera.org/account/accomplishments/records/QK4KW443E5BR',cat:'Software & Systems'},
+{name:'Financial Accounting Fundamentals',issuer:'University of Virginia',date:'Feb 2025',id:'J7T0BF5VD041',url:'https://www.coursera.org/account/accomplishments/records/J7T0BF5VD041',cat:'Finance & Biz'},
+{name:'Digital Product Management: Fundamentals',issuer:'University of Virginia',date:'Feb 2025',id:'RXBYG6EXOG81',url:'https://www.coursera.org/account/accomplishments/records/RXBYG6EXOG81',cat:'Finance & Biz'},
+{name:'Understanding Financial Markets',issuer:'University of Geneva',date:'Feb 2025',id:'NYH9XJZGAYDC',url:'https://www.coursera.org/account/accomplishments/records/NYH9XJZGAYDC',cat:'Finance & Biz'},
+{name:'Learn Spanish: Basic Spanish Vocabulary',issuer:'UC Davis',date:'Oct 2024',id:'XHZF8MVPQLII',url:'https://www.coursera.org/account/accomplishments/specialization/certificate/XHZF8MVPQLII',cat:'Languages'},
+{name:'Introduction to DevOps',issuer:'IBM',date:'Oct 2024',id:'QVEV3I8QXCOO',url:'https://www.coursera.org/account/accomplishments/records/QVEV3I8QXCOO',cat:'Cybersecurity & Cloud'},
+{name:'Programming Fundamentals in Kotlin',issuer:'Meta',date:'Oct 2024',id:'9PYEFOHY3BNH',url:'https://www.coursera.org/account/accomplishments/records/9PYEFOHY3BNH',cat:'Software & Systems'},
+{name:'Intro to Android Mobile App Development',issuer:'Meta',date:'Oct 2024',id:'6MIBO10FPUKG',url:'https://www.coursera.org/account/accomplishments/records/6MIBO10FPUKG',cat:'Software & Systems'},
+{name:'Foundations of Cybersecurity',issuer:'Google',date:'Oct 2024',id:'WNMRN7NJKEJ3',url:'https://www.coursera.org/account/accomplishments/records/WNMRN7NJKEJ3',cat:'Cybersecurity & Cloud'},
+{name:'Play It Safe: Manage Security Risks',issuer:'Google',date:'Oct 2024',id:'JR6D7J2PKGIU',url:'https://www.coursera.org/account/accomplishments/records/JR6D7J2PKGIU',cat:'Cybersecurity & Cloud'},
+{name:'Computer Fundamentals',issuer:'Vidyalankar Polytechnic',date:'Jun 2020',id:'DBYF0K-CE000023',url:'https://drive.google.com/file/d/1T2z5lSkNH3ozWEmBkEVVGhALMLkXMD_v/view?usp=drivesdk',cat:'Software & Systems'}
+];
+const cats=['All',...new Set(certsData.map(c=>c.cat))];
+let activeCat='All',showAllCerts=false;
+function renderCerts(){
+const filtered=certsData.filter(c=>activeCat=='All'||c.cat==activeCat);
+ccCount.textContent=`// ${filtered.length} of ${certsData.length} credentials`;
+cg.innerHTML=filtered.map((c,i)=>`<div class="cert-card rv${(!showAllCerts&&activeCat=='All'&&i>=6)?' hid':''}">
+<div><div class="cert-top"><span class="cert-tag">${c.cat}</span><span class="cert-date">${c.date}</span></div>
+<h3 class="cert-title">${c.name}</h3><p class="cert-issuer">${c.issuer}</p></div>
+<div class="cert-footer"><span class="cert-id" title="Credential ID">ID: ${c.id.length>14?c.id.slice(0,12)+'…':c.id}</span><a class="cert-link" href="${c.url}" target="_blank" rel="noopener">verify ↗</a></div>
+</div>`).join('');
+vc.style.display=(activeCat=='All')?'block':'none';
+vc.textContent=showAllCerts?'show top 6 credentials ↑':`view all ${certsData.length} credentials ↓`;
+document.querySelectorAll('#cg .rv').forEach(e=>io.observe(e));
+}
 const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.08});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+cf.innerHTML=cats.map(c=>`<button class="${c==='All'?'active':''}" data-cat="${c}">${c} (${c==='All'?certsData.length:certsData.filter(x=>x.cat===c).length})</button>`).join('');
+cf.onclick=e=>{const cat=e.target.dataset.cat;if(cat){activeCat=cat;cf.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));renderCerts()}};
+vc.onclick=()=>{showAllCerts=!showAllCerts;renderCerts()};
+renderCerts();
+document.querySelectorAll('.ph').forEach(d=>{const im=new Image();im.onload=()=>{d.textContent='';d.append(im)};im.src=d.dataset.img;im.alt=''});
 addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
 th.onclick=()=>{const d=document.documentElement,dark=getComputedStyle(d).getPropertyValue('--bg').trim()=='#0a0e14';d.dataset.theme=dark?'light':'dark'};
 
@@ -187,7 +306,50 @@ let zt;const wake=()=>{zz.style.display='none';clearTimeout(zt);zt=setTimeout(()
 
 document.querySelectorAll('.sn').forEach(n=>{let sx,sy,tx=0,ty=0,b,r,t;n.onpointerdown=e=>{n.setPointerCapture(e.pointerId);n.classList.add('d');sx=e.clientX;sy=e.clientY;b=n.closest('.bd').getBoundingClientRect();r=n.getBoundingClientRect();t=[tx,ty]};
 n.onpointermove=e=>{if(!n.classList.contains('d'))return;const dx=Math.max(b.left-r.left,Math.min(b.right-r.right,e.clientX-sx)),dy=Math.max(b.top-r.top,Math.min(b.bottom-r.bottom,e.clientY-sy));tx=t[0]+dx;ty=t[1]+dy;n.style.translate=tx+'px '+ty+'px'};n.onpointerup=()=>n.classList.remove('d')});
-kg.innerHTML=[['Rizwan Afsar','VP @ Barclays','RA','<b>“Great work, you have been amazing during this period and we have working code ready for production.”</b>',['🏅 official recognition','Barclays']],['Kapie Mzumara','VP @ Barclays · GFED Early Careers','KM','<b>Chandana Ramesh Galgali has been recognized for ‘Simplicity and efficiency, seeking out every opportunity to automate’.</b><br><br>“Thank you for taking part in the GFED Early Careers programme. Your tenacity and hard work over the last 5 weeks can be clearly seen. The GFED Early Careers Team and Engineering and Architecture Leads are impressed with all the ideas and solutions to the many friction points you have identified! Well done!”',['🏅 official recognition','Barclays']],['Prof. Manas Thakur','Dept of CSE @ IIT Bombay','MT','<b>“Chandana has been a sincere intern, and she has completed the objectives of her internship satisfactorily.”</b>',['🎓 research mentor','IIT Bombay']]].map(p=>`<div class="card post"><div style="display:flex;gap:10px;align-items:center"><div class="av">${p[2]}</div><div><b>${p[0]}</b><br><span class="meta">${p[1]}</span></div></div><p>${p[3]}</p><div class="tags">${p[4].map(t=>`<span>${t}</span>`).join('')}</div></div>`).join('');
+const reviews=[
+{org:'BARCLAYS',idx:'01',name:'Rizwan Afsar',role:'VP @ Barclays',badge:'RA',quote:'Great work, you have been amazing during this period and we have working code ready for production.',tags:['🏅 official recognition','Barclays']},
+{org:'BARCLAYS · GFED',idx:'02',name:'Kapie Mzumara',role:'VP @ Barclays · GFED Early Careers',badge:'KM',quote:'Chandana Ramesh Galgali has been recognized for \'Simplicity and efficiency, seeking out every opportunity to automate\'. Thank you for taking part in the GFED Early Careers programme. Your tenacity and hard work over the last 5 weeks can be clearly seen. The GFED Early Careers Team and Engineering and Architecture Leads are impressed with all the ideas and solutions to the many friction points you have identified! Well done!',tags:['🏅 official recognition','Barclays']},
+{org:'IIT BOMBAY · CSE',idx:'03',name:'Prof. Manas Thakur',role:'Dept of CSE @ IIT Bombay',badge:'MT',quote:'Chandana has been a sincere intern, and she has completed the objectives of her internship satisfactorily.',tags:['🎓 research mentor','IIT Bombay']}
+];
+let curCard=0;
+function renderDeck(){
+kg.innerHTML=reviews.map((r,i)=>{
+const pos=(i-curCard+reviews.length)%reviews.length;
+return `<div class="deck-card s-${pos}" data-idx="${i}">
+<div class="deck-top"><span>${r.org}</span><span>${r.idx} / 03</span></div>
+<div class="deck-q">“</div>
+<div class="deck-body"><p>${r.quote}</p></div>
+<div class="deck-author">
+<div style="display:flex;align-items:center;gap:12px;min-width:0;flex:1">
+<div class="av">${r.badge}</div>
+<div style="min-width:0">
+<b style="font-size:14.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.name}</b>
+<span class="meta" style="font-size:12px;display:block">${r.role}</span>
+</div></div>
+<div class="tags" style="margin:0;flex-shrink:0">${r.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+</div></div>`;
+}).join('');
+dd.innerHTML=reviews.map((_,i)=>`<span class="deck-dot${i===curCard?' active':''}" data-i="${i}"></span>`).join('');
+}
+renderDeck();
+const nextCard=()=>{curCard=(curCard+1)%reviews.length;renderDeck()};
+const prevCard=()=>{curCard=(curCard-1+reviews.length)%reviews.length;renderDeck()};
+dn.onclick=nextCard;dp.onclick=prevCard;
+dd.onclick=e=>{if(e.target.dataset.i!==undefined){curCard=+e.target.dataset.i;renderDeck()}};
+kg.onclick=e=>{
+const c=e.target.closest('.deck-card');
+if(c&&!c.classList.contains('s-0')&&!dw.classList.contains('grid-view')){curCard=+c.dataset.idx;renderDeck()}
+};
+let touchStartX=0;
+kg.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+kg.addEventListener('touchend',e=>{
+const dx=touchStartX-e.changedTouches[0].screenX;
+if(dx>45)nextCard();else if(dx<-45)prevCard();
+},{passive:true});
+kv.onclick=()=>{
+const isGrid=dw.classList.toggle('grid-view');
+kv.textContent=isGrid?'🗂 stack view':'▦ grid view';
+};
 mg.classList.add('col');mg.insertAdjacentHTML('afterend','<button class="btn" id="vm" style="margin-top:16px">view all projects (+10) ↓</button>');vm.onclick=()=>{mg.classList.toggle('col');vm.textContent=mg.classList.contains('col')?'view all projects (+10) ↓':'show less ↑'};fb.addEventListener('click',()=>mg.classList.remove('col'));
 (async()=>{const P='react-ambient-light-adaptive-theme',e=new Date(),s=new Date(e-364*864e5),f=d=>d.toISOString().slice(0,10);try{const r=await(await fetch(`https://api.npmjs.org/downloads/range/${f(s)}:${f(e)}/${P}`)).json(),m={};r.downloads.forEach(x=>m[x.day.slice(0,7)]=(m[x.day.slice(0,7)]||0)+x.downloads);const k=Object.keys(m),mx=Math.max(...k.map(x=>m[x]),1);nt2.textContent=k.reduce((a,x)=>a+m[x],0);ch.innerHTML=`<svg viewBox="0 0 ${k.length*50} 130" style="width:100%;max-width:640px">${k.map((x,i)=>`<rect x="${i*50+8}" y="${100-m[x]/mx*90}" width="34" height="${m[x]/mx*90}" rx="4" fill="var(--a)" opacity=".85"/><text x="${i*50+25}" y="${96-m[x]/mx*90}" font-size="9" text-anchor="middle" fill="var(--fg)">${m[x]}</text><text x="${i*50+25}" y="118" font-size="9" text-anchor="middle" fill="var(--mut)">${x}</text>`).join('')}</svg>`}catch(_){ch.innerHTML='<p class="meta">// monthly chart loads live from the npm registry</p>'}})();
 cp.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText('npm i react-ambient-light-adaptive-theme');cp.textContent='copied ✓'};
