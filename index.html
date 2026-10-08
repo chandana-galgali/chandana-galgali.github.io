@@ -80,7 +80,7 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 #cord{position:fixed;right:10px;top:env(safe-area-inset-top,0px);z-index:12;width:14px;height:64px;cursor:pointer;transition:height .15s}#cord::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--mut)}#cord::after{content:'';position:absolute;bottom:-10px;left:0;width:14px;height:20px;border-radius:7px;background:var(--a);box-shadow:0 0 14px var(--a)}#cord.p{height:100px}
 #bar{position:fixed;top:0;left:0;height:2px;width:0;z-index:30;background:linear-gradient(90deg,var(--a),var(--b))}#pct{position:fixed;left:10px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--mut);z-index:5}
 
-.sec-hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin-bottom:6px}
+.sec-hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin-bottom:24px}
 .sec-hd h2{margin-bottom:0}
 .sec-sub{margin:0 0 16px!important;font-size:12.5px;color:var(--mut)}
 
@@ -207,12 +207,13 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <header id="nh"><nav id="nv"><a href="#" id="cgLogo" class="nav-logo" title="Back to top">&lt;cg/&gt;</a><a href="#about">about</a><a href="#edu">education</a><a href="#exp">experience</a><a href="#proj">projects</a><a href="#more">more-projects</a><a href="#npm">npm</a><a href="#skills">skills</a><a href="#wins">achievements</a><a href="#kind">kudos</a><a href="#certs">certs</a><a href="#contact">contact</a><button id="k">⌘K</button><button id="th" aria-label="toggle theme">◐</button></nav><div id="nsb"></div></header>
 <main>
 <section id="about" style="padding-top:60px">
-<p class="meta">// hello, world — Mumbai, India</p>
+<p class="meta">// hello world</p>
 <h1>I'm Chandana Galgali,<br><span class="grad">I build things that think.</span></h1>
 <div class="term"><div class="dots"><span></span><span></span><span></span></div><pre id="tp" style="white-space:pre-wrap;font:inherit;margin-top:12px"></pre></div>
 <div class="stats" id="stats"></div>
 <div class="links" id="hl"></div></section>
 <section id="edu"><h2>education</h2>
+<p class="meta sec-sub">// high CGPA, a gold medal & real-world campus builds</p>
 <div class="card rv">
 <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:8px">
 <div><h3 style="font-size:20px">🎓 K J Somaiya College of Engineering, Somaiya Vidyavihar University</h3>
@@ -237,14 +238,14 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Led a 30-member council as General Secretary, organizing technical competitions, guest lectures, etc that drove 500+ footfall and secured ₹20,000+ in sponsorships.</p></div></div></div>
 </section>
 <div class="marq"><div id="mq"></div></div>
-<section id="exp"><h2>experience</h2><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
-<section id="proj"><h2>flagship-projects</h2><div class="grid" id="pg"></div></section>
-<section id="more"><h2>more-projects</h2><p class="meta sec-sub">// the smaller builds, scripts &amp; experiments — straight from GitHub</p><div class="grid" id="mg"></div></section>
-<section id="npm"><h2>published-package</h2><div class="card"><h3>📦 react-ambient-light-adaptive-theme</h3><p class="meta">// React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
+<section id="exp"><h2>experience</h2><p class="meta sec-sub">// actual proof that my code doesn't just work on "my machine"</p><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
+<section id="proj"><h2>flagship-projects</h2><p class="meta sec-sub">// the heavy hitters · the builds i'm genuinely proud of</p><div class="grid" id="pg"></div></section>
+<section id="more"><h2>more-projects</h2><p class="meta sec-sub">// late-night "what if I built this?" ideas, cli tools &amp; experiments</p><div class="grid" id="mg"></div></section>
+<section id="npm"><h2>npm-packages</h2><p class="meta sec-sub">// just `npm i` and call it a day</p><div class="card"><h3>📦 react-ambient-light-adaptive-theme</h3><p class="meta">React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
 <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0"><div class="stat" style="min-width:160px"><b id="nt2">131</b><small>downloads · last 12 months</small></div><code class="btn" id="cp">npm i react-ambient-light-adaptive-theme ⧉</code></div><div id="ch"></div>
 <div class="links"><a href="https://www.npmjs.com/package/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm ↗</a><a href="https://npm-stat.com/charts.html?package=react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm-stat ↗</a><a href="https://github.com/chandana-galgali/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">source ↗</a></div></div></section>
-<section id="skills"><h2>tech-stack</h2><p class="meta sec-sub">// drag the notes — each one stays pinned to its own board</p><div class="grid" id="sg"></div></section>
-<section id="wins"><h2>achievements</h2>
+<section id="skills"><h2>tech-stack</h2><p class="meta sec-sub">// my digital toolkit · drag 'em around, each note stays pinned to its own board</p><div class="grid" id="sg"></div></section>
+<section id="wins"><h2>achievements</h2><p class="meta sec-sub">// the shiny stuff · grant checks, hackathon wins & gold medals</p>
 <div class="card rv"><div class="ph" data-img="assets/climate-hackathon.jpg">📸 drop your hackathon win photo → assets/climate-hackathon.jpg</div>
 <h3>🏆 First Place — Climate Hackathon 2024</h3><p class="meta">Issued by the U.S. Consulate General (Mumbai) &amp; Ekonnect Knowledge Foundation</p>
 <ul><li>Led backend development in a 4-person team; won among 150+ teams.</li><li>Awarded a ₹1,50,000 grant to implement the solution across the 65-acre campus (39,000+ students) under “Towards Green Campuses” initiative.</li></ul></div>
@@ -254,11 +255,11 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 </section>
 <section id="kind">
 <div class="sec-hd">
-<h2>kind-words</h2>
+<h2>testimonials</h2>
 <div style="display:flex;gap:8px;align-items:center">
 <button id="kv" style="font-size:12px;padding:3px 8px" title="toggle layout">▦ grid view</button>
 </div></div>
-<p class="meta sec-sub">// feedback from people i have worked with — click or swipe cards to shuffle</p>
+<p class="meta sec-sub" style="margin-top:24px">// nice things awesome people said about me · click or swipe cards to shuffle</p>
 <div class="deck-wrap" id="dw">
 <div class="deck" id="kg"></div>
 <div class="deck-controls">
@@ -272,12 +273,13 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <h2>certifications</h2>
 <span class="meta" id="ccCount" style="font-size:12px">// 22 verified credentials</span>
 </div>
-<p class="meta sec-sub">// filter by domain · click "verify ↗" for official accomplishment records</p>
+<p class="meta sec-sub" style="margin-top:24px">// filter by domain · click "verify ↗" for proof I actually finished 'em</p>
 <div class="cert-filters" id="cf"></div>
 <div class="cert-grid" id="cg"></div>
 <button class="btn" id="vc" style="margin-top:16px;width:100%">view all 22 credentials ↓</button>
 </section>
 <section id="contact"><h2>contact</h2>
+<p class="meta sec-sub" style="margin-top:24px">// hit me up for cool projects, job offers or just a good dev chat</p>
 <div class="grid"><div class="sc"><div><b>GitHub</b><br><small>@chandana-galgali</small></div><a class="btn" href="https://github.com/chandana-galgali" target="_blank" rel="noopener">Follow</a></div>
 <div class="sc"><div><b>LinkedIn</b><br><small>in/chandana-galgali</small></div><a class="btn" href="https://linkedin.com/in/chandana-galgali" target="_blank" rel="noopener">Connect</a></div>
 <div class="sc"><div><b>Email</b><br><small>chandana.galgali@gmail.com</small></div><a class="btn" href="mailto:chandana.galgali@gmail.com">Mail me</a></div>
