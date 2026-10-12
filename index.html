@@ -172,6 +172,43 @@ transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
 #bst{color:var(--a);min-height:1.7em;font-size:14px}
 #bf{width:min(320px,70vw);height:3px;background:var(--bd);margin:0 auto;border-radius:3px;overflow:hidden}#bf i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b))}
 #bh{font-size:11px;color:var(--mut)}
+
+/* mobile: the card nearest viewport centre gets the "hover" look */
+.card.act{transform:translateY(-4px);border-color:var(--a)}.card.act::after{opacity:1}
+.cert-card.act{transform:translateY(-3px);border-color:var(--a)}
+/* org logos on experience cards */
+.eh{display:flex;align-items:center;gap:14px;margin-bottom:4px}
+.eh h3{margin-bottom:2px}
+.lg{width:46px;height:46px;border-radius:10px;flex:none;background:#fff;padding:5px;object-fit:contain;border:1px solid var(--bd)}
+.lg.fb{display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#06121a;font:700 14px 'Space Grotesk',sans-serif;padding:0}
+/* hero: terminal + profile card */
+.hero-row{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:stretch;margin-top:26px}
+.hero-row .term{margin-top:0}
+.pc{order:-1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:22px 18px;box-shadow:0 0 40px -18px var(--b)}
+.pc .me{width:96px;height:96px;font-size:30px;margin-bottom:10px}
+.pc h3{margin:0}
+.pc .meta{margin:0}
+.pc-st{display:inline-flex;align-items:center;gap:6px;margin:10px 0 14px;font-size:11.5px;padding:3px 10px;border-radius:99px;border:1px solid var(--bd);color:var(--mut)}
+.pc-st i{width:7px;height:7px;border-radius:50%;background:#27c93f;box-shadow:0 0 8px #27c93f}
+.pc-links{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;margin-top:auto}
+.pc-links a{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 6px;font-size:12px;border:1px solid var(--bd);border-radius:8px;background:color-mix(in srgb,var(--bg) 50%,var(--card));color:var(--fg)}
+.pc-links a:hover{border-color:var(--a);color:var(--a);text-decoration:none}
+.pc-links a.f{background:var(--a);color:var(--bg);border-color:var(--a)}
+.pc-links a.f:hover{filter:brightness(1.1);color:var(--bg)}
+.pc-links svg{width:15px;height:15px;flex:none}
+@media(max-width:760px){.hero-row{grid-template-columns:1fr}.pc{order:-1}}
+/* hero photo */
+.hero-id{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.hero-id .meta{margin:0}
+.me{width:64px;height:64px;border-radius:50%;flex:none;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b));color:#06121a;font:700 20px 'Space Grotesk',sans-serif;border:2px solid var(--a);box-shadow:0 0 18px -4px var(--a)}
+.me img{width:100%;height:100%;object-fit:cover;display:block}
+.card li,
+.card p:not(.meta),
+.cert-card p:not(.meta) {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
 </style>
 </head>
 <body>
@@ -205,9 +242,24 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <section id="about" style="padding-top:60px">
 <p class="meta">// hello world</p>
 <h1>I'm Chandana Galgali,<br><span class="grad">I build things that think.</span></h1>
+<div class="hero-row">
 <div class="term"><div class="dots"><span></span><span></span><span></span></div><pre id="tp" style="white-space:pre-wrap;font:inherit;margin-top:12px"></pre></div>
+<aside class="card pc">
+<div class="me" id="me" data-img="assets/me.jpg">CG</div>
+<h3>Chandana Galgali</h3>
+<p class="meta">Software Engineer · AI · Systems · Full-Stack</p>
+<p class="meta">📍 Mumbai, India</p>
+<span class="pc-st"><i></i>open to work</span>
+<div class="pc-links">
+<a href="https://github.com/chandana-galgali" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
+<a href="https://linkedin.com/in/chandana-galgali" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+<a href="mailto:chandana.galgali@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+<a class="f" href="assets/Chandana_Galgali_Resume.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Résumé</a>
+</div>
+</aside>
+</div>
 <div class="stats" id="stats"></div>
-<div class="links" id="hl"></div></section>
+</section>
 <section id="edu"><h2>education</h2>
 <p class="meta sec-sub">// high CGPA, a gold medal & real-world campus builds</p>
 <div class="card rv">
@@ -294,9 +346,8 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/chandana-galgali',em:'mailto:chandana.galgali@gmail.com',ph:'tel:+919870776977',orc:'https://orcid.org/0009-0006-8524-809X'};
 const links=[['GitHub',L.gh],['LinkedIn',L.li],['Email',L.em]];
 const lk=a=>a.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join('');
-hl.innerHTML=lk(links)+'<a class="btn f" href="assets/Chandana_Galgali_Resume.pdf" download>⬇ Resume</a>';
 stats.innerHTML=[['9.67 CGPA','Department of IT Rank 1, Gold Medal'],['45%','execution speedup from AOT hints @ IIT Bombay'],['45min→2min','manual to automated SLA validation @ Barclays'],['1st of 150+','teams @ Climate Hackathon (₹1.5L Grant)']].map(s=>`<div class="stat"><b>${s[0]}</b><small>${s[1]}</small></div>`).join('');
-const T=`$ whoami\nchandana-galgali — B.Tech IT (Hons. AI) from KJSCE, Dept Rank 1, Gold Medalist\n$ cat roles.txt\nResearch Intern @ IIT Bombay · SWE Intern @ Barclays · Web Security Intern @ Keva\n$ cat focus.txt\nsoftware dev · ai engineer · full-stack · web dev · web app security · static analysis\n$ echo $STATUS\nopen to work — let's build something together_`;
+const T=`$ whoami\nchandana-galgali — B.Tech IT (Hons. AI) from KJSCE, Dept Rank 1 (Gold Medalist)\n$ cat roles.txt\nCompiler Optimization Research Intern @ IIT Bombay · SDE Intern @ Barclays · Web App Security Intern @ Keva · Machine Learning Intern @ Prodigy · Java Developer Intern @ Keva · Web Development Intern @ KJSCE\n$ cat focus.txt\nsoftware dev · ai · gen ai · full-stack · web dev · web app security · static analysis\n$ echo $STATUS\nopen to work — let's build something together_`;
 let i=0;(function t(){tp.innerHTML=T.slice(0,i).replace(/^\$ (.*)$/gm,'<span class="p">$</span> $1')+'<span class="cur"></span>';if(i++<T.length)setTimeout(t,i%40?14:140)})();
 const exp=[
 ['Indian Institute of Technology Bombay','Compiler Optimization Research Intern','Jan 2026 – Apr 2026 · Mumbai',['Built a static analysis pipeline for JavaScript JIT compiler optimizations, handling AST optimizations, call graph construction, source-to-sink taint tracking and dynamic pattern detection.','Integrated an approximate interpretation pipeline to generate Ahead-of-Time behavioral hints, demonstrating potential performance gains up to a 45% execution speedup and a 48% reduction in peak memory.','Instrumented QuickJS engine internals with custom runtime hooks, comparing native execution logs against predictive static hints to achieve 97.5% property mutation recall across micro-benchmarks and isolate core modeling gaps in 5 industry macro-benchmark suites.'],['C','JavaScript','Babel','AST Parsing','Jelly','Static Analysis','Approximate Interpretation','QuickJS','Systems Programming','Performance Profiling']],
@@ -304,10 +355,14 @@ const exp=[
 ['Keva - Fragrances, Flavours &amp; Aroma Ingredients','Web Application Security Intern','Jan 2025 – Mar 2025 · Mumbai',['Executed web application security audits using SonarQube and Burp Suite on 3 full-stack applications across frontend and backend to test, exploit and remediate SQLi, CORS misconfigurations and CSRF vulnerabilities.','Analyzed live attack vectors and simulated penetration testing, uncovering a high-severity admin path access control flaw and a CWE-319 cleartext transmission risk.','Investigated threat telemetries and historical logs using FortiSIEM, VirusTotal, WHOIS and port scanners to study attack patterns, map exposed surfaces and engineer custom detection rules for brute-force login attempts.'],['Web Application Security','Penetration Testing','Vulnerability Assessment','Burp Suite','SonarQube','FortiSIEM','Threat Analysis','Network Scanning','OSINT']],
 ['Prodigy InfoTech','Machine Learning Intern','Jan 2025 · Remote',['Built and evaluated end-to-end ML models (SVM, Linear Regression, K-Means clustering) for image classification, predictive analytics and data-driven customer segmentation.','Developed real-time hand gesture and food identification pipelines using OpenCV, TensorFlow and CNNs to process video/image streams.'],['Python','TensorFlow','OpenCV','Scikit-Learn','Pandas','NumPy','Keras','Machine Learning']],
 ['Keva - Fragrances, Flavours &amp; Aroma Ingredients','Java Developer Intern','Jan 2024 – Mar 2024 · Mumbai',['Engineered Java backend algorithms using HashMaps to map chemical replacement logic (A + B -> C), optimizing manual formula checks down to O(1) runtime execution.','Applied Object-Oriented Programming (OOP) principles to construct modular backend code, managing build pipelines and database queries using Apache Maven and SQL.'],['Java','Spring Boot','Object-Oriented Programming (OOP)','Data Structures','Algorithms','Apache Maven','RESTful APIs','SQL','Backend Development']],
-['KJSCE - Virtual Lab Development Team','Web Development Intern','Aug 2023 – Nov 2023 · Mumbai',['Architected and built a responsive interactive virtual lab web application using React.js, JavaScript and HTML/CSS to visualize complex Data Structures and Algorithms concepts.','Designed high-fidelity interactive wireframes and UI mockups in Figma, translating designs into modular, reusable React components for real-time code/algorithm simulations.'],['React.js','JavaScript (ES6+)','HTML5/CSS3','Figma','Frontend Development','UI/UX Design','Git','GitHub']]];
+['KJSCE In-House Internship','Web Development Intern','Aug 2023 – Nov 2023 · Mumbai',['Architected and built a responsive interactive virtual lab web application using React.js, JavaScript and HTML/CSS to visualize complex Data Structures and Algorithms concepts.','Designed high-fidelity interactive wireframes and UI mockups in Figma, translating designs into modular, reusable React components for real-time code/algorithm simulations.'],['React.js','JavaScript (ES6+)','HTML5/CSS3','Figma','Frontend Development','UI/UX Design','Git','GitHub']]];
+/* logo order matches `exp`. Tries assets/logos/<file> first, then the site favicon, then initials */
+const LG=[['iitb.png','iitb.ac.in','IIT'],['barclays.png','barclays.com','B'],['keva.png','keva.co.in','K'],['prodigy.png','prodigyinfotech.dev','PI'],['keva.png','keva.co.in','K'],['somaiya.png','somaiya.edu','KJ']];
+const logo=i=>{const l=LG[i];return `<img class="lg" alt="" loading="lazy" src="assets/logos/${l[0]}" data-f="https://www.google.com/s2/favicons?domain=${l[1]}&sz=128" data-t="${l[2]}" onerror="lgErr(this)">`};
+function lgErr(im){if(!im.dataset.tried){im.dataset.tried=1;im.src=im.dataset.f;return}const s=document.createElement('div');s.className='lg fb';s.textContent=im.dataset.t;im.replaceWith(s)}
 const tg=a=>`<div class="tags">${a.map(x=>`<span>${x}</span>`).join('')}</div>`;
 const sm=['Instrumented QuickJS C internals and integrated a static analysis pipeline with Jelly\'s approximate interpretation engine to generate Ahead-of-Time behavioral hints, demonstrating a 45% execution speedup.','Engineered real-time regulatory feed monitoring tools that reduced validation times from 45 minutes to under 2 minutes, developed unsupervised ML predictive models for incident prevention, and automated infrastructure housekeeping.','Executed end-to-end web application security audits, live penetration tests, and SIEM threat monitoring to remediate high-severity vulnerabilities and engineer proactive detection rules.','Built end-to-end computer vision pipelines and predictive ML models using TensorFlow, OpenCV and Scikit-Learn for real-time image processing, classification and data segmentation.','Worked on core Java backend logic, data structures, and Maven-based dependency management to model chemical formulation and component substitution rules for fragrance manufacturing.','Architected a pure frontend React.js virtual lab application for algorithm visualization, translating Figma UI/UX mockups into interactive, modular web components.'],dur=['4 mos','2 mos','3 mos','1 mo','3 mos','4 mos'];
-tl.innerHTML=exp.map((e,i)=>`<div class="card rv${i>2?' hid x':''}"><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p><p class="sum">${sm[i]}</p>${tg(e[4])}<ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+tl.innerHTML=exp.map((e,i)=>`<div class="card rv${i>2?' hid x':''}"><div class="eh">${logo(i)}<div><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p></div></div><p class="sum">${sm[i]}</p>${tg(e[4])}<ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
 ts.innerHTML=exp.map((e,i)=>`<div><b>${e[0].split(' — ')[0]}</b><br>${e[1].split(' / ')[0]}<br><span class="meta">${e[2].split(' · ')[0]} · ${dur[i]}</span></div>`).join('');
 tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:16px">view all experience (+3) ↓</button>');
 vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+3) ↓'};
@@ -383,7 +438,7 @@ function rp(q=''){pl.innerHTML='';cmds.filter(c=>c[0].toLowerCase().includes(q.t
 const op=()=>{pal.classList.add('o');pi.value='';rp();pi.focus()};k.onclick=op;pi.oninput=()=>rp(pi.value);
 pi.onkeydown=e=>{if(e.key=='Enter'){const a=pl.querySelector('a');a&&a.click()}};pal.onclick=e=>{if(e.target==pal)pal.classList.remove('o')};
 addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key=='k'){e.preventDefault();op()}if(e.key=='Escape')pal.classList.remove('o')});
-const qa={'Who is she?':'Chandana: B.Tech IT (Hons. AI), Dept Rank 1 at KJSCE. Compilers, ML, security & full-stack.','Best project?':'Multi-Pollutant Mapping: 1st place Climate Hackathon 2024, ₹1.5L grant, 1000m→10m air-quality maps.','Hire her?':'Yes! chandana.galgali@gmail.com — or press ⌘K → send email.','Fun fact':'Her browser app runs Whisper speech-to-text fully offline in under 600ms.'};
+const qa={'Who is she?':'Chandana: B.Tech IT (Hons. AI). SWE, AI & Systems.','Best projects?':'[1] AI-Powered Multi-Pollutant Mapping: 1st place Climate Hackathon 2024, ₹1.5L grant, 1000m→10m high-resolution hyperlocal maps to monitor air quality. [2] Text-to-AR/VR: ','Hire her?':'Yes! chandana.galgali@gmail.com — or press ⌘K → send email.','Fun fact about Chandana':'Her browser app runs Whisper speech-to-text fully offline in under 600ms.'};
 bq.innerHTML=Object.keys(qa).map(q=>`<button>${q}</button>`).join('');bq.onclick=e=>{if(qa[e.target.textContent])ba.textContent=qa[e.target.textContent]};
 let zt;const wake=()=>{zz.style.display='none';clearTimeout(zt);zt=setTimeout(()=>zz.style.display='',9000)};bb.onclick=()=>bp.classList.toggle('o');addEventListener('pointermove',wake);wake();
 
@@ -487,6 +542,21 @@ if(location.hash){history.replaceState(null,'',window.location.pathname)}
 window.scrollTo(0,0);
 window.addEventListener('load',()=>window.scrollTo(0,0));
 cgLogo.onclick=e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});if(location.hash)history.replaceState(null,'',window.location.pathname)};
+/* profile photo: uses assets/me.jpg if present, otherwise keeps the CG badge */
+(()=>{const m=document.getElementById('me'),im=new Image();im.onload=()=>{m.textContent='';m.append(im)};im.alt='Chandana Galgali';im.src=m.dataset.img})();
+/* touch devices: light up the card at the centre of the screen, like hover on desktop */
+if(matchMedia('(hover:none)').matches){
+let q=0,cur=null;
+const upd=()=>{q=0;const mid=innerHeight/2;let best=null,bd=1e9;
+document.querySelectorAll('.card,.cert-card').forEach(c=>{if(!c.offsetParent)return;const r=c.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+const d=(r.top<=mid&&r.bottom>=mid)?0:Math.min(Math.abs(r.top-mid),Math.abs(r.bottom-mid));
+const vis=Math.min(r.bottom,innerHeight)-Math.max(r.top,0);if(vis<Math.min(r.height,innerHeight)*.35)return;
+if(d<bd){bd=d;best=c}});
+if(best!==cur){cur&&cur.classList.remove('act');best&&(best.classList.add('act'),best.style.setProperty('--mx','50%'),best.style.setProperty('--my','50%'));cur=best}};
+const sch=()=>{if(!q){q=1;requestAnimationFrame(upd)}};
+addEventListener('scroll',sch,{passive:true});addEventListener('resize',sch);addEventListener('click',()=>setTimeout(sch,80));
+setTimeout(sch,1200);setTimeout(sch,5000);
+}
 </script>
 </body>
 </html>
