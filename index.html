@@ -25,7 +25,8 @@ body{background:var(--bg);color:var(--fg);font:15px/1.65 'JetBrains Mono',ui-mon
 #glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;background:radial-gradient(var(--a),transparent 65%);opacity:.08;transform:translate(-50%,-50%);z-index:0}
 a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
 #nh{position:sticky;top:env(safe-area-inset-top,0px);z-index:9}nav{display:flex;gap:6px;align-items:center;padding:10px 5vw;padding-right:46px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}nav::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}#nsb{position:absolute;bottom:0;left:0;width:100%;height:2.5px;pointer-events:none;overflow:hidden}#nsb::after{content:'';position:absolute;top:0;left:var(--nx,0%);width:var(--nw,20%);height:100%;background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 0 8px var(--a);border-radius:99px;opacity:0;transition:opacity .3s ease}#nsb.on::after{opacity:1}
-nav a{color:var(--mut);padding:4px 10px;border-radius:6px;white-space:nowrap;font-size:13px}nav a:hover{color:var(--a);background:var(--card);text-decoration:none}
+nav a{color:var(--mut);padding:4px 10px;border-radius:6px;white-space:nowrap;font-size:13px;transition:color .2s,background .2s,box-shadow .2s}nav a:hover{color:var(--a);background:var(--card);text-decoration:none}
+nav a.act{color:var(--a);background:color-mix(in srgb,var(--a) 12%,var(--card));border:1px solid color-mix(in srgb,var(--a) 40%,transparent);text-decoration:none;font-weight:600}
 .nav-logo{color:var(--a)!important;margin-right:auto;white-space:nowrap;font-weight:700;font-size:14px;padding:4px 6px!important;border-radius:6px;cursor:pointer;display:inline-block}.nav-logo:hover{background:var(--card)!important;text-decoration:none!important}
 button{font:inherit;cursor:pointer;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:4px 10px}
 main{position:relative;z-index:1;max-width:1000px;margin:auto;padding:0 5vw}
@@ -44,17 +45,27 @@ h1{font:700 clamp(36px,8vw,64px)/1.05 'Space Grotesk',sans-serif}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.tags span{font-size:11.5px;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--b)}
 ul{padding-left:18px}li{margin:5px 0;color:color-mix(in srgb,var(--fg) 88%,transparent);font-size:13.5px}
 .tl{border-left:2px solid var(--bd);padding-left:22px;display:grid;gap:18px}.tl .card{position:relative;scroll-margin-top:90px}.tl .card::before{content:'';position:absolute;left:-30px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--a);box-shadow:0 0 12px var(--a)}
-.ph{position:relative;aspect-ratio:16/9;border:1px solid var(--bd);border-radius:10px;background:color-mix(in srgb,var(--bg) 65%,var(--card));padding:8px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;overflow:hidden;color:var(--mut);font-size:12px;text-align:center;user-select:none}
-.ph-track{display:flex;width:100%;height:100%;transition:transform .4s ease}
-.ph-slide{flex:0 0 100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:6px}
-.ph-slide img{width:100%;height:100%;object-fit:cover;border-radius:6px;display:block}
-.ph-btn{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:rgba(10,14,20,.75);color:var(--fg);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;z-index:2;padding:0;transition:.2s;backdrop-filter:blur(4px)}
-.ph-btn:hover{background:var(--a);color:var(--bg);border-color:var(--a);transform:translateY(-50%) scale(1.1)}
-.ph-prev{left:10px}
-.ph-next{right:10px}
-.ph-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
-.ph-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.25s;padding:0;border:0}
-.ph-dot.act{background:var(--a);transform:scale(1.3);box-shadow:0 0 6px var(--a)}
+.ph{position:relative;aspect-ratio:16/9;border:1px solid var(--bd);border-radius:10px;background:color-mix(in srgb,var(--bg) 65%,var(--card));padding:0;margin-bottom:20px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;overflow:hidden;color:var(--mut);font-size:12px;text-align:center;user-select:none}
+.ph>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.ph-track{display:flex;width:100%;height:100%;transition:transform .4s cubic-bezier(.25,1,.5,1);margin:0;padding:0}
+.ph-slide{flex:0 0 100%;width:100%;min-width:100%;max-width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0;padding:0}
+.ph-slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.ph-btn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:color-mix(in srgb,var(--card) 85%,transparent);color:var(--a);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;font-weight:700;z-index:3;padding:0;opacity:0;pointer-events:none;transition:opacity .25s ease,background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.ph-btn:hover{background:var(--a);color:var(--bg);border-color:var(--a);transform:translateY(-50%) scale(1.1);box-shadow:0 0 14px var(--a)}
+.ph:hover .ph-btn,.ph.show-controls .ph-btn{opacity:1;pointer-events:auto}
+.ph-prev{left:12px}
+.ph-next{right:12px}
+.ph-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:3;padding:4px 8px;border-radius:99px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);border:1px solid color-mix(in srgb,var(--bd) 60%,transparent)}
+.ph-dot{width:7px;height:7px;border-radius:50%;background:var(--bd);cursor:pointer;transition:.25s;padding:0;border:0}
+.ph-dot.act{background:var(--a);transform:scale(1.3);box-shadow:0 0 8px var(--a)}
+/* Achievement / Wins cards compact side-by-side layout with locked 16:9 ratio */
+.win-card{display:grid;grid-template-columns:360px 1fr;gap:22px;align-items:center}
+.win-card .ph{margin-bottom:0;aspect-ratio:16/9;width:100%;height:auto}
+.win-body{min-width:0}
+@media(max-width:820px){
+.win-card{grid-template-columns:1fr;gap:16px}
+.win-card .ph{aspect-ratio:16/9;width:100%}
+}
 .p-impact{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}.p-impact b{font:700 22px 'Space Grotesk',sans-serif;color:var(--a);line-height:1}.p-impact span{font-size:11.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
 details{margin-top:8px}summary{cursor:pointer;color:var(--a);font-size:13px}
 .rv{opacity:0;transform:translateY(18px);transition:.6s}.rv.in{opacity:1;transform:none}
@@ -165,8 +176,11 @@ transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
 .cert-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .cert-tag{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--b)}
 .cert-date{font-size:11.5px;color:var(--mut)}
-.cert-title{font:700 15px 'Space Grotesk',sans-serif;color:var(--fg);margin-bottom:4px;line-height:1.35}
-.cert-issuer{font-size:12.5px;color:var(--a);margin-bottom:12px}
+.cert-title{font:700 15px 'Space Grotesk',sans-serif;color:var(--fg);margin-bottom:8px;line-height:1.35}
+.cert-issuer-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.cert-issuer-logo{width:22px;height:22px;border-radius:6px;object-fit:contain;background:#fff;padding:2px;border:1px solid var(--bd);flex-shrink:0}
+.cert-issuer-fallback{width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;background:color-mix(in srgb,var(--a) 15%,var(--card));color:var(--a);font:700 10px 'JetBrains Mono',monospace;border:1px solid var(--bd);flex-shrink:0}
+.cert-issuer{font-size:12.5px;color:var(--a);font-weight:500;margin:0}
 .cert-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px dashed var(--bd);font-size:11.5px}
 .cert-id{color:var(--mut);font-family:'JetBrains Mono',monospace;font-size:11px}
 .cert-link{color:var(--a);font-weight:600;display:inline-flex;align-items:center;gap:4px}
@@ -289,13 +303,13 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:14px">
 <div style="border:1px solid var(--bd);border-radius:10px;padding:14px;background:color-mix(in srgb,var(--bg) 50%,var(--card))">
 <b style="color:var(--b);font-size:14px;display:flex;align-items:center;gap:6px">💻 Virtual DSA Laboratory</b>
-<p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Built an interactive virtual laboratory to simulate core Data Structures and Algorithms, bridging theory and implementation for 350+ second-year students.</p></div>
+<p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Built an interactive virtual laboratory for 350+ second-year students to simulate core Data Structures and Algorithms, boosting their practical comprehension and bridging the gap between theory and implementation.</p></div>
 <div style="border:1px solid var(--bd);border-radius:10px;padding:14px;background:color-mix(in srgb,var(--bg) 50%,var(--card))">
 <b style="color:var(--a);font-size:14px;display:flex;align-items:center;gap:6px">🍃 Hyperlocal AQI Map</b>
-<p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Secured a ₹1.5 Lakh grant to deploy an AI-powered hyperlocal multi-pollutant map to monitor air quality across the 65-acre university campus having 39,000+ students.</p></div>
+<p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Secured a ₹1.5 Lakh grant by the U.S. Consulate General Mumbai & Ekonnect Knowledge Foundation to deploy an AI-powered hyperlocal air quality monitoring system across the 65-acre university campus (39,000+ students).</p></div>
 <div style="border:1px solid var(--bd);border-radius:10px;padding:14px;background:color-mix(in srgb,var(--bg) 50%,var(--card))">
 <b style="color:var(--b);font-size:14px;display:flex;align-items:center;gap:6px">⚡ Team Emfinity Leadership</b>
-<p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Led a 30-member council as General Secretary, organizing technical competitions, guest lectures, etc that drove 500+ footfall and secured ₹20,000+ in sponsorships.</p></div></div></div>
+<p style="font-size:12.5px;color:var(--mut);text-align:justify;margin:6px 0 0">Spearheaded a 30-member council, as the General Secretary, over a 10 month tenure, organizing technical competitions, guest lectures and workshops that drove 500+ footfall and secured ₹20,000+ in sponsorships.</p></div></div></div>
 </section>
 <div class="marq"><div id="mq"></div></div>
 <section id="exp"><h2>experience</h2><p class="meta sec-sub">// actual proof that my code doesn't just work on "my machine"</p><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
@@ -306,12 +320,20 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <div class="links"><a href="https://www.npmjs.com/package/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm ↗</a><a href="https://npm-stat.com/charts.html?package=react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm-stat ↗</a><a href="https://github.com/chandana-galgali/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">source ↗</a></div></div></section>
 <section id="skills"><h2>tech-stack</h2><p class="meta sec-sub">// my digital toolkit · drag 'em around, each note stays pinned to its own board</p><div class="grid" id="sg"></div></section>
 <section id="wins"><h2>achievements</h2><p class="meta sec-sub">// the shiny stuff · grant checks, hackathon wins & gold medals</p>
-<div class="card rv"><div class="ph" data-img="assets/climate-hackathon.jpg,assets/climate-hackathon.jpg">📸 drop your hackathon win photo → assets/climate-hackathon.jpg</div>
+<div class="card rv win-card">
+<div class="ph" data-img="assets/climate-hackathon/img-1.jpg,assets/climate-hackathon/img-2.jpg"></div>
+<div class="win-body">
 <h3>🏆 First Place — Climate Hackathon 2024</h3><p class="meta">Issued by the U.S. Consulate General (Mumbai) &amp; Ekonnect Knowledge Foundation</p>
-<ul><li>Led backend development in a 4-person team; won among 150+ teams.</li><li>Awarded a ₹1,50,000 grant to implement the solution across the 65-acre campus (39,000+ students) under “Towards Green Campuses” initiative.</li></ul></div>
-<div class="card rv" style="margin-top:20px"><div class="ph" data-img="assets/gold-medal.jpg,assets/gold-medal.jpg">📸 drop your gold medal win photo → assets/gold-medal.jpg</div>
-<h3>🥇 Gold Medal — Batch of 2026</h3><p class="meta">Department of Information Technology, K J Somaiya College of Engineering</p>
-<ul><li>Awarded a Gold medal as the Department Topper with a CGPA of 9.67/10.</li></ul></div>
+<ul><li>Led backend development in a 4-person team, outperforming 150+ competing teams to secure 1st place.</li><li>Awarded a ₹1,50,000 grant to deploy the AI-powered hyperlocal air quality monitoring platform across the 65-acre campus (39,000+ students) under the “Towards Green Campuses” initiative.</li></ul>
+</div>
+</div>
+<div class="card rv win-card" style="margin-top:20px">
+<div class="ph" data-img="assets/convocation/img-1.jpg,assets/convocation/img-2.jpg"></div>
+<div class="win-body">
+<h3>🥇 Gold Medal & Department Rank 1 — Batch of 2026</h3><p class="meta">Department of Information Technology, K J Somaiya College of Engineering</p>
+<ul><li>Awarded a Gold Medal for graduating as the Department Topper with Rank #1 in the IT department, with a 9.67 cumulative GPA</li></ul>
+</div>
+</div>
 </section>
 <section id="kind">
 <div class="sec-hd">
@@ -353,7 +375,7 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <div id="bar"></div><span id="pct">0%</span><div id="cord" title="pull me"></div>
 <div id="pal"><div><input id="pi" placeholder="type a command… (esc to close)"><span id="pl"></span></div></div>
 <div id="bot"><span id="zz">z z</span><div id="bp"><b>bit 🤖</b><p id="ba">Hi, I'm bit! Ask me something about Chandana.</p><span id="bq"></span></div><button id="bb" aria-label="chat bot">🤖</button></div>
-<footer>© 2026 Chandana Galgali · hand-built with only HTML, CSS &amp; JS lol<br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
+<footer>© 2026 Chandana Galgali · Built with only HTML, CSS & JS<br><span class="footer-easter-egg">Rome wasn't built in a day, but this site sure was ;)</span><br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
 <script>
 const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/chandana-galgali',em:'mailto:chandana.galgali@gmail.com',ph:'tel:+919870776977',orc:'https://orcid.org/0009-0006-8524-809X'};
 const links=[['GitHub',L.gh],['LinkedIn',L.li],['Email',L.em]];
@@ -394,9 +416,9 @@ tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:
 vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+3) ↓'};
 const R=n=>L.gh+'/'+n;
 const pr=[
-['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality','🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025','CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring','pollution-map.png','1000m → 10m','spatial resolution · 88.88% acc'],
-['Voice-Enabled Geospatial UI','ISRO Bharatiya Antariksh Hackathon 2024','Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],'Voice-Enabled-Geospatial-UI','voice-ui.jpg','<600ms','speech-to-text latency · 94.5% intent'],
+['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality','🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025','CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring','pollution-map.png,pollution-map.png','1000m → 10m','spatial resolution · 88.88% acc'],
 ['Text to AR/VR','Jan 2025–Apr 2025','LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',['Python','Django','LLM','RAG','Unity'],'Text-to-AR-VR-Visualizing-Numerical-Data','ar-vr.jpg','88.89%','pipeline accuracy · 3D scene gen'],
+['Voice-Enabled Geospatial UI','ISRO Bharatiya Antariksh Hackathon 2024','Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],'Voice-Enabled-Geospatial-UI','voice-ui.jpg','<600ms','speech-to-text latency · 94.5% intent'],
 ['Automated Caption Generation for Jewellery Images','Jul 2025–Oct 2025','VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',['Python','PyTorch','VGG-16','GRU','FastAPI','React'],'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images','caption.png','90.44%','captioning accuracy · 94.62% det']];
 pg.innerHTML=pr.map(p=>{
 const imgAttr=Array.isArray(p[5])?`data-imgs="${p[5].map(x=>'assets/'+x).join(',')}"`:`data-img="assets/${p[5]}"`;
@@ -409,29 +431,50 @@ const slug={Python:'python',JavaScript:'javascript',TypeScript:'typescript','C++
 const bc=['#5eead4','#a78bfa','#f9a8d4','#fbbf24','#60a5fa','#86efac'];
 sg.innerHTML=Object.entries(sk).map(([k,v],bi)=>`<div class="bd" style="--c:${bc[bi%6]}"><h3>${k}</h3><div class="nn">${v.split(', ').map((n,j)=>{const b=n.split(' (')[0],z=slug[b];return `<div class="sn" style="--r:${((j*7+bi*3)%9)-4}deg"><i>${z?`<img alt="" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${z}/${z}-original.svg" onerror="this.parentNode.textContent='${b.slice(0,2)}'">`:b.slice(0,2)}</i>${n}</div>`}).join('')}</div></div>`).join('');
 const certsData=[
-{name:'Hardware Security',issuer:'University of Maryland',date:'Apr 2026',id:'MWQQCWO500WG',url:'https://www.coursera.org/account/accomplishments/records/MWQQCWO500WG',cat:'Cybersecurity & Cloud'},
-{name:'Big Data, Genes, and Medicine',issuer:'State University of New York',date:'Apr 2026',id:'2ZDWE67WRTE8',url:'https://www.coursera.org/account/accomplishments/records/2ZDWE67WRTE8',cat:'AI & Data'},
-{name:'Blockchain Security Advanced Protection',issuer:'LearnQuest',date:'Apr 2026',id:'1MMSBFJ55FNZ',url:'https://www.coursera.org/account/accomplishments/records/1MMSBFJ55FNZ',cat:'Blockchain & Web3'},
-{name:'Decentralized Applications (Dapps)',issuer:'University at Buffalo',date:'Apr 2026',id:'93Y65IOJ8D26',url:'https://www.coursera.org/account/accomplishments/records/93Y65IOJ8D26',cat:'Blockchain & Web3'},
-{name:'Smart Contracts',issuer:'University at Buffalo',date:'Apr 2026',id:'CEQLCSQHIXT2',url:'https://www.coursera.org/account/accomplishments/records/CEQLCSQHIXT2',cat:'Blockchain & Web3'},
-{name:'Intro to Generative AI for Data Analysis',issuer:'Microsoft',date:'Sep 2025',id:'INJLQCPBSPPX',url:'https://www.coursera.org/account/accomplishments/records/INJLQCPBSPPX',cat:'AI & Data'},
-{name:'Modeling of Autonomous Systems',issuer:'CU Boulder',date:'Sep 2025',id:'YVK3JHKRIZ61',url:'https://www.coursera.org/account/accomplishments/records/YVK3JHKRIZ61',cat:'AI & Data'},
-{name:'Intro to Microsoft Azure Cloud Services',issuer:'Microsoft',date:'Sep 2025',id:'V0TOQ4Y7QUO5',url:'https://www.coursera.org/account/accomplishments/records/V0TOQ4Y7QUO5',cat:'Cybersecurity & Cloud'},
-{name:'Introduction to Computer Vision',issuer:'CU Boulder',date:'Sep 2025',id:'Q4SYXFFHN5B7',url:'https://www.coursera.org/account/accomplishments/records/Q4SYXFFHN5B7',cat:'AI & Data'},
-{name:'Blockchain Basics',issuer:'University at Buffalo',date:'Feb 2025',id:'5ESXFVTBYINF',url:'https://www.coursera.org/account/accomplishments/records/5ESXFVTBYINF',cat:'Blockchain & Web3'},
+{name:'Introduction to Generative AI for Data Analysis',issuer:'Microsoft',date:'Sep 2025',id:'INJLQCPBSPPX',url:'https://www.coursera.org/account/accomplishments/records/INJLQCPBSPPX',cat:'AI & Data'},
+{name:'Introduction to Computer Vision',issuer:'University of Colorado Boulder',date:'Sep 2025',id:'Q4SYXFFHN5B7',url:'https://www.coursera.org/account/accomplishments/records/Q4SYXFFHN5B7',cat:'AI & Data'},
+{name:'Java Programming: Arrays, Lists, & Structured Data',issuer:'Duke University',date:'Feb 2025',id:'QK4KW443E5BR',url:'https://www.coursera.org/account/accomplishments/records/QK4KW443E5BR',cat:'Software & Systems'},
 {name:'Java Programming: Solving Problems with Software',issuer:'Duke University',date:'Feb 2025',id:'Y8NO4BXR056W',url:'https://www.coursera.org/account/accomplishments/records/Y8NO4BXR056W',cat:'Software & Systems'},
-{name:'Java Programming: Arrays, Lists & Data',issuer:'Duke University',date:'Feb 2025',id:'QK4KW443E5BR',url:'https://www.coursera.org/account/accomplishments/records/QK4KW443E5BR',cat:'Software & Systems'},
-{name:'Financial Accounting Fundamentals',issuer:'University of Virginia',date:'Feb 2025',id:'J7T0BF5VD041',url:'https://www.coursera.org/account/accomplishments/records/J7T0BF5VD041',cat:'Finance & Biz'},
-{name:'Digital Product Management: Fundamentals',issuer:'University of Virginia',date:'Feb 2025',id:'RXBYG6EXOG81',url:'https://www.coursera.org/account/accomplishments/records/RXBYG6EXOG81',cat:'Finance & Biz'},
-{name:'Understanding Financial Markets',issuer:'University of Geneva',date:'Feb 2025',id:'NYH9XJZGAYDC',url:'https://www.coursera.org/account/accomplishments/records/NYH9XJZGAYDC',cat:'Finance & Biz'},
-{name:'Learn Spanish: Basic Spanish Vocabulary',issuer:'UC Davis',date:'Oct 2024',id:'XHZF8MVPQLII',url:'https://www.coursera.org/account/accomplishments/specialization/certificate/XHZF8MVPQLII',cat:'Languages'},
 {name:'Introduction to DevOps',issuer:'IBM',date:'Oct 2024',id:'QVEV3I8QXCOO',url:'https://www.coursera.org/account/accomplishments/records/QVEV3I8QXCOO',cat:'Cybersecurity & Cloud'},
+{name:'Introduction to Microsoft Azure Cloud Services',issuer:'Microsoft',date:'Sep 2025',id:'V0TOQ4Y7QUO5',url:'https://www.coursera.org/account/accomplishments/records/V0TOQ4Y7QUO5',cat:'Cybersecurity & Cloud'},
+{name:'Decentralized Applications (Dapps)',issuer:'University at Buffalo',date:'Apr 2026',id:'93Y65IOJ8D26',url:'https://www.coursera.org/account/accomplishments/records/93Y65IOJ8D26',cat:'Blockchain & Web3'},
+{name:'Big Data, Genes, and Medicine',issuer:'The State University of New York',date:'Apr 2026',id:'2ZDWE67WRTE8',url:'https://www.coursera.org/account/accomplishments/records/2ZDWE67WRTE8',cat:'AI & Data'},
+{name:'Modeling of Autonomous Systems',issuer:'University of Colorado Boulder',date:'Sep 2025',id:'YVK3JHKRIZ61',url:'https://www.coursera.org/account/accomplishments/records/YVK3JHKRIZ61',cat:'AI & Data'},
+{name:'Computer Fundamentals',issuer:'Vidyalankar Polytechnic',date:'Jun 2020',id:'DBYF0K-CE000023',url:'https://drive.google.com/file/d/1T2z5lSkNH3ozWEmBkEVVGhALMLkXMD_v/view?usp=drivesdk',cat:'Software & Systems'},
 {name:'Programming Fundamentals in Kotlin',issuer:'Meta',date:'Oct 2024',id:'9PYEFOHY3BNH',url:'https://www.coursera.org/account/accomplishments/records/9PYEFOHY3BNH',cat:'Software & Systems'},
-{name:'Intro to Android Mobile App Development',issuer:'Meta',date:'Oct 2024',id:'6MIBO10FPUKG',url:'https://www.coursera.org/account/accomplishments/records/6MIBO10FPUKG',cat:'Software & Systems'},
+{name:'Introduction to Android Mobile Application Development',issuer:'Meta',date:'Oct 2024',id:'6MIBO10FPUKG',url:'https://www.coursera.org/account/accomplishments/records/6MIBO10FPUKG',cat:'Software & Systems'},
 {name:'Foundations of Cybersecurity',issuer:'Google',date:'Oct 2024',id:'WNMRN7NJKEJ3',url:'https://www.coursera.org/account/accomplishments/records/WNMRN7NJKEJ3',cat:'Cybersecurity & Cloud'},
 {name:'Play It Safe: Manage Security Risks',issuer:'Google',date:'Oct 2024',id:'JR6D7J2PKGIU',url:'https://www.coursera.org/account/accomplishments/records/JR6D7J2PKGIU',cat:'Cybersecurity & Cloud'},
-{name:'Computer Fundamentals',issuer:'Vidyalankar Polytechnic',date:'Jun 2020',id:'DBYF0K-CE000023',url:'https://drive.google.com/file/d/1T2z5lSkNH3ozWEmBkEVVGhALMLkXMD_v/view?usp=drivesdk',cat:'Software & Systems'}
+{name:'Hardware Security',issuer:'University of Maryland',date:'Apr 2026',id:'MWQQCWO500WG',url:'https://www.coursera.org/account/accomplishments/records/MWQQCWO500WG',cat:'Cybersecurity & Cloud'},
+{name:'Blockchain Basics',issuer:'University at Buffalo',date:'Feb 2025',id:'5ESXFVTBYINF',url:'https://www.coursera.org/account/accomplishments/records/5ESXFVTBYINF',cat:'Blockchain & Web3'},
+{name:'Smart Contracts',issuer:'University at Buffalo',date:'Apr 2026',id:'CEQLCSQHIXT2',url:'https://www.coursera.org/account/accomplishments/records/CEQLCSQHIXT2',cat:'Blockchain & Web3'},
+{name:'Blockchain Security Advanced Protection',issuer:'LearnQuest',date:'Apr 2026',id:'1MMSBFJ55FNZ',url:'https://www.coursera.org/account/accomplishments/records/1MMSBFJ55FNZ',cat:'Blockchain & Web3'},
+{name:'Financial Accounting Fundamentals',issuer:'University of Virginia',date:'Feb 2025',id:'J7T0BF5VD041',url:'https://www.coursera.org/account/accomplishments/records/J7T0BF5VD041',cat:'Finance & Biz'},
+{name:'Digital Product Management: Modern Fundamentals',issuer:'University of Virginia',date:'Feb 2025',id:'RXBYG6EXOG81',url:'https://www.coursera.org/account/accomplishments/records/RXBYG6EXOG81',cat:'Finance & Biz'},
+{name:'Understanding Financial Markets',issuer:'University of Geneva',date:'Feb 2025',id:'NYH9XJZGAYDC',url:'https://www.coursera.org/account/accomplishments/records/NYH9XJZGAYDC',cat:'Finance & Biz'},
+{name:'Learn Spanish: Basic Spanish Vocabulary',issuer:'University of California Davis',date:'Oct 2024',id:'XHZF8MVPQLII',url:'https://www.coursera.org/account/accomplishments/specialization/certificate/XHZF8MVPQLII',cat:'Languages'}
 ];
+const certLogos={
+'Microsoft':'microsoft.com',
+'CU Boulder':'colorado.edu',
+'Duke University':'duke.edu',
+'IBM':'ibm.com',
+'University at Buffalo':'buffalo.edu',
+'State University of New York':'suny.edu',
+'Vidyalankar Polytechnic':'vpt.edu.in',
+'Meta':'meta.com',
+'Google':'google.com',
+'University of Maryland':'umd.edu',
+'LearnQuest':'learnquest.com',
+'University of Virginia':'virginia.edu',
+'University of Geneva':'unige.ch',
+'UC Davis':'ucdavis.edu'
+};
+function certLogoHtml(issuer){
+const domain=certLogos[issuer]||'coursera.org';
+const initials=issuer.split(/\s+/).map(w=>w[0]).filter(c=>/[A-Za-z]/.test(c)).slice(0,2).join('').toUpperCase()||'C';
+return `<img class="cert-issuer-logo" alt="" loading="lazy" src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" onerror="this.outerHTML='<span class=\\'cert-issuer-fallback\\'>${initials}</span>'">`;
+}
 const cats=['All',...new Set(certsData.map(c=>c.cat))];
 let activeCat='All',showAllCerts=false;
 function renderCerts(){
@@ -439,7 +482,7 @@ const filtered=certsData.filter(c=>activeCat=='All'||c.cat==activeCat);
 ccCount.textContent=`// ${filtered.length} of ${certsData.length} credentials`;
 cg.innerHTML=filtered.map((c,i)=>`<div class="cert-card rv${(!showAllCerts&&activeCat=='All'&&i>=6)?' hid':''}">
 <div><div class="cert-top"><span class="cert-tag">${c.cat}</span><span class="cert-date">${c.date}</span></div>
-<h3 class="cert-title">${c.name}</h3><p class="cert-issuer">${c.issuer}</p></div>
+<h3 class="cert-title">${c.name}</h3><div class="cert-issuer-row">${certLogoHtml(c.issuer)}<span class="cert-issuer">${c.issuer}</span></div></div>
 <div class="cert-footer"><span class="cert-id" title="Credential ID">ID: ${c.id.length>14?c.id.slice(0,12)+'…':c.id}</span><a class="cert-link" href="${c.url}" target="_blank" rel="noopener">verify ↗</a></div>
 </div>`).join('');
 vc.style.display=(activeCat=='All')?'block':'none';
@@ -503,8 +546,17 @@ dots.querySelectorAll('.ph-dot').forEach((dt,i)=>dt.classList.toggle('act',i===c
 }
 function startTimer(){timer=setInterval(()=>goTo((cur+1)%list.length),4000)}
 function resetTimer(){clearInterval(timer);startTimer()}
-d.addEventListener('mouseenter',()=>clearInterval(timer));
-d.addEventListener('mouseleave',()=>resetTimer());
+d.addEventListener('mouseenter',()=>{clearInterval(timer);d.classList.add('show-controls')});
+d.addEventListener('mouseleave',()=>{resetTimer();d.classList.remove('show-controls')});
+let ctrlTimer=null;
+d.addEventListener('click',e=>{
+if(e.target.closest('.ph-btn,.ph-dot'))return;
+d.classList.toggle('show-controls');
+clearTimeout(ctrlTimer);
+if(d.classList.contains('show-controls')){
+ctrlTimer=setTimeout(()=>d.classList.remove('show-controls'),3500);
+}
+});
 let tx0=0;
 d.addEventListener('touchstart',e=>{tx0=e.changedTouches[0].screenX},{passive:true});
 d.addEventListener('touchend',e=>{
@@ -628,6 +680,36 @@ ms.oninput=()=>st.textContent='PAYLOAD_READY';
 tx.onclick=()=>{const b=ms.value+(em2.value?'\n\nReply to: '+em2.value:'');st.textContent='TRANSMITTING...';location.href='mailto:chandana.galgali@gmail.com?subject='+encodeURIComponent(tp3)+'&body='+encodeURIComponent(b);setTimeout(()=>st.textContent='TRANSMITTED ✓',800)};
 cord.onclick=()=>{cord.classList.add('p');setTimeout(()=>{cord.classList.remove('p');th.click()},180)};
 addEventListener('scroll',()=>{const p=Math.round(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*100);bar.style.width=p+'%';pct.textContent=p+'%'},{passive:true});
+/* scrollspy: highlight active section in navbar as user scrolls */
+(()=>{
+const navLinks=Array.from(document.querySelectorAll('#nv a[href^="#"]:not(#cgLogo)'));
+const secMap=navLinks.map(a=>({link:a,id:a.getAttribute('href').slice(1),sec:document.getElementById(a.getAttribute('href').slice(1))})).filter(x=>x.sec);
+let curActive=null;
+function updateSpy(){
+const scrollPos=window.scrollY+90;
+let active=secMap[0];
+for(let i=0;i<secMap.length;i++){
+if(secMap[i].sec.offsetTop<=scrollPos){active=secMap[i]}
+}
+if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-40){
+active=secMap[secMap.length-1];
+}
+if(active&&active!==curActive){
+if(curActive)curActive.link.classList.remove('act');
+active.link.classList.add('act');
+curActive=active;
+/* ensure active tab is comfortably in view in the horizontal scrolling nav bar */
+const nvEl=document.getElementById('nv');
+const lRect=active.link.getBoundingClientRect(), nRect=nvEl.getBoundingClientRect();
+if(lRect.left<nRect.left+20||lRect.right>nRect.right-20){
+active.link.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+}
+}
+window.addEventListener('scroll',updateSpy,{passive:true});
+window.addEventListener('resize',updateSpy);
+setTimeout(updateSpy,100);
+})();
 const ck=()=>clk.textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'});ck();setInterval(ck,1000);
 let nt;nv.addEventListener('scroll',()=>{const sw=nv.scrollWidth-nv.clientWidth;if(sw<=0){nsb.classList.remove('on');return}const w=Math.max(16,Math.round((nv.clientWidth/nv.scrollWidth)*100)),x=Math.round((nv.scrollLeft/sw)*(100-w));nsb.style.setProperty('--nw',w+'%');nsb.style.setProperty('--nx',x+'%');nsb.classList.add('on');clearTimeout(nt);nt=setTimeout(()=>nsb.classList.remove('on'),650)},{passive:true});
 if('scrollRestoration' in history){history.scrollRestoration='manual'}
