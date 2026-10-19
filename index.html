@@ -429,7 +429,7 @@ const pr=[
 'CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',
 ['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],
 'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring',
-'pollution-map.png,pollution-map.png',
+['assets/projects/pollutant-map/img-1.png'],
 '1000m → 10m',
 'spatial resolution · 88.88% acc',
 [
@@ -441,7 +441,7 @@ const pr=[
 'LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',
 ['Python','Django','LLM','RAG','Unity'],
 'Text-to-AR-VR-Visualizing-Numerical-Data',
-'ar-vr.jpg',
+['assets/projects/ar-vr/img-1.jpg'],
 '88.89%',
 'pipeline accuracy · 3D scene gen',
 [
@@ -452,7 +452,7 @@ const pr=[
 'Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',
 ['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],
 'Voice-Enabled-Geospatial-UI',
-'voice-ui.jpg',
+['assets/projects/voice-ui/img-1.jpg'],
 '<600ms',
 'speech-to-text latency · 94.5% intent',
 [
@@ -464,20 +464,23 @@ const pr=[
 'VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',
 ['Python','PyTorch','VGG-16','GRU','FastAPI','React'],
 'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images',
-'caption.png',
+['assets/projects/caption-gen/img-1.png'],
 '90.44%',
 'captioning accuracy · 94.62% det',
 [
   {label:'source ↗',url:R('Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images')}
 ]]
 ];
+const normImg=s=>(s.startsWith('assets/')||s.startsWith('http'))?s:'assets/'+s;
 pg.innerHTML=pr.map(p=>{
-const imgAttr=Array.isArray(p[5])?`data-imgs="${p[5].map(x=>'assets/'+x).join(',')}"`:`data-img="assets/${p[5]}"`;
+const rawImgs=Array.isArray(p[5])?p[5]:p[5].split(',').map(s=>s.trim()).filter(Boolean);
+const resolved=rawImgs.map(normImg);
+const imgAttr=resolved.length>1?`data-imgs="${resolved.join(',')}"`:`data-img="${resolved[0]}"`;
 const btnList=(p[8]||[{label:'source ↗',url:R(p[4])}]).filter(b=>b.url||b.pri).map(b=>{
   const href=b.url?`href="${b.url}" target="_blank" rel="noopener"`:'href="#" onclick="return false;" style="opacity:.65;cursor:not-allowed;" title="Demo link coming soon"';
   return `<a class="${b.pri?'pri':''}" ${href}>${b.label}</a>`;
 }).join('');
-return `<div class="card rv"><div class="ph" ${imgAttr}>🖼 screenshot → assets/${Array.isArray(p[5])?p[5][0]:p[5]}</div><div class="p-impact"><b>${p[6]}</b><span>${p[7]}</span></div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links">${btnList}</div></div>`;
+return `<div class="card rv"><div class="ph" ${imgAttr}>🖼 screenshot → ${resolved[0]}</div><div class="p-impact"><b>${p[6]}</b><span>${p[7]}</span></div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links">${btnList}</div></div>`;
 }).join('');
 const mp=[['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python'],['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript'],['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript'],['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python'],['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python'],['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter'],['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript'],['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP'],['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter'],['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter'],['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python'],['K-Means-Clustering','Retail customer segmentation.','Python'],['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python'],['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter'],['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML'],['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web']];
 mg.innerHTML=mp.map(p=>`<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${p[2]!='Web'?`<a href="${R(p[0])}" target="_blank" rel="noopener">repo ↗</a>`:''}</div>`).join('');
@@ -557,9 +560,9 @@ const list=raw.split(',').map(s=>s.trim()).filter(Boolean);
 if(!list.length)return;
 d.textContent='';
 if(list.length===1){
-const im=new Image();im.loading='lazy';im.alt='';
-im.onload=()=>d.replaceChildren(im);
+const im=new Image();im.loading='eager';im.alt='';
 im.src=list[0];
+d.replaceChildren(im);
 return;
 }
 const track=document.createElement('div');
