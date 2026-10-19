@@ -70,7 +70,15 @@ ul{padding-left:18px}li{margin:5px 0;color:color-mix(in srgb,var(--fg) 88%,trans
 details{margin-top:8px}summary{cursor:pointer;color:var(--a);font-size:13px}
 .rv{opacity:0;transform:translateY(18px);transition:.6s}.rv.in{opacity:1;transform:none}
 footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;z-index:1}
-.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.links a{border:1px solid var(--bd);padding:6px 12px;border-radius:8px;background:var(--card)}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.links a{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid var(--bd);padding:6px 14px;border-radius:8px;background:var(--card);color:var(--fg);font-size:12.5px;font-weight:500;transition:.2s;text-decoration:none}
+.links a:hover{border-color:var(--a);color:var(--a);transform:translateY(-1px);text-decoration:none}
+.links a.pri{background:color-mix(in srgb,var(--a) 15%,var(--card));border-color:color-mix(in srgb,var(--a) 50%,transparent);color:var(--a);font-weight:600}
+.links a.pri:hover{background:var(--a);color:var(--bg);box-shadow:0 0 12px var(--a)}
+@media(max-width:520px){
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.links a{width:100%;padding:8px 10px;text-align:center}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 .card{position:relative;overflow:hidden}.card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:.3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--a) 14%,transparent),transparent)}.card:hover::after{opacity:1}
@@ -375,7 +383,7 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <div id="bar"></div><span id="pct">0%</span><div id="cord" title="pull me"></div>
 <div id="pal"><div><input id="pi" placeholder="type a command… (esc to close)"><span id="pl"></span></div></div>
 <div id="bot"><span id="zz">z z</span><div id="bp"><b>bit 🤖</b><p id="ba">Hi, I'm bit! Ask me something about Chandana.</p><span id="bq"></span></div><button id="bb" aria-label="chat bot">🤖</button></div>
-<footer>© 2026 Chandana Galgali · Built with only HTML, CSS & JS<br><span class="footer-easter-egg">Rome wasn't built in a day, but this site sure was ;)</span><br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
+<footer>© 2026 Chandana Galgali · Powered by coffee<br><span class="p">●</span> ONLINE · IST <span id="clk"></span> · <a href="#about">↑ top</a></footer>
 <script>
 const L={li:'https://linkedin.com/in/chandana-galgali',gh:'https://github.com/chandana-galgali',em:'mailto:chandana.galgali@gmail.com',ph:'tel:+919870776977',orc:'https://orcid.org/0009-0006-8524-809X'};
 const links=[['GitHub',L.gh],['LinkedIn',L.li],['Email',L.em]];
@@ -416,13 +424,60 @@ tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:
 vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+3) ↓'};
 const R=n=>L.gh+'/'+n;
 const pr=[
-['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality','🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025','CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring','pollution-map.png,pollution-map.png','1000m → 10m','spatial resolution · 88.88% acc'],
-['Text to AR/VR','Jan 2025–Apr 2025','LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',['Python','Django','LLM','RAG','Unity'],'Text-to-AR-VR-Visualizing-Numerical-Data','ar-vr.jpg','88.89%','pipeline accuracy · 3D scene gen'],
-['Voice-Enabled Geospatial UI','ISRO Bharatiya Antariksh Hackathon 2024','Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],'Voice-Enabled-Geospatial-UI','voice-ui.jpg','<600ms','speech-to-text latency · 94.5% intent'],
-['Automated Caption Generation for Jewellery Images','Jul 2025–Oct 2025','VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',['Python','PyTorch','VGG-16','GRU','FastAPI','React'],'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images','caption.png','90.44%','captioning accuracy · 94.62% det']];
+['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality',
+'🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025',
+'CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',
+['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],
+'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring',
+'pollution-map.png,pollution-map.png',
+'1000m → 10m',
+'spatial resolution · 88.88% acc',
+[
+  {label:'live demo ↗',url:'',pri:true},
+  {label:'source ↗',url:R('AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring')}
+]],
+['Text to AR/VR',
+'Jan 2025–Apr 2025',
+'LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',
+['Python','Django','LLM','RAG','Unity'],
+'Text-to-AR-VR-Visualizing-Numerical-Data',
+'ar-vr.jpg',
+'88.89%',
+'pipeline accuracy · 3D scene gen',
+[
+  {label:'source ↗',url:R('Text-to-AR-VR-Visualizing-Numerical-Data')}
+]],
+['Voice-Enabled Geospatial UI',
+'ISRO Bharatiya Antariksh Hackathon 2024',
+'Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',
+['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],
+'Voice-Enabled-Geospatial-UI',
+'voice-ui.jpg',
+'<600ms',
+'speech-to-text latency · 94.5% intent',
+[
+  {label:'live demo ↗',url:'https://voice-enabled-geospatial-ui.netlify.app',pri:true},
+  {label:'source ↗',url:R('Voice-Enabled-Geospatial-UI')}
+]],
+['Automated Caption Generation for Jewellery Images',
+'Jul 2025–Oct 2025',
+'VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',
+['Python','PyTorch','VGG-16','GRU','FastAPI','React'],
+'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images',
+'caption.png',
+'90.44%',
+'captioning accuracy · 94.62% det',
+[
+  {label:'source ↗',url:R('Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images')}
+]]
+];
 pg.innerHTML=pr.map(p=>{
 const imgAttr=Array.isArray(p[5])?`data-imgs="${p[5].map(x=>'assets/'+x).join(',')}"`:`data-img="assets/${p[5]}"`;
-return `<div class="card rv"><div class="ph" ${imgAttr}>🖼 screenshot → assets/${Array.isArray(p[5])?p[5][0]:p[5]}</div><div class="p-impact"><b>${p[6]}</b><span>${p[7]}</span></div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links"><a href="${R(p[4])}" target="_blank" rel="noopener">source ↗</a></div></div>`;
+const btnList=(p[8]||[{label:'source ↗',url:R(p[4])}]).filter(b=>b.url||b.pri).map(b=>{
+  const href=b.url?`href="${b.url}" target="_blank" rel="noopener"`:'href="#" onclick="return false;" style="opacity:.65;cursor:not-allowed;" title="Demo link coming soon"';
+  return `<a class="${b.pri?'pri':''}" ${href}>${b.label}</a>`;
+}).join('');
+return `<div class="card rv"><div class="ph" ${imgAttr}>🖼 screenshot → assets/${Array.isArray(p[5])?p[5][0]:p[5]}</div><div class="p-impact"><b>${p[6]}</b><span>${p[7]}</span></div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links">${btnList}</div></div>`;
 }).join('');
 const mp=[['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python'],['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript'],['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript'],['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python'],['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python'],['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter'],['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript'],['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP'],['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter'],['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter'],['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python'],['K-Means-Clustering','Retail customer segmentation.','Python'],['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python'],['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter'],['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML'],['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web']];
 mg.innerHTML=mp.map(p=>`<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${p[2]!='Web'?`<a href="${R(p[0])}" target="_blank" rel="noopener">repo ↗</a>`:''}</div>`).join('');
