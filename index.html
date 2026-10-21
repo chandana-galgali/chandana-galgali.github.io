@@ -58,15 +58,37 @@ ul{padding-left:18px}li{margin:5px 0;color:color-mix(in srgb,var(--fg) 88%,trans
 .ph-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:3;padding:4px 8px;border-radius:99px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);border:1px solid color-mix(in srgb,var(--bd) 60%,transparent)}
 .ph-dot{width:7px;height:7px;border-radius:50%;background:var(--bd);cursor:pointer;transition:.25s;padding:0;border:0}
 .ph-dot.act{background:var(--a);transform:scale(1.3);box-shadow:0 0 8px var(--a)}
+/* Flagship Projects horizontal split layout (matches Achievements / Wins) */
+#pg{display:flex;flex-direction:column;gap:20px}
+.proj-card{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:stretch}
+.proj-media{display:flex;flex-direction:column;justify-content:flex-start}
+.proj-media .ph{margin-bottom:12px;aspect-ratio:16/9;width:100%}
+.proj-body{min-width:0;display:flex;flex-direction:column}
+.proj-body h3{font:700 17px 'Space Grotesk',sans-serif;margin-bottom:4px;line-height:1.35}
+.proj-body .meta{font-size:12px;color:var(--mut);margin-bottom:6px}
+.proj-body .tags{margin:6px 0 10px}
+.proj-body .links{margin-top:auto;padding-top:12px}
+.p-impact{display:flex;align-items:baseline;gap:8px;margin-bottom:0}.p-impact b{font:700 20px 'Space Grotesk',sans-serif;color:var(--a);line-height:1}.p-impact span{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.p-desc{font-size:13px;line-height:1.6;color:var(--fg);margin:4px 0 8px;text-align:justify;text-justify:inter-word}
+.p-details{margin-top:8px;border-top:1px dashed var(--bd);padding-top:8px}
+
 /* Achievement / Wins cards compact side-by-side layout with locked 16:9 ratio */
-.win-card{display:grid;grid-template-columns:360px 1fr;gap:22px;align-items:center}
+.win-card{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:center}
 .win-card .ph{margin-bottom:0;aspect-ratio:16/9;width:100%;height:auto}
 .win-body{min-width:0}
-@media(max-width:820px){
-.win-card{grid-template-columns:1fr;gap:16px}
+@media(max-width:860px){
+.proj-card{grid-template-columns:1fr;gap:14px}
+.proj-media .ph{margin-bottom:10px}
+.win-card{grid-template-columns:1fr;gap:14px}
 .win-card .ph{aspect-ratio:16/9;width:100%}
 }
-.p-impact{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}.p-impact b{font:700 22px 'Space Grotesk',sans-serif;color:var(--a);line-height:1}.p-impact span{font-size:11.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.p-details summary{font-size:12px;font-weight:600;color:var(--a);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;user-select:none;padding:3px 8px;border-radius:6px;background:color-mix(in srgb,var(--a) 10%,transparent);border:1px solid color-mix(in srgb,var(--a) 30%,transparent);transition:.2s}
+.p-details summary:hover{background:color-mix(in srgb,var(--a) 20%,transparent);border-color:var(--a)}
+.p-details summary::-webkit-details-marker{display:none}
+.p-details summary::after{content:'↓';font-size:11px}
+.p-details[open] summary::after{content:'↑'}
+.p-details ul{padding-left:18px;margin:10px 0 6px}
+.p-details li{font-size:12.5px;line-height:1.55;margin:5px 0;color:color-mix(in srgb,var(--fg) 85%,transparent);text-align:justify;text-justify:inter-word}
 details{margin-top:8px}summary{cursor:pointer;color:var(--a);font-size:13px}
 .rv{opacity:0;transform:translateY(18px);transition:.6s}.rv.in{opacity:1;transform:none}
 footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;z-index:1}
@@ -424,63 +446,90 @@ tl.insertAdjacentHTML('afterend','<button class="btn" id="vx" style="margin-top:
 vx.onclick=()=>{const h=tl.querySelector('.x').classList.contains('hid');tl.querySelectorAll('.x').forEach(c=>c.classList.toggle('hid',!h));vx.textContent=h?'show less ↑':'view all experience (+3) ↓'};
 const R=n=>L.gh+'/'+n;
 const pr=[
-['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality',
-'🏆 1st Place, Climate Hackathon 2024 · Sep 2024–Jan 2025',
-'CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 via Google Earth Engine; downscales 1000m → 10m with 88.88% accuracy for urban hotspot identification. React + Flask app.',
-['Python','Flask','CNN','TensorFlow','Google Earth Engine','React'],
+['AI-Powered Multi-Pollutant Mapping for Hyperlocal Air Quality Monitoring',
+'🏆 1st Place + ₹1.5 Lakh Grant, Climate Hackathon 2024',
+'CNN super-resolution pipeline fusing Sentinel-5P (NO₂) and Sentinel-2 satellite imagery via Google Earth Engine to downscale coarse atmospheric data from 1000m to 10m for hyperlocal pollution hotspot identification.',
+[
+  'Fused Sentinel-5P atmospheric observations with Sentinel-2 multi-spectral high-resolution imagery via Google Earth Engine API.',
+  'Engineered a CNN-based super-resolution pipeline applying statistical correlation techniques to downscale coarse 1000m data down to 10m spatial resolution.',
+  'Achieved an 88.88% validation accuracy in identifying hyperlocal urban pollution hotspots for targeted civic and environmental interventions.',
+  'Developed a full-stack interactive dashboard with React.js and Flask backend for real-time visualization and spatial analytics.'
+],
+['Python','Flask','CNN','TensorFlow','GEE','React'],
 'AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring',
 ['assets/projects/pollutant-map/img-1.png'],
 '1000m → 10m',
-'spatial resolution · 88.88% acc',
+'spatial resolution',
 [
   {label:'live demo ↗',url:'',pri:true},
   {label:'source ↗',url:R('AI-Powered-Multi-Pollutant-Mapping-for-Hyperlocal-Air-Quality-Monitoring')}
 ]],
-['Text to AR/VR',
-'Jan 2025–Apr 2025',
-'LLM + custom RAG pipeline over an OGD-curated dataset turns text about numerical data into interactive Unity AR/VR bar/line charts; 88.89% accuracy; edit data live in VR, zoom, filter, hover.',
-['Python','Django','LLM','RAG','Unity'],
-'Text-to-AR-VR-Visualizing-Numerical-Data',
-['assets/projects/ar-vr/img-1.jpg'],
-'88.89%',
-'pipeline accuracy · 3D scene gen',
-[
-  {label:'source ↗',url:R('Text-to-AR-VR-Visualizing-Numerical-Data')}
-]],
-['Voice-Enabled Geospatial UI',
+['Voice-Enabled Geospatial User Interface',
 'ISRO Bharatiya Antariksh Hackathon 2024',
-'Offline Leaflet.js GIS app with in-browser Whisper (Xenova/whisper-base.en, ~73MB) via WebGL, &lt;600ms speech-to-text; intent NLP (94.5%) maps 25+ OSM tags through Overpass &amp; Nominatim; 3km capped queries; jsPDF export.',
-['JavaScript','Transformers.js','WebGL','Leaflet.js','Hugging Face','OpenStreetMap'],
+'Developed a voice-controlled geospatial web application allowing users to navigate maps, discover real-time Points of Interest (POIs) and export spatial data using natural language commands.',
+[
+  'Engineered an offline, in-browser speech-to-text pipeline using a Hugging Face Whisper AI model (Xenova/whisper-base.en) via Transformers.js, coupled with a custom NLP dictionary to map conversational intents to precise OpenStreetMap (OSM) tags.',
+  'Integrated the OSM Overpass API and Nominatim geocoding to dynamically fetch, parse and render live spatial data (Nodes, Ways and Relations) onto a custom Leaflet.js mapping interface based on complex voice queries.',
+  'Optimized server-side spatial query payloads by implementing localized 3km search radiuses and strict data capping, preventing API timeouts and ensuring stable retrieval in high-density urban environments.',
+  'Built a responsive, glassmorphic dashboard featuring dynamic map layer toggling, a manual crosshair pin-dropping tool and a client-side engine (jsPDF) to instantly export mapped POIs with exact coordinates and routing links.'
+],
+['JS','Transformers.js','WebGL','Leaflet.js','OSM'],
 'Voice-Enabled-Geospatial-UI',
 ['assets/projects/voice-ui/img-1.jpg'],
 '<600ms',
-'speech-to-text latency · 94.5% intent',
+'speech-to-text latency',
 [
   {label:'live demo ↗',url:'https://voice-enabled-geospatial-ui.netlify.app',pri:true},
   {label:'source ↗',url:R('Voice-Enabled-Geospatial-UI')}
 ]],
-['Automated Caption Generation for Jewellery Images',
-'Jul 2025–Oct 2025',
-'VGG-16 + GRU encoder-decoder (PyTorch) trained on 32,190 augmented images: 94.62% detection, 90.44% captioning, 1–2s inference via FastAPI + React.',
+['Text to AR/VR: Generating AR/VR Visualization from Textual Description of Numerical Data',
+'Pre-Final Year Capstone Project',
+'Developed a novel, end-to-end spatial computing and generative AI system that transforms unstructured textual descriptions of numerical data into immersive, interactive Augmented Reality (AR) and Virtual Reality (VR) environments.',
+[
+  'Engineered a sequential AI pipeline utilizing a Large Language Model (LLM) to parse unstructured text into structured data (eg. table, json, etc.), followed by a custom Retrieval-Augmented Generation (RAG) framework connected to Unity to manipulate spatial coordinates for AR/VR generation.',
+  'Curated a custom dataset from the Open Government Data (OGD) Platform to train the system to intelligently determine the most suitable visualization (strictly constrained to bar charts and line charts).',
+  'Achieved an 88.89% accuracy rate, validated against government datasets by evaluating the system\'s ability to consistently select the correct AR/VR chart type and accurately map data to the spatial X and Y axes.',
+  'Built an interactive VR interface driven by intermediate JSON data, enabling users to edit data in real-time directly within the VR environment, alongside zooming, filtering, and hover interactions to inspect data labels and values.'
+],
+['Python','Django','LLM','RAG','Unity'],
+'Text-to-AR-VR-Visualizing-Numerical-Data',
+['assets/projects/ar-vr/img-1.jpg'],
+'88.89%',
+'pipeline accuracy',
+[
+  {label:'live demo ↗',url:'',pri:true},
+  {label:'source ↗',url:R('Text-to-AR-VR-Visualizing-Numerical-Data')}
+]],
+['Automated Caption Generation using Encoder-Decoder Model for Targetted Objects (Jewellery Images)',
+'Final Year Capstone Project',
+'Developed an end-to-end computer vision and natural language processing application to automatically detect, classify and generate structured descriptions for intricate jewellery items.',
+[
+  'Engineered a PyTorch and Torchvision deep learning system utilizing an Encoder-Decoder architecture (VGG-16 & GRU).',
+  'Curated, augmented, and preprocessed a dataset of 32,190 images using resizing, tensor conversion and ImageNet normalization.',
+  'Achieved 94.62% accuracy in object detection and 90.44% accuracy in structured caption generation.',
+  'Built a responsive React.js frontend integrated with a FastAPI backend, enabling real-time image processing and inference within 1-2 seconds.'
+],
 ['Python','PyTorch','VGG-16','GRU','FastAPI','React'],
 'Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images',
 ['assets/projects/caption-gen/img-1.png'],
 '90.44%',
-'captioning accuracy · 94.62% det',
+'captioning accuracy',
 [
+  {label:'live demo ↗',url:'',pri:true},
   {label:'source ↗',url:R('Automated-Caption-Generation-using-Encoder-Decoder-Model-for-Jewellery-Images')}
 ]]
 ];
 const normImg=s=>(s.startsWith('assets/')||s.startsWith('http'))?s:'assets/'+s;
 pg.innerHTML=pr.map(p=>{
-const rawImgs=Array.isArray(p[5])?p[5]:p[5].split(',').map(s=>s.trim()).filter(Boolean);
+const rawImgs=Array.isArray(p[6])?p[6]:p[6].split(',').map(s=>s.trim()).filter(Boolean);
 const resolved=rawImgs.map(normImg);
 const imgAttr=resolved.length>1?`data-imgs="${resolved.join(',')}"`:`data-img="${resolved[0]}"`;
-const btnList=(p[8]||[{label:'source ↗',url:R(p[4])}]).filter(b=>b.url||b.pri).map(b=>{
+const btnList=(p[9]||[{label:'source ↗',url:R(p[5])}]).filter(b=>b.url||b.pri).map(b=>{
   const href=b.url?`href="${b.url}" target="_blank" rel="noopener"`:'href="#" onclick="return false;" style="opacity:.65;cursor:not-allowed;" title="Demo link coming soon"';
   return `<a class="${b.pri?'pri':''}" ${href}>${b.label}</a>`;
 }).join('');
-return `<div class="card rv"><div class="ph" ${imgAttr}>🖼 screenshot → ${resolved[0]}</div><div class="p-impact"><b>${p[6]}</b><span>${p[7]}</span></div><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[3])}<p style="font-size:13.5px">${p[2]}</p><div class="links">${btnList}</div></div>`;
+const bullets=p[3]&&p[3].length?`<details class="p-details"><summary>view implementation details</summary><ul>${p[3].map(x=>`<li>${x}</li>`).join('')}</ul></details>`:'';
+return `<div class="card rv proj-card"><div class="proj-media"><div class="ph" ${imgAttr}>🖼 screenshot → ${resolved[0]}</div><div class="p-impact"><b>${p[7]}</b><span>${p[8]}</span></div></div><div class="proj-body"><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[4])}<p class="p-desc">${p[2]}</p>${bullets}<div class="links">${btnList}</div></div></div>`;
 }).join('');
 const mp=[['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python'],['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript'],['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript'],['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python'],['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python'],['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter'],['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript'],['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP'],['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter'],['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter'],['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python'],['K-Means-Clustering','Retail customer segmentation.','Python'],['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python'],['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter'],['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML'],['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web']];
 mg.innerHTML=mp.map(p=>`<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${p[2]!='Web'?`<a href="${R(p[0])}" target="_blank" rel="noopener">repo ↗</a>`:''}</div>`).join('');
