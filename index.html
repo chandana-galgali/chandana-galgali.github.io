@@ -118,8 +118,12 @@ footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;
 nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:none}
 .btn{display:inline-block;border:1px solid var(--a);color:var(--a);padding:7px 14px;border-radius:8px;background:var(--card);cursor:pointer;font:inherit}.btn.f{background:var(--a);color:var(--bg)}.btn:hover{text-decoration:none;filter:brightness(1.1)}
 .tags button{font:inherit;font-size:12px;border-radius:99px;padding:3px 10px}.tags button.on{background:var(--a);color:var(--bg)}
-.sn{position:relative;display:flex;align-items:center;gap:8px;padding:10px 12px;background:color-mix(in srgb,var(--c) 20%,var(--card));border:1px solid color-mix(in srgb,var(--c) 55%,transparent);border-radius:4px;font:600 12.5px 'Space Grotesk',sans-serif;cursor:grab;user-select:none;touch-action:none;rotate:var(--r);box-shadow:0 8px 14px -8px #000a}
-.sn::before{content:'';position:absolute;top:-6px;left:50%;width:34px;height:10px;margin-left:-17px;background:color-mix(in srgb,var(--c) 60%,transparent);border-radius:2px}.sn.d{cursor:grabbing;z-index:5;box-shadow:0 18px 24px -8px #000c}
+.sn{position:relative;display:flex;align-items:center;gap:8px;padding:10px 13px;background:linear-gradient(145deg,color-mix(in srgb,var(--c) 26%,var(--card)),color-mix(in srgb,var(--c) 17%,var(--card)));border:1px solid color-mix(in srgb,var(--c) 45%,transparent);border-radius:2px 2px 14px 2px;font:600 12.5px 'Space Grotesk',sans-serif;cursor:grab;user-select:none;touch-action:none;rotate:var(--r);box-shadow:0 4px 10px -3px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 6px rgba(0,0,0,.15);transform-origin:50% 6px;transition:box-shadow .25s cubic-bezier(.25,1,.5,1),filter .2s ease,transform .2s ease}
+.sn::before{content:'';position:absolute;top:-7px;left:50%;width:40px;height:14px;margin-left:-20px;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.22));border:1px solid rgba(255,255,255,.4);border-radius:1px;box-shadow:0 1px 3px rgba(0,0,0,.3);backdrop-filter:blur(2px);z-index:2}
+.sn::after{content:'';position:absolute;bottom:0;right:0;width:14px;height:14px;background:linear-gradient(135deg,transparent 48%,color-mix(in srgb,var(--c) 50%,rgba(0,0,0,.5)) 52%);border-bottom-right-radius:12px;pointer-events:none;opacity:.8;transition:transform .22s ease,opacity .22s ease}
+.sn:hover{box-shadow:0 8px 18px -4px rgba(0,0,0,.45),0 2px 4px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.2);filter:brightness(1.04)}
+.sn.d{cursor:grabbing;z-index:25;box-shadow:0 30px 45px -10px rgba(0,0,0,.65),0 12px 22px -6px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.25);filter:brightness(1.12);transform:scale(1.08) perspective(600px) rotateX(var(--peel-x, 8deg)) rotateY(var(--peel-y, 0deg)) rotate(calc(var(--r, 0deg) + var(--drag-tilt, 0deg)))}
+.sn.d::after{opacity:1;transform:scale(1.35) translate(-1px,-1px)}
 .sn i{width:22px;height:22px;border-radius:5px;background:#f4f6fa;display:grid;place-items:center;font:700 10px 'JetBrains Mono';color:#222;flex:none}.sn img{width:16px;height:16px}
 .bd{position:relative;min-height:170px;padding:44px 16px 18px;border:1px solid var(--bd);border-radius:12px;background:radial-gradient(color-mix(in srgb,var(--c) 22%,transparent) 1px,transparent 1px) 0 0/16px 16px,var(--card);overflow:hidden}
 .bd h3{position:absolute;top:12px;left:16px;font:700 13px 'JetBrains Mono';color:var(--c)}.bd h3::before{content:'📌 '}.nn{display:flex;flex-wrap:wrap;gap:16px 12px}
@@ -135,7 +139,7 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 .sec-hd h2{margin-bottom:0}
 .sec-sub{margin:0 0 16px!important;font-size:12.5px;color:var(--mut)}
 
-.deck-wrap{position:relative;max-width:640px;margin:28px auto 14px;perspective:1200px;width:100%}
+.deck-wrap{position:relative;max-width:640px;margin:28px auto 14px;perspective:1200px;width:100%;overflow-x:clip}
 .deck-wrap.grid-view{max-width:100%}
 .deck{position:relative;min-height:380px;width:100%}
 @media(max-width:640px){
@@ -156,10 +160,10 @@ nav{padding-right:46px}.hid{display:none!important}.col>:nth-child(n+7){display:
 }
 
 .deck-card.shuffle-fly-right{
-transform:translate3d(115%,-20px,80px) rotate(16deg)!important;
-opacity:.9!important;
+transform:translate3d(105%,-16px,40px) rotate(14deg)!important;
+opacity:0!important;
 z-index:12!important;
-transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .22s!important
+transition:transform .22s cubic-bezier(.2,.8,.4,1),opacity .2s!important
 }
 .deck-card.shuffle-fly-left{
 transform:translate3d(-115%,-20px,80px) rotate(-16deg)!important;
@@ -346,7 +350,7 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <section id="proj"><h2>flagship-projects</h2><p class="meta sec-sub">// the heavy hitters · the builds i'm genuinely proud of</p><div class="grid" id="pg"></div></section>
 <section id="more"><h2>more-projects</h2><p class="meta sec-sub">// late-night "what if I built this?" ideas, cli tools &amp; experiments</p><div class="grid" id="mg"></div></section>
 <section id="npm"><h2>npm-packages</h2><p class="meta sec-sub">// just `npm i` and call it a day</p><div class="card"><h3>📦 react-ambient-light-adaptive-theme</h3><p class="meta">React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
-<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0"><div class="stat" style="min-width:160px"><b id="nt2">131</b><small>downloads · last 12 months</small></div><code class="btn" id="cp">npm i react-ambient-light-adaptive-theme ⧉</code></div><div id="ch"></div>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0"><div class="stat" style="min-width:160px"><b id="nt2">131</b><small>total downloads</small></div><code class="btn" id="cp">npm i react-ambient-light-adaptive-theme ⧉</code></div><div id="ch"></div>
 <div class="links"><a href="https://www.npmjs.com/package/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm ↗</a><a href="https://npm-stat.com/charts.html?package=react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm-stat ↗</a><a href="https://github.com/chandana-galgali/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">source ↗</a></div></div></section>
 <section id="skills"><h2>tech-stack</h2><p class="meta sec-sub">// my digital toolkit · drag 'em around, each note stays pinned to its own board</p><div class="grid" id="sg"></div></section>
 <section id="wins"><h2>achievements</h2><p class="meta sec-sub">// the shiny stuff · grant checks, hackathon wins & gold medals</p>
@@ -365,7 +369,7 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 </div>
 </div>
 </section>
-<section id="kind">
+<section id="kind" style="overflow:hidden">
 <div class="sec-hd">
 <h2>testimonials</h2>
 <div style="display:flex;gap:8px;align-items:center">
@@ -500,7 +504,7 @@ const pr=[
   {label:'live demo ↗',url:'',pri:true},
   {label:'source ↗',url:R('Text-to-AR-VR-Visualizing-Numerical-Data')}
 ]],
-['Automated Caption Generation using Encoder-Decoder Model for Targetted Objects (Jewellery Images)',
+['Automated Caption Generation using Encoder-Decoder Model for Targetted Objects',
 'Final Year Capstone Project',
 'Developed an end-to-end computer vision and natural language processing application to automatically detect, classify and generate structured descriptions for intricate jewellery items.',
 [
@@ -531,8 +535,31 @@ const btnList=(p[9]||[{label:'source ↗',url:R(p[5])}]).filter(b=>b.url||b.pri)
 const bullets=p[3]&&p[3].length?`<details class="p-details"><summary>view implementation details</summary><ul>${p[3].map(x=>`<li>${x}</li>`).join('')}</ul></details>`:'';
 return `<div class="card rv proj-card"><div class="proj-media"><div class="ph" ${imgAttr}>🖼 screenshot → ${resolved[0]}</div><div class="p-impact"><b>${p[7]}</b><span>${p[8]}</span></div></div><div class="proj-body"><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[4])}<p class="p-desc">${p[2]}</p>${bullets}<div class="links">${btnList}</div></div></div>`;
 }).join('');
-const mp=[['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python'],['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript'],['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript'],['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python'],['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python'],['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter'],['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript'],['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP'],['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter'],['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter'],['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python'],['K-Means-Clustering','Retail customer segmentation.','Python'],['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python'],['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter'],['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML'],['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web']];
-mg.innerHTML=mp.map(p=>`<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${p[2]!='Web'?`<a href="${R(p[0])}" target="_blank" rel="noopener">repo ↗</a>`:''}</div>`).join('');
+const mp=[
+  ['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python',[{label:'repo ↗',url:R('AST-Query')}]],
+  ['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript',[{label:'repo ↗',url:R('react-ambient-light-adaptive-theme')},{label:'npm ↗',url:'https://www.npmjs.com/package/react-ambient-light-adaptive-theme'}]],
+  ['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript',[{label:'repo ↗',url:R('gmail-bulk-trash-purger')}]],
+  ['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python',[{label:'repo ↗',url:R('Batch-Image-Optimizer')}]],
+  ['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python',[{label:'repo ↗',url:R('Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM')}]],
+  ['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter',[{label:'repo ↗',url:R('Analysis-of-the-GWA-T-4-AuverGrid-Workload')}]],
+  ['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript',[{label:'repo ↗',url:R('Voluntr-Volunteer-Match-Website')}]],
+  ['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP',[{label:'repo ↗',url:R('E-Commerce-Website-Perfume-Shop')}]],
+  ['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter',[{label:'repo ↗',url:R('Hand-Gesture-Recognition-Model')}]],
+  ['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter',[{label:'repo ↗',url:R('Object-Detection-from-Image')}]],
+  ['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python',[{label:'repo ↗',url:R('Support-Vector-Machine')}]],
+  ['K-Means-Clustering','Retail customer segmentation.','Python',[{label:'repo ↗',url:R('K-Means-Clustering')}]],
+  ['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python',[{label:'repo ↗',url:R('Linear-Regression-Model')}]],
+  ['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter',[{label:'repo ↗',url:R('KJSCE-IT-Reference-Material')}]],
+  ['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML',[{label:'repo ↗',url:R('Chandana-Galgali-Portfolio')}]],
+  ['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web',[{label:'live ↗',url:'https://chandana-galgali.github.io/Virtual-DSA-Laboratory/',pri:true}]]
+];
+mg.innerHTML=mp.map(p=>{
+  const linksHtml=(p[3]||[]).map(l=>{
+    if(!l.url)return '';
+    return `<a href="${l.url}" target="_blank" rel="noopener" class="${l.pri?'pri':''}">${l.label}</a>`;
+  }).filter(Boolean).join('');
+  return `<div class="card rv"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${linksHtml?`<div class="links" style="margin-top:12px;gap:6px">${linksHtml}</div>`:''}</div>`;
+}).join('');
 const sk={'Languages':'Python, JavaScript, TypeScript, C++, C, Java, R, SQL','AI / ML / Data':'TensorFlow, PyTorch, Keras, Scikit-Learn, Hugging Face, Transformers, OpenCV, CNNs, RNNs (LSTM, GRU), VGG-16, LLMs, RAG, Pandas, NumPy, K-Means, SVM, Linear Regression','Backend &amp; Web':'React.js, Next.js, Angular, Node.js, Flask, FastAPI, Django, Spring Boot, GraphQL, WebGL, HTML5/CSS3','DevOps, Security &amp; Cloud':'Docker, Kubernetes, Ansible, Git (GitHub/GitLab CI/CD), SonarQube, Burp Suite, Metasploit, FortiSIEM, Red Hat OpenShift, Linux/Ubuntu, AWS (Botocore)','Databases':'PostgreSQL, MySQL, MongoDB, SQL Server Management Studio','Tools &amp; Platforms':'Unity (AR/VR), Babel (AST Parsing), Leaflet.js, Google Earth Engine, MATLAB, RStudio, npm, Jira, Confluence, Agile/Scrum, VSCode, Docker Desktop'};
 const slug={Python:'python',JavaScript:'javascript',TypeScript:'typescript','C++':'cplusplus',C:'c',Java:'java',R:'r',TensorFlow:'tensorflow',PyTorch:'pytorch',Keras:'keras','Scikit-Learn':'scikitlearn',OpenCV:'opencv',Pandas:'pandas',NumPy:'numpy','React.js':'react','Next.js':'nextjs',Angular:'angular','Node.js':'nodejs',Flask:'flask',FastAPI:'fastapi',Django:'django','Spring Boot':'spring',GraphQL:'graphql','HTML5/CSS3':'html5',Docker:'docker',Kubernetes:'kubernetes',Ansible:'ansible',Git:'git',SonarQube:'sonarqube','Linux/Ubuntu':'ubuntu',AWS:'amazonwebservices','Red Hat OpenShift':'openshift',PostgreSQL:'postgresql',MySQL:'mysql',MongoDB:'mongodb','SQL Server Management Studio':'microsoftsqlserver','Unity':'unity',MATLAB:'matlab',RStudio:'rstudio',npm:'npm',Jira:'jira',Confluence:'confluence',VSCode:'vscode','Docker Desktop':'docker',Babel:'babel'};
 const bc=['#5eead4','#a78bfa','#f9a8d4','#fbbf24','#60a5fa','#86efac'];
@@ -694,8 +721,41 @@ const qa={'Who is she?':'Chandana: B.Tech IT (Hons. AI) . 9.67 CGPA (Dept Rank 1
 bq.innerHTML=Object.keys(qa).map(q=>`<button>${q}</button>`).join('');bq.onclick=e=>{if(qa[e.target.textContent])ba.textContent=qa[e.target.textContent]};
 let zt;const wake=()=>{zz.style.display='none';clearTimeout(zt);zt=setTimeout(()=>zz.style.display='',9000)};bb.onclick=()=>bp.classList.toggle('o');addEventListener('pointermove',wake);wake();
 
-document.querySelectorAll('.sn').forEach(n=>{let sx,sy,tx=0,ty=0,b,r,t;n.onpointerdown=e=>{n.setPointerCapture(e.pointerId);n.classList.add('d');sx=e.clientX;sy=e.clientY;b=n.closest('.bd').getBoundingClientRect();r=n.getBoundingClientRect();t=[tx,ty]};
-n.onpointermove=e=>{if(!n.classList.contains('d'))return;const dx=Math.max(b.left-r.left,Math.min(b.right-r.right,e.clientX-sx)),dy=Math.max(b.top-r.top,Math.min(b.bottom-r.bottom,e.clientY-sy));tx=t[0]+dx;ty=t[1]+dy;n.style.translate=tx+'px '+ty+'px'};n.onpointerup=()=>n.classList.remove('d')});
+document.querySelectorAll('.sn').forEach(n=>{let sx,sy,tx=0,ty=0,b,r,t;
+n.onpointerdown=e=>{
+  n.setPointerCapture(e.pointerId);
+  n.classList.add('d');
+  sx=e.clientX;sy=e.clientY;
+  b=n.closest('.bd').getBoundingClientRect();
+  r=n.getBoundingClientRect();
+  t=[tx,ty];
+  n.style.setProperty('--peel-x','12deg');
+};
+n.onpointermove=e=>{
+  if(!n.classList.contains('d'))return;
+  const rawDx=e.clientX-sx;
+  const rawDy=e.clientY-sy;
+  const dx=Math.max(b.left-r.left,Math.min(b.right-r.right,rawDx));
+  const dy=Math.max(b.top-r.top,Math.min(b.bottom-r.bottom,rawDy));
+  tx=t[0]+dx;
+  ty=t[1]+dy;
+  const tilt=Math.max(-12,Math.min(12,dx*0.14));
+  const peelY=Math.max(-10,Math.min(10,-dx*0.1));
+  const peelX=Math.max(4,Math.min(18,12 + dy*0.08));
+  n.style.setProperty('--drag-tilt',tilt+'deg');
+  n.style.setProperty('--peel-x',peelX+'deg');
+  n.style.setProperty('--peel-y',peelY+'deg');
+  n.style.translate=tx+'px '+ty+'px';
+};
+const release=()=>{
+  n.classList.remove('d');
+  n.style.removeProperty('--drag-tilt');
+  n.style.removeProperty('--peel-x');
+  n.style.removeProperty('--peel-y');
+};
+n.onpointerup=release;
+n.onpointercancel=release;
+});
 const reviews=[
 {org:'BARCLAYS',idx:'01',name:'Rizwan Afsar',role:'VP @ Barclays',badge:'RA',quote:'Great work, you have been amazing during this period and we have working code ready for production.',tags:['🏅 official recognition','Barclays']},
 {org:'BARCLAYS · GFED',idx:'02',name:'Kapie Mzumara',role:'VP @ Barclays · GFED Early Careers',badge:'KM',quote:'Chandana Ramesh Galgali has been recognized for \'Simplicity and efficiency, seeking out every opportunity to automate\'. Thank you for taking part in the GFED Early Careers programme. Your tenacity and hard work over the last 5 weeks can be clearly seen. The GFED Early Careers Team and Engineering and Architecture Leads are impressed with all the ideas and solutions to the many friction points you have identified! Well done!',tags:['🏅 official recognition','Barclays']},
@@ -779,7 +839,115 @@ const isGrid=dw.classList.toggle('grid-view');
 kv.textContent=isGrid?'🗂 stack view':'▦ grid view';
 };
 mg.classList.add('col');mg.insertAdjacentHTML('afterend','<button class="btn" id="vm" style="margin-top:16px">view all projects (+10) ↓</button>');vm.onclick=()=>{mg.classList.toggle('col');vm.textContent=mg.classList.contains('col')?'view all projects (+10) ↓':'show less ↑'};fb.addEventListener('click',()=>mg.classList.remove('col'));
-(async()=>{const P='react-ambient-light-adaptive-theme',e=new Date(),s=new Date(e-364*864e5),f=d=>d.toISOString().slice(0,10);try{const r=await(await fetch(`https://api.npmjs.org/downloads/range/${f(s)}:${f(e)}/${P}`)).json(),m={};r.downloads.forEach(x=>m[x.day.slice(0,7)]=(m[x.day.slice(0,7)]||0)+x.downloads);const k=Object.keys(m),mx=Math.max(...k.map(x=>m[x]),1);nt2.textContent=k.reduce((a,x)=>a+m[x],0);ch.innerHTML=`<svg viewBox="0 0 ${k.length*50} 130" style="width:100%;max-width:640px">${k.map((x,i)=>`<rect x="${i*50+8}" y="${100-m[x]/mx*90}" width="34" height="${m[x]/mx*90}" rx="4" fill="var(--a)" opacity=".85"/><text x="${i*50+25}" y="${96-m[x]/mx*90}" font-size="9" text-anchor="middle" fill="var(--fg)">${m[x]}</text><text x="${i*50+25}" y="118" font-size="9" text-anchor="middle" fill="var(--mut)">${x}</text>`).join('')}</svg>`}catch(_){ch.innerHTML='<p class="meta">// monthly chart loads live from the npm registry</p>'}})();
+(async()=>{
+  const P='react-ambient-light-adaptive-theme';
+  const now=new Date();
+  const f=d=>d.toISOString().slice(0,10);
+  const endStr=f(now);
+  // Fetch from package creation (2025-01-01) to today for total downloads
+  const startStr='2025-01-01';
+  try{
+    const r=await (await fetch(`https://api.npmjs.org/downloads/range/${startStr}:${endStr}/${P}`)).json();
+    const m={};
+    r.downloads.forEach(x=>{
+      const mo=x.day.slice(0,7);
+      m[mo]=(m[mo]||0)+x.downloads;
+    });
+    // Filter out initial inactive months with 0 downloads
+    const allMonths=Object.keys(m);
+    const firstActiveIdx=allMonths.findIndex(mo=>m[mo]>0);
+    const k=firstActiveIdx!==-1?allMonths.slice(firstActiveIdx):allMonths;
+    const totalDownloads=r.downloads.reduce((sum,x)=>sum+x.downloads,0);
+    nt2.textContent=totalDownloads;
+    
+    const mx=Math.max(...k.map(x=>m[x]),1);
+    const colW=46;
+    const chartW=k.length*colW;
+    const chartH=135;
+    const barMaxH=75;
+    const baselineY=105;
+    
+    ch.innerHTML=`
+      <div style="width:100%;max-width:720px;margin-top:10px">
+        <svg viewBox="0 0 ${chartW} ${chartH}" style="width:100%;height:auto;display:block;overflow:visible">
+          <defs>
+            <linearGradient id="npmBarGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--a)" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="var(--a)" stop-opacity="0.55"/>
+            </linearGradient>
+            <linearGradient id="npmBarHover" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--a)" stop-opacity="1"/>
+              <stop offset="100%" stop-color="var(--b)" stop-opacity="0.95"/>
+            </linearGradient>
+            <filter id="npmGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="var(--a)" flood-opacity="0.75"/>
+            </filter>
+          </defs>
+          <line x1="4" y1="${baselineY}" x2="${chartW-4}" y2="${baselineY}" stroke="var(--bd)" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+          ${k.map((x,i)=>{
+            const val=m[x];
+            const h=Math.max(6, (val/mx)*barMaxH);
+            const bx=i*colW + 6;
+            const by=baselineY-h;
+            const bw=32;
+            const cx=bx+bw/2;
+            return `
+              <g class="npm-bar-grp" data-mo="${x}" data-val="${val}" tabindex="0" role="button" aria-label="${x}: ${val} downloads" style="cursor:pointer;outline:none">
+                <rect class="npm-bar-hit" x="${i*colW}" y="0" width="${colW}" height="${chartH}" fill="transparent"/>
+                <rect class="npm-bar-rect" x="${bx}" y="${by}" width="${bw}" height="${h}" rx="5" fill="url(#npmBarGrad)" style="transition:all .2s ease"/>
+                <text class="npm-bar-val" x="${cx}" y="${by-9}" font-size="10.5" font-weight="700" text-anchor="middle" fill="var(--fg)" style="transition:all .2s ease">${val}</text>
+                <text class="npm-bar-label" x="${cx}" y="${baselineY+18}" font-size="9" text-anchor="middle" fill="var(--mut)" style="transition:all .2s ease">${x}</text>
+              </g>
+            `;
+          }).join('')}
+        </svg>
+      </div>
+    `;
+    
+    ch.querySelectorAll('.npm-bar-grp').forEach(grp=>{
+      const highlight=()=>{
+        grp.querySelector('.npm-bar-rect').setAttribute('fill','url(#npmBarHover)');
+        grp.querySelector('.npm-bar-rect').setAttribute('filter','url(#npmGlow)');
+        grp.querySelector('.npm-bar-val').setAttribute('fill','var(--a)');
+        grp.querySelector('.npm-bar-val').setAttribute('font-size','12');
+        grp.querySelector('.npm-bar-label').setAttribute('fill','var(--fg)');
+        grp.querySelector('.npm-bar-label').setAttribute('font-weight','700');
+      };
+      const reset=()=>{
+        grp.querySelector('.npm-bar-rect').setAttribute('fill','url(#npmBarGrad)');
+        grp.querySelector('.npm-bar-rect').removeAttribute('filter');
+        grp.querySelector('.npm-bar-val').setAttribute('fill','var(--fg)');
+        grp.querySelector('.npm-bar-val').setAttribute('font-size','10.5');
+        grp.querySelector('.npm-bar-label').setAttribute('fill','var(--mut)');
+        grp.querySelector('.npm-bar-label').removeAttribute('font-weight');
+      };
+      grp.addEventListener('mouseenter',highlight);
+      grp.addEventListener('mouseleave',reset);
+      grp.addEventListener('focus',highlight);
+      grp.addEventListener('blur',reset);
+      grp.addEventListener('touchstart',e=>{
+        ch.querySelectorAll('.npm-bar-grp').forEach(g=>{
+          g.querySelector('.npm-bar-rect').setAttribute('fill','url(#npmBarGrad)');
+          g.querySelector('.npm-bar-rect').removeAttribute('filter');
+          g.querySelector('.npm-bar-val').setAttribute('fill','var(--fg)');
+          g.querySelector('.npm-bar-val').setAttribute('font-size','10.5');
+          g.querySelector('.npm-bar-label').setAttribute('fill','var(--mut)');
+        });
+        highlight();
+        e.stopPropagation();
+      },{passive:true});
+    });
+    document.addEventListener('touchstart',()=>ch.querySelectorAll('.npm-bar-grp').forEach(g=>{
+      g.querySelector('.npm-bar-rect').setAttribute('fill','url(#npmBarGrad)');
+      g.querySelector('.npm-bar-rect').removeAttribute('filter');
+      g.querySelector('.npm-bar-val').setAttribute('fill','var(--fg)');
+      g.querySelector('.npm-bar-val').setAttribute('font-size','10.5');
+      g.querySelector('.npm-bar-label').setAttribute('fill','var(--mut)');
+    }),{passive:true});
+  }catch(_){
+    ch.innerHTML='<p class="meta">// monthly chart loads live from the npm registry</p>';
+  }
+})();
 cp.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText('npm i react-ambient-light-adaptive-theme');cp.textContent='copied ✓'};
 const TP={'Job opportunity':['Opportunity for you','Hi Chandana,\n\nI came across your portfolio and we have an opportunity that fits your profile. Are you open to a quick chat this week?\n\nBest regards,'],'Project':['Project inquiry','Hi Chandana,\n\nI have a project I would like to discuss with you. Could we set up a short call to talk scope and timeline?\n\nBest regards,'],'Collaboration':['Let us collaborate','Hi Chandana,\n\nI would love to collaborate with you on something. Can we find time to brainstorm?\n\nBest regards,'],'Just saying hi':['Hello from your portfolio','Hi Chandana,\n\nLoved your portfolio, just wanted to say hi!\n\nCheers,']};let tp3='Hello from your portfolio';
 tc.innerHTML=Object.keys(TP).map(k=>`<button>${k}</button>`).join('');tc.onclick=e=>{const k=e.target.textContent;if(!TP[k])return;[...tc.children].forEach(c=>c.classList.toggle('on',c==e.target));tp3=TP[k][0];ms.value=TP[k][1];st.textContent='PAYLOAD_READY'};
