@@ -353,8 +353,17 @@ if(red)end();else{tick();iv=setInterval(tick,50);draw();chk()}
 <div class="marq"><div id="mq"></div></div>
 <section id="exp"><h2>experience</h2><p class="meta sec-sub">// actual proof that my code doesn't just work on "my machine"</p><div class="ts" id="ts"></div><div class="tl" id="tl"></div></section>
 <section id="proj"><h2>flagship-projects</h2><p class="meta sec-sub">// the heavy hitters · the builds i'm genuinely proud of</p><div class="grid" id="pg"></div></section>
-<section id="more"><h2>more-projects</h2><p class="meta sec-sub">// late-night "what if I built this?" ideas, cli tools &amp; experiments</p><div class="grid" id="mg"></div></section>
-<section id="npm"><h2>npm-packages</h2><p class="meta sec-sub">// just `npm i` and call it a day</p><div class="card"><h3>📦 react-ambient-light-adaptive-theme</h3><p class="meta">React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
+<section id="more">
+<div class="sec-hd">
+<h2>more-projects</h2>
+<span class="meta" id="mpCount" style="font-size:12px">// 16 projects</span>
+</div>
+<p class="meta sec-sub" style="margin-top:24px">// filter by category · late-night ideas, cli tools, packages &amp; experiments</p>
+<div class="cert-filters" id="mf"></div>
+<div class="grid" id="mg"></div>
+<button class="btn" id="vm" style="margin-top:16px;width:100%">view all 16 projects ↓</button>
+</section>
+<section id="npm"><h2>npm-packages</h2><p class="meta sec-sub">// just `npm i` and call it a day</p><div class="card"><h3>📦 Adaptive UI Theme Component (react-ambient-light-adaptive-theme)</h3><p class="meta">React component: auto dark/light theme from ambient light (AmbientLightSensor API) · TypeScript · MIT</p>
 <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0"><div class="stat" style="min-width:160px"><b id="nt2">131</b><small>total downloads</small></div><code class="btn" id="cp">npm i react-ambient-light-adaptive-theme ⧉</code></div><div id="ch"></div>
 <div class="links"><a href="https://www.npmjs.com/package/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm ↗</a><a href="https://npm-stat.com/charts.html?package=react-ambient-light-adaptive-theme" target="_blank" rel="noopener">npm-stat ↗</a><a href="https://github.com/chandana-galgali/react-ambient-light-adaptive-theme" target="_blank" rel="noopener">source ↗</a></div></div></section>
 <section id="skills"><h2>tech-stack</h2><p class="meta sec-sub">// my digital toolkit · drag 'em around, each note stays pinned to its own board</p><div class="grid" id="sg"></div></section>
@@ -543,22 +552,21 @@ const bullets=p[3]&&p[3].length?`<details class="p-details"><summary>view implem
 return `<div class="card rv proj-card"><div class="proj-media"><div class="ph" ${imgAttr}>🖼 screenshot → ${resolved[0]}</div><div class="p-impact"><b>${p[7]}</b><span>${p[8]}</span></div></div><div class="proj-body"><h3>${p[0]}</h3><p class="meta">${p[1]}</p>${tg(p[4])}<p class="p-desc">${p[2]}</p>${bullets}<div class="links">${btnList}</div></div></div>`;
 }).join('');
 const mp=[
-  ['AST-Query','Zero-dependency Python CLI to query &amp; filter AST structures with a simple query language.','Python',[{label:'repo ↗',url:R('AST-Query')}]],
-  ['react-ambient-light-adaptive-theme','Hardware-aware React component switching dark/light via AmbientLightSensor API. Published.','TypeScript',[{label:'repo ↗',url:R('react-ambient-light-adaptive-theme')},{label:'npm ↗',url:'https://www.npmjs.com/package/react-ambient-light-adaptive-theme'}]],
-  ['gmail-bulk-trash-purger','Google Apps Script that batch-deletes thousands of Trash emails past server timeouts.','JavaScript',[{label:'repo ↗',url:R('gmail-bulk-trash-purger')}]],
-  ['Batch-Image-Optimizer','CLI that resizes to a bounding box, compresses &amp; saves images with descriptive names.','Python',[{label:'repo ↗',url:R('Batch-Image-Optimizer')}]],
-  ['Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM','LSTM sentiment model in TensorFlow/Keras.','Python',[{label:'repo ↗',url:R('Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM')}]],
-  ['Analysis-of-the-GWA-T-4-AuverGrid-Workload','Job runtime &amp; memory analysis of the AuverGrid trace.','Jupyter',[{label:'repo ↗',url:R('Analysis-of-the-GWA-T-4-AuverGrid-Workload')}]],
-  ['Voluntr-Volunteer-Match-Website','Connect people with volunteer opportunities; filter by cause &amp; location.','JavaScript',[{label:'repo ↗',url:R('Voluntr-Volunteer-Match-Website')}]],
-  ['E-Commerce-Website-Perfume-Shop','Perfume shop e-commerce site.','PHP',[{label:'repo ↗',url:R('E-Commerce-Website-Perfume-Shop')}]],
-  ['Hand-Gesture-Recognition-Model','Classifies hand gestures from image/video.','Jupyter',[{label:'repo ↗',url:R('Hand-Gesture-Recognition-Model')}]],
-  ['Object-Detection-from-Image','Food recognition with calorie estimation.','Jupyter',[{label:'repo ↗',url:R('Object-Detection-from-Image')}]],
-  ['Support-Vector-Machine','SVM cats-vs-dogs classifier (Kaggle).','Python',[{label:'repo ↗',url:R('Support-Vector-Machine')}]],
-  ['K-Means-Clustering','Retail customer segmentation.','Python',[{label:'repo ↗',url:R('K-Means-Clustering')}]],
-  ['Linear-Regression-Model','House price prediction (sqft, beds, baths).','Python',[{label:'repo ↗',url:R('Linear-Regression-Model')}]],
-  ['KJSCE-IT-Reference-Material','Notes, IA material, lab code &amp; writeups for KJSCE IT 2022–26.','Jupyter',[{label:'repo ↗',url:R('KJSCE-IT-Reference-Material')}]],
-  ['Chandana-Galgali-Portfolio','Earlier portfolio site.','HTML',[{label:'repo ↗',url:R('Chandana-Galgali-Portfolio')}]],
-  ['Virtual DSA Laboratory','Interactive visualizer of core Data Structures &amp; Algorithms for 350+ students.','Web',[{label:'live ↗',url:'https://chandana-galgali.github.io/Virtual-DSA-Laboratory/',pri:true}]]
+  ['AST Query (Python Static Analysis CLI)','A zero-dependency, pure Python utility acting as a "SQL for code", implementing a custom declarative query engine to interactively search, filter and highlight Abstract Syntax Tree (AST) architectures.','CLI & Tools',[{label:'repo ↗',url:R('AST-Query')}]],
+  ['Gmail Bulk Trash Purger (Google Apps Script Utility)','A lightweight Google Apps Script utility designed to bypass Gmail batch limits and server timeouts by executing automated chunked purges for high-volume email deletion.','CLI & Tools',[{label:'repo ↗',url:R('gmail-bulk-trash-purger')}]],
+  ['Batch Image Optimizer (Python Compression CLI)','A Python CLI utility that proportionally resizes images to fit a specified bounding box, compresses file size, and exports optimized outputs with custom descriptive names.','CLI & Tools',[{label:'repo ↗',url:R('Batch-Image-Optimizer')}]],
+  ['Adaptive UI Theme Component (npm Package)','A hardware-aware React component published to npm, utilizing the browser\'s AmbientLightSensor API to dynamically adapt UI themes based on real-world environmental lux levels.','Frontend Components',[{label:'repo ↗',url:R('react-ambient-light-adaptive-theme')},{label:'npm ↗',url:'https://www.npmjs.com/package/react-ambient-light-adaptive-theme'}]],
+  ['AuverGrid Workload Performance Analysis (Jupyter Notebook)','Exploratory data analysis in Jupyter Notebook evaluating job execution runtimes, scheduling efficiency and memory consumption traces from the AuverGrid dataset.','Data Analytics',[{label:'repo ↗',url:R('Analysis-of-the-GWA-T-4-AuverGrid-Workload')}]],
+  ['Real Estate Valuation Predictor (Linear Regression)','Predictive analytics pipeline applying Linear Regression to evaluate multi-feature real estate datasets and estimate valuation trends.','ML',[{label:'repo ↗',url:R('Linear-Regression-Model')}]],
+  ['Retail Customer Segmentation (K-Means Clustering)','Unsupervised learning implementation using K-Means clustering to analyze purchase history metrics and derive data-driven customer segmentation profiles.','ML',[{label:'repo ↗',url:R('K-Means-Clustering')}]],
+  ['Binary Image Classifier (Support Vector Machine)','Binary image classification pipeline using Support Vector Machines (SVM) in Python and Scikit-Learn trained for high-accuracy feature separation.','ML',[{label:'repo ↗',url:R('Support-Vector-Machine')}]],
+  ['IMDb Review Sentiment Analysis (LSTM Deep Learning)','Deep learning sentiment classification pipeline engineered using LSTM networks in TensorFlow and Keras to process and predict review polarities.','Deep Learning & NLP',[{label:'repo ↗',url:R('Sentiment-Analysis-of-IMDb-Movie-Reviews-using-LSTM')}]],
+  ['Food Recognition & Calorie Estimation Model','Computer vision model designed for automated food recognition and image-based feature extraction paired with caloric intake estimation logic.','Computer Vision',[{label:'repo ↗',url:R('Object-Detection-from-Image')}]],
+  ['Hand Gesture Recognition Model','Real-time computer vision pipeline built with Python and OpenCV to capture, track and classify multi-hand gestures for interactive human-computer interaction.','Computer Vision',[{label:'repo ↗',url:R('Hand-Gesture-Recognition-Model')}]],
+  ['Voluntr (Community Volunteer Match Platform)','Full-stack web application designed to connect individuals with community volunteer opportunities, featuring dynamic filtering capabilities by cause and location.','Web Apps',[{label:'repo ↗',url:R('Voluntr-Volunteer-Match-Website')}]],
+  ['Fragrance Store (Full-Stack E-Commerce Website)','Feature-rich e-commerce web platform engineered for browsing, filtering, and purchasing artisanal aroma ingredients and fragrance products.','Web Apps',[{label:'repo ↗',url:R('E-Commerce-Website-Perfume-Shop')}]],
+  ['Interactive Virtual DSA Laboratory (React Web App)','Interactive web-based educational visualizer built to simulate core Data Structures and Algorithms concepts, boosting practical comprehension for 350+ students.','Web Apps',[{label:'live ↗',url:'https://chandana-galgali.github.io/Virtual-DSA-Laboratory/',pri:true}]],
+  ['KJSCE-IT-Reference-Material','Comprehensive academic archive containing lecture notes, internal assessment resources, source code for lab experiments and structured lab writeups for KJSCE Information Technology (2022-2026).','Academic Resources',[{label:'repo ↗',url:R('KJSCE-IT-Reference-Material')}]]
 ];
 mg.innerHTML=mp.map(p=>{
   const linksHtml=(p[3]||[]).map(l=>{
@@ -716,8 +724,40 @@ th.onclick=()=>{const d=document.documentElement,dark=getComputedStyle(d).getPro
 mq.innerHTML=(Object.values(sk).join(', ')+' · ').repeat(2);
 document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}});
 pg.querySelectorAll('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*7}deg) rotateX(${-y*7}deg)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
-const ls=['All',...new Set(mp.map(p=>p[2]))],fb=document.createElement('div');fb.className='tags';fb.innerHTML=ls.map(l=>`<button data-l="${l}">${l}</button>`).join('');mg.before(fb);
-fb.onclick=e=>{const l=e.target.dataset.l;if(l)[...mg.children].forEach((c,i)=>c.style.display=l=='All'||mp[i][2]==l?'':'none')};
+const mpCats=['All',...new Set(mp.map(p=>p[2]))];
+let activeMpCat='All',showAllMp=false;
+function renderMoreProjects(){
+  const filtered=mp.map((p,i)=>({p,i})).filter(({p})=>activeMpCat=='All'||p[2]==activeMpCat);
+  if(window.mpCount) mpCount.textContent=`// ${filtered.length} of ${mp.length} projects`;
+  mg.innerHTML=filtered.map(({p,i},idx)=>{
+    const isHidden=(!showAllMp && activeMpCat=='All' && idx>=6);
+    const linksHtml=(p[3]||[]).map(l=>{
+      if(!l.url)return '';
+      return `<a href="${l.url}" target="_blank" rel="noopener" class="${l.pri?'pri':''}">${l.label}</a>`;
+    }).filter(Boolean).join('');
+    return `<div class="card rv${isHidden?' hid':''}"><h3 style="font-size:15px">${p[0].replace(/-/g,' ')}</h3><div class="tags"><span>${p[2]}</span></div><p style="font-size:13px">${p[1]}</p>${linksHtml?`<div class="links" style="margin-top:12px;gap:6px">${linksHtml}</div>`:''}</div>`;
+  }).join('');
+  if(window.vm){
+    vm.style.display=(activeMpCat=='All')?'block':'none';
+    vm.textContent=showAllMp?'show top 6 projects ↑':`view all ${mp.length} projects ↓`;
+  }
+  document.querySelectorAll('#mg .rv').forEach(e=>io.observe(e));
+}
+if(window.mf){
+  mf.innerHTML=mpCats.map(c=>`<button class="${c==='All'?'active':''}" data-cat="${c}">${c} (${c==='All'?mp.length:mp.filter(x=>x[2]===c).length})</button>`).join('');
+  mf.onclick=e=>{
+    const cat=e.target.dataset.cat;
+    if(cat){
+      activeMpCat=cat;
+      mf.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
+      renderMoreProjects();
+    }
+  };
+}
+if(window.vm){
+  vm.onclick=()=>{showAllMp=!showAllMp;renderMoreProjects()};
+}
+renderMoreProjects();
 const go=id=>()=>document.getElementById(id).scrollIntoView();
 const cmds=[...['about','exp','proj','more','skills','npm','wins','kind','certs','contact'].map(x=>['→ jump: '+x,go(x)]),['◐ toggle theme',()=>th.click()],['↗ open GitHub',()=>open(L.gh)],['↗ open LinkedIn',()=>open(L.li)],['✉ copy email',()=>navigator.clipboard&&navigator.clipboard.writeText('chandana.galgali@gmail.com')],['✉ send email',()=>location.href=L.em]];
 function rp(q=''){pl.innerHTML='';cmds.filter(c=>c[0].toLowerCase().includes(q.toLowerCase())).forEach(c=>{const a=document.createElement('a');a.textContent=c[0];a.onclick=()=>{pal.classList.remove('o');c[1]()};pl.append(a)})}
@@ -845,7 +885,7 @@ kv.onclick=()=>{
 const isGrid=dw.classList.toggle('grid-view');
 kv.textContent=isGrid?'🗂 stack view':'▦ grid view';
 };
-mg.classList.add('col');mg.insertAdjacentHTML('afterend','<button class="btn" id="vm" style="margin-top:16px">view all projects (+10) ↓</button>');vm.onclick=()=>{mg.classList.toggle('col');vm.textContent=mg.classList.contains('col')?'view all projects (+10) ↓':'show less ↑'};fb.addEventListener('click',()=>mg.classList.remove('col'));
+// more-projects handled via renderMoreProjects()
 (async()=>{
   const P='react-ambient-light-adaptive-theme';
   const now=new Date();
