@@ -60,20 +60,22 @@ ul{padding-left:18px}li{margin:5px 0;color:color-mix(in srgb,var(--fg) 88%,trans
 .ph-dot.act{background:var(--a);transform:scale(1.3);box-shadow:0 0 8px var(--a)}
 /* Flagship Projects horizontal split layout (matches Achievements / Wins) */
 #pg{display:flex;flex-direction:column;gap:20px}
-.proj-card{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:stretch}
-.proj-media{display:flex;flex-direction:column;justify-content:flex-start}
-.proj-media .ph{margin-bottom:12px;aspect-ratio:16/9;width:100%}
+.proj-card{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:start}
+.proj-media{display:flex;flex-direction:column;gap:10px}
+.proj-media .ph{margin-bottom:0;aspect-ratio:16/9;width:100%;box-shadow:0 6px 18px -4px rgba(0,0,0,.35)}
 .proj-body{min-width:0;display:flex;flex-direction:column}
-.proj-body h3{font:700 17px 'Space Grotesk',sans-serif;margin-bottom:4px;line-height:1.35}
+.proj-body h3{font:700 17.5px 'Space Grotesk',sans-serif;margin-bottom:4px;line-height:1.35}
 .proj-body .meta{font-size:12px;color:var(--mut);margin-bottom:6px}
 .proj-body .tags{margin:6px 0 10px}
-.proj-body .links{margin-top:auto;padding-top:12px}
-.p-impact{display:flex;align-items:baseline;gap:8px;margin-bottom:0}.p-impact b{font:700 20px 'Space Grotesk',sans-serif;color:var(--a);line-height:1}.p-impact span{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.proj-body .links{margin-top:14px;padding-top:10px;border-top:1px dashed var(--bd)}
+.p-impact{display:inline-flex;align-items:center;gap:10px;padding:7px 12px;border-radius:8px;background:color-mix(in srgb,var(--a) 10%,var(--card));border:1px solid color-mix(in srgb,var(--a) 30%,transparent);width:fit-content;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.p-impact b{font:700 18px 'Space Grotesk',sans-serif;color:var(--a);line-height:1;letter-spacing:-.01em}
+.p-impact span{font-size:10.5px;color:var(--fg);text-transform:uppercase;letter-spacing:.06em;font-weight:600;opacity:.9}
 .p-desc{font-size:13px;line-height:1.6;color:var(--fg);margin:4px 0 8px;text-align:justify;text-justify:inter-word}
 .p-details{margin-top:8px;border-top:1px dashed var(--bd);padding-top:8px}
 
 /* Achievement / Wins cards compact side-by-side layout with locked 16:9 ratio */
-.win-card{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:center}
+.win-card{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:start}
 .win-card .ph{margin-bottom:0;aspect-ratio:16/9;width:100%;height:auto}
 .win-body{min-width:0}
 @media(max-width:860px){
@@ -82,13 +84,16 @@ ul{padding-left:18px}li{margin:5px 0;color:color-mix(in srgb,var(--fg) 88%,trans
 .win-card{grid-template-columns:1fr;gap:14px}
 .win-card .ph{aspect-ratio:16/9;width:100%}
 }
-.p-details summary{font-size:12px;font-weight:600;color:var(--a);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;user-select:none;padding:3px 8px;border-radius:6px;background:color-mix(in srgb,var(--a) 10%,transparent);border:1px solid color-mix(in srgb,var(--a) 30%,transparent);transition:.2s}
-.p-details summary:hover{background:color-mix(in srgb,var(--a) 20%,transparent);border-color:var(--a)}
-.p-details summary::-webkit-details-marker{display:none}
-.p-details summary::after{content:'↓';font-size:11px}
-.p-details[open] summary::after{content:'↑'}
+.p-details summary,.exp-details summary{font-size:12px;font-weight:600;color:var(--a);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;user-select:none;padding:3px 8px;border-radius:6px;background:color-mix(in srgb,var(--a) 10%,transparent);border:1px solid color-mix(in srgb,var(--a) 30%,transparent);transition:.2s}
+.p-details summary:hover,.exp-details summary:hover{background:color-mix(in srgb,var(--a) 20%,transparent);border-color:var(--a)}
+.p-details summary::-webkit-details-marker,.exp-details summary::-webkit-details-marker{display:none}
+.p-details summary::after,.exp-details summary::after{content:'↓';font-size:11px}
+.p-details[open] summary::after,.exp-details[open] summary::after{content:'↑'}
 .p-details ul{padding-left:18px;margin:10px 0 6px}
 .p-details li{font-size:12.5px;line-height:1.55;margin:5px 0;color:color-mix(in srgb,var(--fg) 85%,transparent);text-align:justify;text-justify:inter-word}
+.exp-details{margin-top:12px}
+.exp-details ul{padding-left:18px;margin:10px 0 6px}
+.exp-details li{font-size:13px;line-height:1.6;margin:6px 0;color:color-mix(in srgb,var(--fg) 88%,transparent);text-align:justify;text-justify:inter-word}
 details{margin-top:8px}summary{cursor:pointer;color:var(--a);font-size:13px}
 .rv{opacity:0;transform:translateY(18px);transition:.6s}.rv.in{opacity:1;transform:none}
 footer{text-align:center;color:var(--mut);padding:60px 0 40px;position:relative;z-index:1}
@@ -429,7 +434,7 @@ const logo=i=>{const l=LG[i];return `<img class="lg" alt="" loading="lazy" src="
 function lgErr(im){if(!im.dataset.tried){im.dataset.tried=1;im.src=im.dataset.f;return}const s=document.createElement('div');s.className='lg fb';s.textContent=im.dataset.t;im.replaceWith(s)}
 const tg=a=>`<div class="tags">${a.map(x=>`<span>${x}</span>`).join('')}</div>`;
 const sm=['Instrumented QuickJS C internals and integrated a static analysis pipeline with Jelly\'s approximate interpretation engine to generate Ahead-of-Time behavioral hints, demonstrating a 45% execution speedup.','Engineered real-time regulatory feed monitoring tools that reduced validation times from 45 minutes to under 2 minutes, developed unsupervised ML predictive models for incident prevention, and automated infrastructure housekeeping.','Executed end-to-end web application security audits, live penetration tests, and SIEM threat monitoring to remediate high-severity vulnerabilities and engineer proactive detection rules.','Built end-to-end computer vision pipelines and predictive ML models using TensorFlow, OpenCV and Scikit-Learn for real-time image processing, classification and data segmentation.','Worked on core Java backend logic, data structures, and Maven-based dependency management to model chemical formulation and component substitution rules for fragrance manufacturing.','Architected a pure frontend React.js virtual lab application for algorithm visualization, translating Figma UI/UX mockups into interactive, modular web components.'],dur=['4 mos','2 mos','3 mos','1 mo','3 mos','4 mos'];
-tl.innerHTML=exp.map((e,i)=>`<div class="card rv${i>2?' hid x':''}" id="exp-${i}"><div class="eh">${logo(i)}<div><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p></div></div><p class="sum">${sm[i]}</p>${tg(e[4])}<ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+tl.innerHTML=exp.map((e,i)=>{const bullets=e[3]&&e[3].length?`<details class="exp-details"><summary>view details</summary><ul>${e[3].map(x=>`<li>${x}</li>`).join('')}</ul></details>`:'';return `<div class="card rv${i>2?' hid x':''}" id="exp-${i}"><div class="eh">${logo(i)}<div><h3>${e[1]}</h3><p class="meta">@ ${e[0]} · ${e[2]}</p></div></div><p class="sum">${sm[i]}</p>${tg(e[4])}${bullets}</div>`;}).join('');
 ts.innerHTML=exp.map((e,i)=>`<div data-idx="${i}" role="button" tabindex="0" title="Click to view details for ${e[1]}"><b>${e[0].split(' — ')[0]}</b><br>${e[1].split(' / ')[0]}<br><span class="meta">${e[2].split(' · ')[0]} · ${dur[i]}</span></div>`).join('');
 ts.onclick=e=>{
 const item=e.target.closest('[data-idx]');
@@ -441,6 +446,8 @@ if(target.classList.contains('hid')){
 tl.querySelectorAll('.x').forEach(c=>c.classList.remove('hid'));
 if(window.vx)vx.textContent='show less ↑';
 }
+const d=target.querySelector('.exp-details');
+if(d)d.open=true;
 target.scrollIntoView({behavior:'smooth',block:'center'});
 target.classList.add('act');
 setTimeout(()=>target.classList.remove('act'),1800);
@@ -488,7 +495,7 @@ const pr=[
 ]],
 ['Text to AR/VR: Generating AR/VR Visualization from Textual Description of Numerical Data',
 'Pre-Final Year Capstone Project',
-'Developed a novel, end-to-end spatial computing and generative AI system that transforms unstructured textual descriptions of numerical data into immersive, interactive Augmented Reality (AR) and Virtual Reality (VR) environments.',
+'Developed a novel, end-to-end spatial computing and generative AI system that transforms unstructured textual descriptions of numerical data into immersive, interactive Augmented and Virtual Reality (AR/VR) environments.',
 [
   'Engineered a sequential AI pipeline utilizing a Large Language Model (LLM) to parse unstructured text into structured data (eg. table, json, etc.), followed by a custom Retrieval-Augmented Generation (RAG) framework connected to Unity to manipulate spatial coordinates for AR/VR generation.',
   'Curated a custom dataset from the Open Government Data (OGD) Platform to train the system to intelligently determine the most suitable visualization (strictly constrained to bar charts and line charts).',
